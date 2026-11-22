@@ -15,6 +15,7 @@ lock_mask:
   spine_1_pitch: true
   spine_2_yaw: true
   spine_2_pitch: true
+  neck_pitch: true
 lock_angles:
   spine_0_yaw: 0.0
   spine_0_pitch: 1.5707963267948966
@@ -22,3 +23,4 @@ lock_angles:
   spine_1_pitch: 0.0
   spine_2_yaw: 0.0
   spine_2_pitch: 0.0
+  neck_pitch: 1.5707963267948966
