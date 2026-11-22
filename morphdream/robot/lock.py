@@ -24,6 +24,9 @@ class Morphology:
     lock_angles: Mapping[str, float] = field(default_factory=dict)
     support_segments: tuple[int, ...] = ()
     camera_height_target_m: float = 0.30
+    gaze_nominal_pitch_rad: float = 0.0
+    gaze_pitch_range_rad: tuple[float, float] = (-1.0471975512, 1.0471975512)
+    gaze_yaw_range_rad: tuple[float, float] = (-1.5707963268, 1.5707963268)
 
 
 def load_morphology(path: str | Path) -> Morphology:
@@ -46,6 +49,9 @@ def load_morphology(path: str | Path) -> Morphology:
             {str(key): float(value) for key, value in payload.get("lock_angles", {}).items()},
             tuple(int(value) for value in payload.get("support_segments", [])),
             float(payload.get("camera_height_target_m", 0.30)),
+            float(payload.get("gaze_nominal_pitch_rad", 0.0)),
+            tuple(float(value) for value in payload.get("gaze_pitch_range_rad", (-1.0471975512, 1.0471975512))),
+            tuple(float(value) for value in payload.get("gaze_yaw_range_rad", (-1.5707963268, 1.5707963268))),
         )
     except ImportError:
         pass

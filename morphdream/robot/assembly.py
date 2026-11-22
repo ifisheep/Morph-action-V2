@@ -22,7 +22,7 @@ class AssemblySpec:
     module_radius_m: float = 0.04
     leg_length_m: float = 0.12
     camera_height_m: float = 0.30
-    neck_length_m: float = 0.25
+    neck_length_m: float = 0.40
     base_height_m: float = 0.30
     include_head: bool = True
     include_free_base: bool = True

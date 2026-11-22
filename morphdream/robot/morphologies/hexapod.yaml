@@ -1,5 +1,8 @@
 morph_id: hexapod
 camera_height_target_m: 0.32
+gaze_nominal_pitch_rad: 0.0
+gaze_pitch_range_rad: [-1.0471975512, 1.0471975512]
+gaze_yaw_range_rad: [-1.5707963268, 1.5707963268]
 support_segments: [1, 2, 3]
 contact_roles:
   leg_left_0: support
@@ -15,7 +18,6 @@ lock_mask:
   spine_1_pitch: true
   spine_2_yaw: true
   spine_2_pitch: true
-  neck_pitch: true
 lock_angles:
   spine_0_yaw: 0.0
   spine_0_pitch: 0.0
@@ -23,4 +25,3 @@ lock_angles:
   spine_1_pitch: 0.0
   spine_2_yaw: 0.0
   spine_2_pitch: 0.0
-  neck_pitch: 0.0
