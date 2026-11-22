@@ -26,18 +26,21 @@ def _hull(points: np.ndarray) -> list[np.ndarray]:
         return (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0])
     lower = []
     for p in pts:
-        while len(lower) >= 2 and cross(lower[-2], lower[-1], p) <= 0: lower.pop()
+        while len(lower) >= 2 and cross(lower[-2], lower[-1], p) <= 0:
+            lower.pop()
         lower.append(p)
     upper = []
     for p in reversed(pts):
-        while len(upper) >= 2 and cross(upper[-2], upper[-1], p) <= 0: upper.pop()
+        while len(upper) >= 2 and cross(upper[-2], upper[-1], p) <= 0:
+            upper.pop()
         upper.append(p)
     return [np.asarray(p) for p in lower[:-1] + upper[:-1]]
 
 
 def _margin(point: np.ndarray, points: np.ndarray) -> float:
     hull = _hull(points)
-    if len(hull) < 3: return 0.0
+    if len(hull) < 3:
+        return 0.0
     values = []
     for a, b in zip(hull, hull[1:] + hull[:1]):
         edge = b - a
@@ -78,7 +81,8 @@ def _settle(model, data, mujoco, morphology: str, template: Any, candidate: dict
         data.ctrl[:] = 0.0
         for name, angle in targets.items():
             aid = actuator_ids.get(f"servo_{name}")
-            if aid is not None: data.ctrl[aid] = angle
+            if aid is not None:
+                data.ctrl[aid] = angle
         mujoco.mj_step(model, data)
     mujoco.mj_forward(model, data)
 
@@ -86,11 +90,14 @@ def _settle(model, data, mujoco, morphology: str, template: Any, candidate: dict
 def _support_points(model, data, template, morphology: str, mujoco) -> np.ndarray:
     points = []
     for pair in range(3):
-        if pair + 1 not in template.support_segments: continue
+        if pair + 1 not in template.support_segments:
+            continue
         for side in ("left", "right"):
             gid = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_GEOM, f"foot_{side}_{pair}")
-            if gid >= 0: points.append(data.geom_xpos[gid, :2].copy())
-    if points: return np.asarray(points)
+            if gid >= 0:
+                points.append(data.geom_xpos[gid, :2].copy())
+    if points:
+        return np.asarray(points)
     for segment in template.support_segments or (1, 2, 3):
         gid = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_GEOM, f"spine_geom_{segment}")
         if gid >= 0:
@@ -104,13 +111,15 @@ def _aabb_hit(origin: np.ndarray, target: np.ndarray, lo: np.ndarray, hi: np.nda
     t0, t1 = 0.0, 1.0
     for axis in range(3):
         if abs(direction[axis]) < 1e-9:
-            if origin[axis] < lo[axis] or origin[axis] > hi[axis]: return False
+            if origin[axis] < lo[axis] or origin[axis] > hi[axis]:
+                return False
             continue
         a = (lo[axis] - origin[axis]) / direction[axis]
         b = (hi[axis] - origin[axis]) / direction[axis]
         a, b = min(a, b), max(a, b)
         t0, t1 = max(t0, a), min(t1, b)
-        if t0 > t1: return False
+        if t0 > t1:
+            return False
     return 0.0 <= t0 <= 1.0
 
 
@@ -147,8 +156,10 @@ def _visibility_matrix(camera_xyz: np.ndarray, height_range: tuple[float, float]
                 for lateral in (-4.0, 0.0, 4.0):
                     origin = np.array([camera_xyz[0] - 0.5, camera_xyz[1] + lateral, height])
                     if not _aabb_hit(origin, target, obstacle[0], obstacle[1]):
-                        visible = True; break
-                if visible: break
+                        visible = True
+                        break
+                if visible:
+                    break
             scores[kind].append(float(visible))
     return {kind: float(np.mean(values)) for kind, values in scores.items()}
 
@@ -193,12 +204,16 @@ def run(output_dir: Path, candidates_path: Path, *, render: bool = True) -> dict
             for pitch in np.linspace(pitch_range[0], pitch_range[1], 31):
                 jid = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_JOINT, "neck_pitch")
                 if jid >= 0:
-                    q = model.jnt_qposadr[jid]; data.qpos[q] = pitch; mujoco.mj_forward(model, data)
-                pos = data.cam_xpos[camera].copy(); heights.append(float(pos[2]))
+                    q = model.jnt_qposadr[jid]
+                    data.qpos[q] = pitch
+                    mujoco.mj_forward(model, data)
+                pos = data.cam_xpos[camera].copy()
+                heights.append(float(pos[2]))
                 forward = -data.cam_xmat[camera].reshape(3, 3)[:, 2]
                 if forward[2] < -1e-6:
                     t = (0.0 - pos[2]) / forward[2]
-                    if 0.0 < t <= 1.0 and 0.0 < pos[0] + t * forward[0] <= 1.0: look_down = True
+                    if 0.0 < t <= 1.0 and 0.0 < pos[0] + t * forward[0] <= 1.0:
+                        look_down = True
             data.qpos[:] = settled_qpos
             data.qvel[:] = settled_qvel
             mujoco.mj_forward(model, data)
@@ -233,7 +248,6 @@ def run(output_dir: Path, candidates_path: Path, *, render: bool = True) -> dict
                 "support_point_count": int(len(points)),
                 "render": str(image_path.relative_to(output_dir)) if image_path else None,
             }
-        dimensions = model.geom_pos.copy()
         rows.append({
             "id": candidate["id"],
             "model_hash": model_hash,
