@@ -1,0 +1,7 @@
+model: ROBOTIS XM430-W350
+source: https://emanual.robotis.com/docs/en/dxl/x/xm430-w350/
+voltage_v: 11.1
+stall_torque_nm: 3.8
+no_load_speed_rpm: 43
+mass_kg: 0.082
+note: "Design study uses 3.8 N·m stall torque as a conservative continuous upper bound proxy. Final hardware selection must confirm duty-cycle derating."

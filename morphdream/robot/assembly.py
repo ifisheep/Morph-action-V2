@@ -18,6 +18,7 @@ class AssemblySpec:
     spine_segments: int = 4
     leg_pairs: int = 3
     leg_dofs: int = 3
+    neck_dofs: int = 2
     module_length_m: float = 0.11
     module_radius_m: float = 0.04
     leg_length_m: float = 0.12
@@ -27,13 +28,15 @@ class AssemblySpec:
     include_head: bool = True
     include_free_base: bool = True
     include_actuators: bool = True
-    actuator_torque_limit_nm: float = 4.0
+    actuator_torque_limit_nm: float = 3.8
 
     def __post_init__(self) -> None:
         if self.spine_segments < 1 or self.leg_pairs < 0:
             raise ValueError("assembly counts must be non-negative and non-zero")
         if not 0 <= self.leg_dofs <= 3:
             raise ValueError("leg_dofs must be between 0 and 3")
+        if self.neck_dofs not in (2, 3):
+            raise ValueError("neck_dofs must be 2 or 3")
         if min(
             self.module_length_m,
             self.module_radius_m,
@@ -149,6 +152,7 @@ def build_mjcf(spec: AssemblySpec, *, model_name: str = "morphdream_robot") -> s
                 f'{indent}  <body name="head_mount" pos="{-spec.module_length_m * 0.55:.5f} 0 0">',
                 _joint_xml("neck_yaw", "0 0 1", damping=1.5),
                 _joint_xml("neck_pitch", "0 1 0", damping=1.5),
+                *([_joint_xml("neck_roll", "1 0 0", damping=1.5)] if spec.neck_dofs == 3 else []),
                 f'{indent}    <geom name="neck_link" type="capsule" fromto="0 0 0 {spec.neck_length_m:.5f} 0 0" size="0.025" mass="0.12"/>',
                 f'{indent}    <body name="head" pos="{spec.neck_length_m:.5f} 0 0">',
                 f'{indent}      <geom name="head_geom" type="sphere" size="0.07" mass="0.3"/>',
@@ -157,6 +161,8 @@ def build_mjcf(spec: AssemblySpec, *, model_name: str = "morphdream_robot") -> s
                 f'{indent}  </body>',
             ])
             joint_names.extend(("neck_yaw", "neck_pitch"))
+            if spec.neck_dofs == 3:
+                joint_names.append("neck_roll")
         if segment + 1 < spec.spine_segments:
             emit_segment(segment + 1)
         lines.append(f'{indent}</body>')

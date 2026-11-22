@@ -1,0 +1,38 @@
+# Candidate designs for the S1.1 design study. No gait or controller tuning.
+candidates:
+  - id: baseline_4x011
+    spine_segments: 4
+    module_length_m: 0.11
+    module_radius_m: 0.04
+    leg_length_m: 0.12
+    neck_length_m: 0.40
+    neck_dofs: 2
+  - id: compact_short_neck
+    spine_segments: 4
+    module_length_m: 0.09
+    module_radius_m: 0.035
+    leg_length_m: 0.10
+    neck_length_m: 0.20
+    neck_dofs: 2
+  - id: long_spine_5
+    spine_segments: 5
+    module_length_m: 0.11
+    module_radius_m: 0.04
+    leg_length_m: 0.12
+    neck_length_m: 0.25
+    neck_dofs: 2
+  - id: periscope_raise
+    spine_segments: 4
+    module_length_m: 0.12
+    module_radius_m: 0.04
+    leg_length_m: 0.12
+    neck_length_m: 0.30
+    neck_dofs: 2
+    periscope_upright_segments: [0, 1]
+  - id: decoupled_neck_3dof
+    spine_segments: 4
+    module_length_m: 0.11
+    module_radius_m: 0.04
+    leg_length_m: 0.12
+    neck_length_m: 0.25
+    neck_dofs: 3

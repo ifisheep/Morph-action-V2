@@ -31,18 +31,21 @@ thresholds:
   max_lock_drift_rad: 0.017453292519943295
   max_stabilization_ratio: 0.50
   min_transition_success_rate: 0.90
-  min_displacement_body_lengths:
-    quadruped: 12.0
-    centaur: 9.0
-    snake: 6.0
+  min_net_displacement_body_lengths: 2.0
+locomotion:
+  backend: mjlab_speed_tracking
+  gait_style: learned_velocity_tracking
 actuators:
-  torque_limit_nm: 4.0
+  model: ROBOTIS XM430-W350
+  source: https://emanual.robotis.com/docs/en/dxl/x/xm430-w350/
+  torque_limit_nm: 3.8
   root_free_joint_torque_limit_nm: 0.0
 transitions:
   trials_per_edge: 100
-  duration_s: 10.0
-  stable_tail_s: 2.0
-  target_angle_error_rad: 0.05235987755982989
+  proposed_duration_s: 10.0
+  proposed_stable_tail_s: 2.0
+  proposed_target_angle_error_rad: 0.05235987755982989
+  frozen: false
 videos:
   duration_s: 10.0
   fps: 30

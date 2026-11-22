@@ -7,8 +7,8 @@ support_segments: [1, 3]
 contact_roles:
   leg_left_0: support
   leg_right_0: support
-  leg_left_1: support
-  leg_right_1: support
+  leg_left_1: retracted
+  leg_right_1: retracted
   leg_left_2: support
   leg_right_2: support
 lock_mask:

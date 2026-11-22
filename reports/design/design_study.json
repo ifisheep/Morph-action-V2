@@ -1,0 +1,840 @@
+{
+  "source": "reports/design/requirements.md",
+  "candidates": [
+    {
+      "id": "baseline_4x011",
+      "model_hash": "98c478c3c53d879dc214310017f60c63d7a15de30a27975ecca86a81e654fe10",
+      "parameters": {
+        "spine_segments": 4,
+        "leg_pairs": 3,
+        "leg_dofs": 3,
+        "neck_dofs": 2,
+        "module_length_m": 0.11,
+        "module_radius_m": 0.04,
+        "leg_length_m": 0.12,
+        "camera_height_m": 0.3,
+        "neck_length_m": 0.4,
+        "base_height_m": 0.3,
+        "include_head": true,
+        "include_free_base": true,
+        "include_actuators": true,
+        "actuator_torque_limit_nm": 3.8
+      },
+      "dof_count_nv": 32,
+      "mass_kg": 10.239999999999997,
+      "length_m": 1.08,
+      "morphologies": {
+        "quadruped": {
+          "camera_height_range_m": [
+            -0.02705988761560435,
+            0.289686024497336,
+            0.4155428405470388
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": -0.1480528033882315,
+          "max_gravity_torque_nm": 1.3963487460425417,
+          "torque_margin_nm": 2.403651253957458,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            0.2943206333443953,
+            -0.3939779667911064,
+            0.289686024497336
+          ],
+          "support_point_count": 4,
+          "render": null
+        },
+        "hexapod": {
+          "camera_height_range_m": [
+            0.06374039734486749,
+            0.06517448995202493,
+            0.07625160080276273
+          ],
+          "can_view_ground_1m": false,
+          "static_margin_m": -0.1838796243123241,
+          "max_gravity_torque_nm": 11.677209049811644,
+          "torque_margin_nm": -7.877209049811644,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            0.3276071850079344,
+            0.24388388554044538,
+            0.06517448995202493
+          ],
+          "support_point_count": 6,
+          "render": null
+        },
+        "centaur": {
+          "camera_height_range_m": [
+            -0.1495471824455383,
+            0.37929979519143786,
+            0.44548126463165405
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": -0.11547984227911731,
+          "max_gravity_torque_nm": 6.982397170594491,
+          "torque_margin_nm": -3.1823971705944913,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            -0.03602197338707386,
+            -0.17556267831794453,
+            0.37929979519143786
+          ],
+          "support_point_count": 4,
+          "render": null
+        },
+        "snake": {
+          "camera_height_range_m": [
+            -0.12660538781389377,
+            0.32493217690524767,
+            0.4615030187321156
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": 0.07858747809991681,
+          "max_gravity_torque_nm": 7.043348662540056,
+          "torque_margin_nm": -3.243348662540056,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            0.2209933868157573,
+            -0.5011673611663805,
+            0.32493217690524767
+          ],
+          "support_point_count": 12,
+          "render": null
+        },
+        "periscope": {
+          "camera_height_range_m": [
+            -0.12596884451692036,
+            0.3256563857928944,
+            0.4616873355287797
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": 0.06086899326646569,
+          "max_gravity_torque_nm": 7.030675743145402,
+          "torque_margin_nm": -3.230675743145402,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            0.31243661275171525,
+            -0.5485556872494545,
+            0.3256563857928944
+          ],
+          "support_point_count": 12,
+          "render": null
+        }
+      },
+      "coverage_matrix": {
+        "quadruped": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        },
+        "hexapod": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        },
+        "centaur": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        },
+        "snake": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        },
+        "periscope": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        }
+      },
+      "max_torque_margin_nm": -7.877209049811644,
+      "best_by_hiding_type": {
+        "under_bed": "quadruped",
+        "under_sofa": "quadruped",
+        "behind_obstacle": "quadruped",
+        "high_shelf": "quadruped",
+        "open_low_cubby": "quadruped"
+      },
+      "coverage_complete": false,
+      "complementary_type_count": 0
+    },
+    {
+      "id": "compact_short_neck",
+      "model_hash": "364e6392359cef137d1d10703b0207a917034014d689ce11ee436037535bdfd2",
+      "parameters": {
+        "spine_segments": 4,
+        "leg_pairs": 3,
+        "leg_dofs": 3,
+        "neck_dofs": 2,
+        "module_length_m": 0.09,
+        "module_radius_m": 0.035,
+        "leg_length_m": 0.1,
+        "camera_height_m": 0.3,
+        "neck_length_m": 0.2,
+        "base_height_m": 0.3,
+        "include_head": true,
+        "include_free_base": true,
+        "include_actuators": true,
+        "actuator_torque_limit_nm": 3.8
+      },
+      "dof_count_nv": 32,
+      "mass_kg": 10.239999999999997,
+      "length_m": 0.76,
+      "morphologies": {
+        "quadruped": {
+          "camera_height_range_m": [
+            0.09513315307703689,
+            0.32433619057149043,
+            0.32843489004861504
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": 0.04824271218870149,
+          "max_gravity_torque_nm": 7.359700745693299,
+          "torque_margin_nm": -3.5597007456932994,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            -0.11259064155331527,
+            0.022844157499436836,
+            0.32433619057149043
+          ],
+          "support_point_count": 4,
+          "render": null
+        },
+        "hexapod": {
+          "camera_height_range_m": [
+            0.009763763290120936,
+            0.04964051304397399,
+            0.08691867191133612
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": -0.16057518582167096,
+          "max_gravity_torque_nm": 9.39271544452976,
+          "torque_margin_nm": -5.59271544452976,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            0.2868125672684,
+            0.3058706825181171,
+            0.04964051304397399
+          ],
+          "support_point_count": 6,
+          "render": null
+        },
+        "centaur": {
+          "camera_height_range_m": [
+            -0.03851714404407676,
+            0.2552881711175513,
+            0.26808755249823407
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": -0.10359764868919397,
+          "max_gravity_torque_nm": 5.944428974398097,
+          "torque_margin_nm": -2.144428974398097,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            -0.14500337849819597,
+            -0.0819649204268377,
+            0.2552881711175513
+          ],
+          "support_point_count": 4,
+          "render": null
+        },
+        "snake": {
+          "camera_height_range_m": [
+            -0.03924619471450836,
+            0.2278176923289616,
+            0.2578899439368075
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": 0.06526153589545433,
+          "max_gravity_torque_nm": 5.4607214092218035,
+          "torque_margin_nm": -1.6607214092218037,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            -0.052061997611553244,
+            -0.1680826369088929,
+            0.2278176923289616
+          ],
+          "support_point_count": 12,
+          "render": null
+        },
+        "periscope": {
+          "camera_height_range_m": [
+            -0.038745695007415495,
+            0.22823630372469272,
+            0.2581800899945164
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": 0.06554161410509518,
+          "max_gravity_torque_nm": 5.444096874694318,
+          "torque_margin_nm": -1.644096874694318,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            -0.04720374422484318,
+            -0.16659846850392585,
+            0.22823630372469272
+          ],
+          "support_point_count": 12,
+          "render": null
+        }
+      },
+      "coverage_matrix": {
+        "quadruped": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        },
+        "hexapod": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        },
+        "centaur": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        },
+        "snake": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        },
+        "periscope": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        }
+      },
+      "max_torque_margin_nm": -5.59271544452976,
+      "best_by_hiding_type": {
+        "under_bed": "quadruped",
+        "under_sofa": "quadruped",
+        "behind_obstacle": "quadruped",
+        "high_shelf": "quadruped",
+        "open_low_cubby": "quadruped"
+      },
+      "coverage_complete": false,
+      "complementary_type_count": 0
+    },
+    {
+      "id": "long_spine_5",
+      "model_hash": "2a8509be8048acb6ad373cfb95d5c7bee81bbdba4ec5cc97d955d5dc9e60b222",
+      "parameters": {
+        "spine_segments": 5,
+        "leg_pairs": 3,
+        "leg_dofs": 3,
+        "neck_dofs": 2,
+        "module_length_m": 0.11,
+        "module_radius_m": 0.04,
+        "leg_length_m": 0.12,
+        "camera_height_m": 0.3,
+        "neck_length_m": 0.25,
+        "base_height_m": 0.3,
+        "include_head": true,
+        "include_free_base": true,
+        "include_actuators": true,
+        "actuator_torque_limit_nm": 3.8
+      },
+      "dof_count_nv": 34,
+      "mass_kg": 11.239999999999997,
+      "length_m": 1.04,
+      "morphologies": {
+        "quadruped": {
+          "camera_height_range_m": [
+            0.04262327992134837,
+            0.32744849379944824,
+            0.4363834339738434
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": -0.09208913815340353,
+          "max_gravity_torque_nm": 8.488196090485252,
+          "torque_margin_nm": -4.688196090485252,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            0.14130605507169153,
+            -0.013254458824419956,
+            0.32744849379944824
+          ],
+          "support_point_count": 4,
+          "render": null
+        },
+        "hexapod": {
+          "camera_height_range_m": [
+            0.20252491789875396,
+            0.3746242457586405,
+            0.4833405308861888
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": -0.05463501434717024,
+          "max_gravity_torque_nm": 9.557023871540933,
+          "torque_margin_nm": -5.757023871540933,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            0.05742948177997681,
+            0.03406174625834982,
+            0.3746242457586405
+          ],
+          "support_point_count": 6,
+          "render": null
+        },
+        "centaur": {
+          "camera_height_range_m": [
+            0.030569872251843877,
+            0.2615015884025447,
+            0.3756241651445003
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": -0.07413100924491516,
+          "max_gravity_torque_nm": 8.191332386767261,
+          "torque_margin_nm": -4.391332386767261,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            0.07962894992023867,
+            0.1901792690537928,
+            0.2615015884025447
+          ],
+          "support_point_count": 4,
+          "render": null
+        },
+        "snake": {
+          "camera_height_range_m": [
+            0.014185014469169407,
+            0.05227366943758113,
+            0.08955052475655581
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": 0.08426899362106424,
+          "max_gravity_torque_nm": 5.692942968975531,
+          "torque_margin_nm": -1.8929429689755315,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            -0.1900149632743529,
+            -0.4623541867229083,
+            0.05227366943758113
+          ],
+          "support_point_count": 12,
+          "render": null
+        },
+        "periscope": {
+          "camera_height_range_m": [
+            0.022519777319957135,
+            0.0502846620151,
+            0.08070322699309264
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": 0.08596170672865247,
+          "max_gravity_torque_nm": 5.312747658927254,
+          "torque_margin_nm": -1.5127476589272542,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            -0.18640703505692482,
+            -0.47344795502861486,
+            0.0502846620151
+          ],
+          "support_point_count": 12,
+          "render": null
+        }
+      },
+      "coverage_matrix": {
+        "quadruped": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        },
+        "hexapod": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        },
+        "centaur": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        },
+        "snake": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        },
+        "periscope": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        }
+      },
+      "max_torque_margin_nm": -5.757023871540933,
+      "best_by_hiding_type": {
+        "under_bed": "quadruped",
+        "under_sofa": "quadruped",
+        "behind_obstacle": "quadruped",
+        "high_shelf": "quadruped",
+        "open_low_cubby": "quadruped"
+      },
+      "coverage_complete": false,
+      "complementary_type_count": 0
+    },
+    {
+      "id": "periscope_raise",
+      "model_hash": "6b2ff9bfcf93bb2a4cc80dc4cbbb45e943f630b8a58ba090b7764a6d2ac23e19",
+      "parameters": {
+        "spine_segments": 4,
+        "leg_pairs": 3,
+        "leg_dofs": 3,
+        "neck_dofs": 2,
+        "module_length_m": 0.12,
+        "module_radius_m": 0.04,
+        "leg_length_m": 0.12,
+        "camera_height_m": 0.3,
+        "neck_length_m": 0.3,
+        "base_height_m": 0.3,
+        "include_head": true,
+        "include_free_base": true,
+        "include_actuators": true,
+        "actuator_torque_limit_nm": 3.8
+      },
+      "dof_count_nv": 32,
+      "mass_kg": 10.239999999999997,
+      "length_m": 1.02,
+      "morphologies": {
+        "quadruped": {
+          "camera_height_range_m": [
+            0.050937020621059384,
+            0.4207259928801237,
+            0.46758113552315894
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": 0.053430887111052955,
+          "max_gravity_torque_nm": 9.919644264806148,
+          "torque_margin_nm": -6.119644264806149,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            -0.06772854158382458,
+            -0.007055389535673251,
+            0.4207259928801237
+          ],
+          "support_point_count": 4,
+          "render": null
+        },
+        "hexapod": {
+          "camera_height_range_m": [
+            0.06616852677386875,
+            0.06898973520754198,
+            0.07659209071639347
+          ],
+          "can_view_ground_1m": false,
+          "static_margin_m": -0.2021116493880016,
+          "max_gravity_torque_nm": 12.294392870378267,
+          "torque_margin_nm": -8.494392870378267,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            -0.35738457031445187,
+            0.3442395323345909,
+            0.06898973520754198
+          ],
+          "support_point_count": 6,
+          "render": null
+        },
+        "centaur": {
+          "camera_height_range_m": [
+            -0.10771231972132737,
+            0.3070396387763242,
+            0.343508911609373
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": -0.11805418334536286,
+          "max_gravity_torque_nm": 7.908489087282641,
+          "torque_margin_nm": -4.108489087282641,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            -0.07677648439446058,
+            -0.09127517328703853,
+            0.3070396387763242
+          ],
+          "support_point_count": 4,
+          "render": null
+        },
+        "snake": {
+          "camera_height_range_m": [
+            -0.09503848706948742,
+            0.2837816536363937,
+            0.354422478414563
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": 0.07224424812393614,
+          "max_gravity_torque_nm": 8.00084061505212,
+          "torque_margin_nm": -4.20084061505212,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            0.321717537133018,
+            -0.36692135703842355,
+            0.2837816536363937
+          ],
+          "support_point_count": 12,
+          "render": null
+        },
+        "periscope": {
+          "camera_height_range_m": [
+            -0.10653153416864819,
+            0.27651036785999117,
+            0.3682918250433487
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": 0.07578102225141885,
+          "max_gravity_torque_nm": 8.065111217209187,
+          "torque_margin_nm": -4.265111217209188,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            0.2924673785593914,
+            -0.36646969670804835,
+            0.27651036785999117
+          ],
+          "support_point_count": 12,
+          "render": null
+        }
+      },
+      "coverage_matrix": {
+        "quadruped": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        },
+        "hexapod": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        },
+        "centaur": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        },
+        "snake": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        },
+        "periscope": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        }
+      },
+      "max_torque_margin_nm": -8.494392870378267,
+      "best_by_hiding_type": {
+        "under_bed": "quadruped",
+        "under_sofa": "quadruped",
+        "behind_obstacle": "quadruped",
+        "high_shelf": "quadruped",
+        "open_low_cubby": "quadruped"
+      },
+      "coverage_complete": false,
+      "complementary_type_count": 0
+    },
+    {
+      "id": "decoupled_neck_3dof",
+      "model_hash": "379ef87d9d30504120f91aeb91d65877734297e4fbce8b603faad1090a1a5290",
+      "parameters": {
+        "spine_segments": 4,
+        "leg_pairs": 3,
+        "leg_dofs": 3,
+        "neck_dofs": 3,
+        "module_length_m": 0.11,
+        "module_radius_m": 0.04,
+        "leg_length_m": 0.12,
+        "camera_height_m": 0.3,
+        "neck_length_m": 0.25,
+        "base_height_m": 0.3,
+        "include_head": true,
+        "include_free_base": true,
+        "include_actuators": true,
+        "actuator_torque_limit_nm": 3.8
+      },
+      "dof_count_nv": 33,
+      "mass_kg": 10.239999999999997,
+      "length_m": 0.9299999999999999,
+      "morphologies": {
+        "quadruped": {
+          "camera_height_range_m": [
+            0.08580295210688493,
+            0.3526891720678937,
+            0.40661171495539583
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": 0.056425643370769725,
+          "max_gravity_torque_nm": 9.058059110275597,
+          "torque_margin_nm": -5.258059110275597,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            -0.04238157438132212,
+            0.07857356314053593,
+            0.3526891720678937
+          ],
+          "support_point_count": 4,
+          "render": null
+        },
+        "hexapod": {
+          "camera_height_range_m": [
+            0.03949445745796795,
+            0.04970459863338092,
+            0.1615640473477287
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": -0.17000667700187688,
+          "max_gravity_torque_nm": 10.226466569030103,
+          "torque_margin_nm": -6.4264665690301035,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            0.3902307351517272,
+            0.3153817840048646,
+            0.04970459863338092
+          ],
+          "support_point_count": 6,
+          "render": null
+        },
+        "centaur": {
+          "camera_height_range_m": [
+            -0.05000633187646457,
+            0.2935970964864495,
+            0.3220948233465708
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": -0.11697969817377449,
+          "max_gravity_torque_nm": 6.9836727371684795,
+          "torque_margin_nm": -3.1836727371684796,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            -0.16332978179587712,
+            -0.12555683888428393,
+            0.2935970964864495
+          ],
+          "support_point_count": 4,
+          "render": null
+        },
+        "snake": {
+          "camera_height_range_m": [
+            -0.05498630951733653,
+            0.2540746504147564,
+            0.3124844883983755
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": 0.07245429425498322,
+          "max_gravity_torque_nm": 7.047181394317798,
+          "torque_margin_nm": -3.2471813943177983,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            0.31878957943048697,
+            -0.45792313537397167,
+            0.2540746504147564
+          ],
+          "support_point_count": 12,
+          "render": null
+        },
+        "periscope": {
+          "camera_height_range_m": [
+            -0.05339968969805656,
+            0.2502899781522906,
+            0.31261856425896706
+          ],
+          "can_view_ground_1m": true,
+          "static_margin_m": 0.07336088011627911,
+          "max_gravity_torque_nm": 7.013307709237785,
+          "torque_margin_nm": -3.2133077092377853,
+          "min_geom_height_m": -0.02,
+          "camera_xyz_m": [
+            0.32236835906759415,
+            -0.4464659630739469,
+            0.2502899781522906
+          ],
+          "support_point_count": 12,
+          "render": null
+        }
+      },
+      "coverage_matrix": {
+        "quadruped": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        },
+        "hexapod": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        },
+        "centaur": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        },
+        "snake": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        },
+        "periscope": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 1.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        }
+      },
+      "max_torque_margin_nm": -6.4264665690301035,
+      "best_by_hiding_type": {
+        "under_bed": "quadruped",
+        "under_sofa": "quadruped",
+        "behind_obstacle": "quadruped",
+        "high_shelf": "quadruped",
+        "open_low_cubby": "quadruped"
+      },
+      "coverage_complete": false,
+      "complementary_type_count": 0
+    }
+  ]
+}
