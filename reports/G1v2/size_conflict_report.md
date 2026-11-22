@@ -1,5 +1,9 @@
 # G1 v2 size-conflict report
 
+The earlier camera-height targets are withdrawn. The intervals below are
+retained as a geometry comparison for design selection and no longer gate the
+G1 result.
+
 Static stability analysis is paused pending a geometry decision. This report
 uses the current S1.1 dimensions and the frozen nominal root poses. The neck
 has two continuously movable joints. The current template envelope is ±60°
