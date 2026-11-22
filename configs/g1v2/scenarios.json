@@ -1,0 +1,707 @@
+{
+  "version": "g1-v2-scenes",
+  "frozen": true,
+  "seed": 20261122,
+  "scenarios": [
+    {
+      "scene_id": "g1v2-eval-000",
+      "seed": 20261122,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.1659480994708394
+      },
+      "ground_friction_scale": 1.001970121973622,
+      "mass_scale": 1.0252901202211055,
+      "actuator_noise_scale": 0.016827200067873638,
+      "command_heading_rad": -0.16189360411551124,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-001",
+      "seed": 20261123,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.044682959901527264
+      },
+      "ground_friction_scale": 1.1216708481833173,
+      "mass_scale": 0.9342548600386822,
+      "actuator_noise_scale": -0.00020967742964487363,
+      "command_heading_rad": -0.0027111182056896443,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-002",
+      "seed": 20261124,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.045884867324339884
+      },
+      "ground_friction_scale": 0.919670699234487,
+      "mass_scale": 1.0056628678165649,
+      "actuator_noise_scale": 0.04403673312954923,
+      "command_heading_rad": 0.07122542361513695,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-003",
+      "seed": 20261125,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.006089254040277797
+      },
+      "ground_friction_scale": 1.1627381839836084,
+      "mass_scale": 0.967318399455348,
+      "actuator_noise_scale": 0.036638203925167256,
+      "command_heading_rad": -0.03798555931590536,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-004",
+      "seed": 20261126,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.00654216689122622
+      },
+      "ground_friction_scale": 0.9476090747263572,
+      "mass_scale": 1.0384235262326726,
+      "actuator_noise_scale": -0.006355342568106194,
+      "command_heading_rad": -0.09617393860951431,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-005",
+      "seed": 20261127,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.04660868067865301
+      },
+      "ground_friction_scale": 0.9112920659265126,
+      "mass_scale": 0.9438425540173123,
+      "actuator_noise_scale": -0.0003900089447344407,
+      "command_heading_rad": -0.1005175959711533,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-006",
+      "seed": 20261128,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.037288136620012874
+      },
+      "ground_friction_scale": 0.9049973448196386,
+      "mass_scale": 0.9120411486945568,
+      "actuator_noise_scale": -0.005024092825709703,
+      "command_heading_rad": -0.05432160868167964,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-007",
+      "seed": 20261129,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": -0.10919744285881859
+      },
+      "ground_friction_scale": 1.0213620790759772,
+      "mass_scale": 1.0520064244759406,
+      "actuator_noise_scale": 0.04155104860197824,
+      "command_heading_rad": -0.08212897990765083,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-008",
+      "seed": 20261130,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.01329031183895188
+      },
+      "ground_friction_scale": 0.851207383663796,
+      "mass_scale": 0.9848740547641682,
+      "actuator_noise_scale": 0.007451980555211582,
+      "command_heading_rad": -0.09842893989092923,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-009",
+      "seed": 20261131,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": -0.14561990181846582
+      },
+      "ground_friction_scale": 1.1414993266449662,
+      "mass_scale": 0.964451189944541,
+      "actuator_noise_scale": -0.036616323364483096,
+      "command_heading_rad": -0.014523890749988444,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-010",
+      "seed": 20261132,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.021821991004151775
+      },
+      "ground_friction_scale": 0.9450956514902811,
+      "mass_scale": 1.059096048562239,
+      "actuator_noise_scale": -0.013168033648965363,
+      "command_heading_rad": 0.14566731229683091,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-011",
+      "seed": 20261133,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": -0.03497418612714159
+      },
+      "ground_friction_scale": 0.9734542777579718,
+      "mass_scale": 0.9323758127376576,
+      "actuator_noise_scale": -0.022123005672502073,
+      "command_heading_rad": -0.14127766263055078,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-012",
+      "seed": 20261134,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.09332154590396283
+      },
+      "ground_friction_scale": 0.8486247044208158,
+      "mass_scale": 0.9366222321457321,
+      "actuator_noise_scale": -0.0011606932336986758,
+      "command_heading_rad": -0.07557963994389454,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-013",
+      "seed": 20261135,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.12201006444771453
+      },
+      "ground_friction_scale": 0.9866843155070678,
+      "mass_scale": 0.9475678606909441,
+      "actuator_noise_scale": -0.03290543128093175,
+      "command_heading_rad": -0.034036795181513396,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-014",
+      "seed": 20261136,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": -0.1106511313867736
+      },
+      "ground_friction_scale": 0.8549478964896249,
+      "mass_scale": 0.9957777184799391,
+      "actuator_noise_scale": 0.016225963324851975,
+      "command_heading_rad": -0.14686200497676838,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-015",
+      "seed": 20261137,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.05565569654113525
+      },
+      "ground_friction_scale": 0.9715539513976276,
+      "mass_scale": 0.9561629773340324,
+      "actuator_noise_scale": -0.02769945987400001,
+      "command_heading_rad": -0.1444553577898274,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-016",
+      "seed": 20261138,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": -0.038739003772481684
+      },
+      "ground_friction_scale": 0.8861783408222835,
+      "mass_scale": 1.017610283884336,
+      "actuator_noise_scale": -0.028303103938245346,
+      "command_heading_rad": 0.0694374754701711,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-017",
+      "seed": 20261139,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": -0.053004636004547426
+      },
+      "ground_friction_scale": 1.0440564244168904,
+      "mass_scale": 1.0524826260882663,
+      "actuator_noise_scale": 0.01408616571764229,
+      "command_heading_rad": 0.06390976445352589,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-018",
+      "seed": 20261140,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.13321470370572955
+      },
+      "ground_friction_scale": 0.9629895714782155,
+      "mass_scale": 1.041810564168697,
+      "actuator_noise_scale": -0.04447722566883301,
+      "command_heading_rad": -0.006007093137091107,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-019",
+      "seed": 20261141,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": -0.06509711618289445
+      },
+      "ground_friction_scale": 1.189864759621189,
+      "mass_scale": 0.9137849045366394,
+      "actuator_noise_scale": 0.011809106487568999,
+      "command_heading_rad": 0.0519858730651124,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-020",
+      "seed": 20261142,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.07392720696439847
+      },
+      "ground_friction_scale": 0.8068481340112399,
+      "mass_scale": 0.9489440654666054,
+      "actuator_noise_scale": 0.0477072553658756,
+      "command_heading_rad": -0.016316467545410357,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-021",
+      "seed": 20261143,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": -0.1017667829713341
+      },
+      "ground_friction_scale": 1.0182146978888496,
+      "mass_scale": 0.9473235738688567,
+      "actuator_noise_scale": 0.031507390295129264,
+      "command_heading_rad": 0.16877978350799758,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-022",
+      "seed": 20261144,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.031415195942313845
+      },
+      "ground_friction_scale": 0.8150874834788109,
+      "mass_scale": 1.0133725039996673,
+      "actuator_noise_scale": 0.006587773665075312,
+      "command_heading_rad": 0.1479408367566187,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-023",
+      "seed": 20261145,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.11145745263359189
+      },
+      "ground_friction_scale": 1.0636206299911182,
+      "mass_scale": 0.9053688283220129,
+      "actuator_noise_scale": -0.020164948663357208,
+      "command_heading_rad": 0.16822437503289198,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-024",
+      "seed": 20261146,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": -0.15627771287489614
+      },
+      "ground_friction_scale": 0.9658731493211162,
+      "mass_scale": 0.911930676102488,
+      "actuator_noise_scale": 0.027984452134105345,
+      "command_heading_rad": -0.07114634330131266,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-025",
+      "seed": 20261147,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": -0.06165953704439915
+      },
+      "ground_friction_scale": 0.9090098275887439,
+      "mass_scale": 0.9966868920961985,
+      "actuator_noise_scale": -0.029070123281319683,
+      "command_heading_rad": 0.08872957819195196,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-026",
+      "seed": 20261148,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": -0.10638983821520398
+      },
+      "ground_friction_scale": 0.9824355082904527,
+      "mass_scale": 0.9700265986746361,
+      "actuator_noise_scale": 0.013398243490825107,
+      "command_heading_rad": 0.08865622297407358,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-027",
+      "seed": 20261149,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": -0.03956782906055392
+      },
+      "ground_friction_scale": 1.018421256715291,
+      "mass_scale": 1.0567114716300199,
+      "actuator_noise_scale": 0.026021200016659154,
+      "command_heading_rad": -0.07257013130977592,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-028",
+      "seed": 20261150,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.1504551478192043
+      },
+      "ground_friction_scale": 0.99181232438805,
+      "mass_scale": 0.932326366074361,
+      "actuator_noise_scale": -0.002287168901170998,
+      "command_heading_rad": -0.09493020414472324,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-029",
+      "seed": 20261151,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.021759965115748625
+      },
+      "ground_friction_scale": 1.179906188783833,
+      "mass_scale": 1.0658299822090902,
+      "actuator_noise_scale": 0.04609993316133236,
+      "command_heading_rad": 0.15343474898864948,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-030",
+      "seed": 20261152,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": -0.03888537525517127
+      },
+      "ground_friction_scale": 0.8012791958867324,
+      "mass_scale": 0.997561717537228,
+      "actuator_noise_scale": 0.03823634401400218,
+      "command_heading_rad": -0.13670537456400955,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-031",
+      "seed": 20261153,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.08654775035481396
+      },
+      "ground_friction_scale": 1.0802857656351021,
+      "mass_scale": 0.9200442690868643,
+      "actuator_noise_scale": 0.017189788782951756,
+      "command_heading_rad": -0.06290246661799241,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-032",
+      "seed": 20261154,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.10128645912127768
+      },
+      "ground_friction_scale": 1.118158563812825,
+      "mass_scale": 0.9901553351975287,
+      "actuator_noise_scale": -0.019893234476008305,
+      "command_heading_rad": 0.07603387931988084,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-033",
+      "seed": 20261155,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.042744654600464366
+      },
+      "ground_friction_scale": 0.9281379598848258,
+      "mass_scale": 1.0011513475616578,
+      "actuator_noise_scale": 0.02083988374800752,
+      "command_heading_rad": -0.13612604253853597,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-034",
+      "seed": 20261156,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": -0.13357056876461498
+      },
+      "ground_friction_scale": 0.9352260900332352,
+      "mass_scale": 1.0423463631037995,
+      "actuator_noise_scale": 0.019016132677803402,
+      "command_heading_rad": 0.12082872795726593,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-035",
+      "seed": 20261157,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": -0.14829080014548304
+      },
+      "ground_friction_scale": 1.0304587903391582,
+      "mass_scale": 1.018691857385782,
+      "actuator_noise_scale": 0.0012428469428071645,
+      "command_heading_rad": -0.027868740717508222,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-036",
+      "seed": 20261158,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": -0.09874632394913571
+      },
+      "ground_friction_scale": 1.0657013810446179,
+      "mass_scale": 0.9892276670889111,
+      "actuator_noise_scale": 0.024885073682986078,
+      "command_heading_rad": 0.04955885381814473,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-037",
+      "seed": 20261159,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": -0.1663827766966423
+      },
+      "ground_friction_scale": 1.0864661190404625,
+      "mass_scale": 1.0949364585954973,
+      "actuator_noise_scale": -0.003510307038053717,
+      "command_heading_rad": -0.15997176499613197,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-038",
+      "seed": 20261160,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.15415026029990944
+      },
+      "ground_friction_scale": 1.1293623298906503,
+      "mass_scale": 0.9226904215269391,
+      "actuator_noise_scale": -0.038889244758402636,
+      "command_heading_rad": -0.05242368611477985,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-039",
+      "seed": 20261161,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": -0.10707967838005335
+      },
+      "ground_friction_scale": 0.9274911221567733,
+      "mass_scale": 1.017973542923919,
+      "actuator_noise_scale": -0.023774188422334433,
+      "command_heading_rad": 0.014096301385501914,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-040",
+      "seed": 20261162,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": -0.1248591912619545
+      },
+      "ground_friction_scale": 0.8703887907183827,
+      "mass_scale": 1.0280068661699675,
+      "actuator_noise_scale": -0.02969219161509881,
+      "command_heading_rad": 0.09338158085994355,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-041",
+      "seed": 20261163,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.10019006261155058
+      },
+      "ground_friction_scale": 0.8305349939325012,
+      "mass_scale": 0.9689668774370088,
+      "actuator_noise_scale": 0.02904313911265373,
+      "command_heading_rad": 0.15955434501847007,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-042",
+      "seed": 20261164,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0017299907313545193
+      },
+      "ground_friction_scale": 1.165037136412302,
+      "mass_scale": 0.9462120622565788,
+      "actuator_noise_scale": -0.007887484988064908,
+      "command_heading_rad": -0.12860287315555324,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-043",
+      "seed": 20261165,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.016320358014028008
+      },
+      "ground_friction_scale": 1.0644410421511419,
+      "mass_scale": 1.0039912454952862,
+      "actuator_noise_scale": 0.004843680217964864,
+      "command_heading_rad": -0.041359092715777424,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-044",
+      "seed": 20261166,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.14202337162933218
+      },
+      "ground_friction_scale": 1.117443944722496,
+      "mass_scale": 0.9608259951934555,
+      "actuator_noise_scale": -0.022605408956089625,
+      "command_heading_rad": 0.05027589371662383,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-045",
+      "seed": 20261167,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.16466902774759554
+      },
+      "ground_friction_scale": 0.8184476321259987,
+      "mass_scale": 0.9491250069795601,
+      "actuator_noise_scale": -0.004527315615487401,
+      "command_heading_rad": -0.021131417817145504,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-046",
+      "seed": 20261168,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.14118598868042462
+      },
+      "ground_friction_scale": 0.9106837317891093,
+      "mass_scale": 1.0929237144973152,
+      "actuator_noise_scale": 0.009632342464701092,
+      "command_heading_rad": -0.004889268679344305,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-047",
+      "seed": 20261169,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.04815229900647003
+      },
+      "ground_friction_scale": 0.821562539202946,
+      "mass_scale": 0.9668730244089491,
+      "actuator_noise_scale": -0.02311913866670641,
+      "command_heading_rad": 0.014109038127018914,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-048",
+      "seed": 20261170,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": -0.07371035850754756
+      },
+      "ground_friction_scale": 0.8667893019126007,
+      "mass_scale": 0.9272889259678251,
+      "actuator_noise_scale": 0.019986171382357115,
+      "command_heading_rad": 0.08395672264884144,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1v2-eval-049",
+      "seed": 20261171,
+      "initial_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": -0.09274297026337383
+      },
+      "ground_friction_scale": 0.9735184653522595,
+      "mass_scale": 1.0976917296312534,
+      "actuator_noise_scale": -0.024280204993237423,
+      "command_heading_rad": -0.07328221817694575,
+      "duration_s": 60.0
+    }
+  ]
+}

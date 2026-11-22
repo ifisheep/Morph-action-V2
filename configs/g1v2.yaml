@@ -4,6 +4,7 @@ frozen: true
 seed: 20261122
 scene_count: 50
 episode_duration_s: 60.0
+scenario_manifest: configs/g1v2/scenarios.json
 model:
   spine_segments: 4
   leg_pairs: 3

@@ -53,6 +53,13 @@ def test_frozen_g1v2_thresholds_and_scope() -> None:
     assert config["transitions"]["trials_per_edge"] == 100
     assert config["thresholds"]["max_fall_rate"] == 0.05
     assert config["thresholds"]["min_transition_success_rate"] == 0.90
+    manifest = json.loads((ROOT / config["scenario_manifest"]).read_text(encoding="utf-8"))
+    assert manifest["frozen"] is True
+    scenarios = manifest["scenarios"]
+    assert len(scenarios) == 50
+    assert len({item["scene_id"] for item in scenarios}) == 50
+    assert len({item["ground_friction_scale"] for item in scenarios}) > 1
+    assert len({item["mass_scale"] for item in scenarios}) > 1
 
 
 def test_one_superset_model_has_required_topology() -> None:
