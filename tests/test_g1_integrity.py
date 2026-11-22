@@ -65,14 +65,17 @@ def test_frozen_g1v2_thresholds_and_scope() -> None:
 def test_one_superset_model_has_required_topology() -> None:
     xml = _supermodel_xml()
     root = ET.fromstring(xml)
-    assert len(root.findall(".//body[@name='spine_0']/joint")) == 1
+    spine_bodies = [
+        body for body in root.findall(".//body") if body.attrib.get("name", "").startswith("spine_")
+    ]
+    assert len(spine_bodies) == 4
     spine_joints = [
         joint
         for body in root.findall(".//body")
         if body.attrib.get("name", "").startswith("spine_")
         for joint in body.findall("joint")
     ]
-    assert len(spine_joints) == 4
+    assert len(spine_joints) == 6
     leg_joints = [
         joint
         for body in root.findall(".//body")
