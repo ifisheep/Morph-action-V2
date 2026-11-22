@@ -1,0 +1,4 @@
+morph_id: hexapod
+locks:
+contact_roles:
+  legs: support

@@ -1,0 +1,806 @@
+{
+  "version": "g1-scenarios-v1",
+  "frozen": true,
+  "scenarios": [
+    {
+      "scene_id": "g1-eval-000",
+      "seed": 20261122,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-001",
+      "seed": 20261123,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-002",
+      "seed": 20261124,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-003",
+      "seed": 20261125,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-004",
+      "seed": 20261126,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-005",
+      "seed": 20261127,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-006",
+      "seed": 20261128,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-007",
+      "seed": 20261129,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-008",
+      "seed": 20261130,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-009",
+      "seed": 20261131,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-010",
+      "seed": 20261132,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-011",
+      "seed": 20261133,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-012",
+      "seed": 20261134,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-013",
+      "seed": 20261135,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-014",
+      "seed": 20261136,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-015",
+      "seed": 20261137,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-016",
+      "seed": 20261138,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-017",
+      "seed": 20261139,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-018",
+      "seed": 20261140,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-019",
+      "seed": 20261141,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-020",
+      "seed": 20261142,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-021",
+      "seed": 20261143,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-022",
+      "seed": 20261144,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-023",
+      "seed": 20261145,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-024",
+      "seed": 20261146,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-025",
+      "seed": 20261147,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-026",
+      "seed": 20261148,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-027",
+      "seed": 20261149,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-028",
+      "seed": 20261150,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-029",
+      "seed": 20261151,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-030",
+      "seed": 20261152,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-031",
+      "seed": 20261153,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-032",
+      "seed": 20261154,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-033",
+      "seed": 20261155,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-034",
+      "seed": 20261156,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-035",
+      "seed": 20261157,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-036",
+      "seed": 20261158,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-037",
+      "seed": 20261159,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-038",
+      "seed": 20261160,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-039",
+      "seed": 20261161,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-040",
+      "seed": 20261162,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-041",
+      "seed": 20261163,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-042",
+      "seed": 20261164,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-043",
+      "seed": 20261165,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-044",
+      "seed": 20261166,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-045",
+      "seed": 20261167,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-046",
+      "seed": 20261168,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-047",
+      "seed": 20261169,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-048",
+      "seed": 20261170,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    },
+    {
+      "scene_id": "g1-eval-049",
+      "seed": 20261171,
+      "terrain": {
+        "kind": "flat",
+        "roughness_m": 0.0,
+        "slope_rad": 0.0
+      },
+      "start_pose": {
+        "x_m": 0.0,
+        "y_m": 0.0,
+        "yaw_rad": 0.0
+      },
+      "distance_m": 6.0,
+      "duration_s": 60.0
+    }
+  ]
+}

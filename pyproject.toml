@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "morphdream"
+version = "0.1.0"
+description = "MorphDream: morphology-aware active visual search research platform"
+requires-python = ">=3.12"
+dependencies = [
+  "numpy>=1.24",
+  "pyyaml>=6",
+]
+
+[project.optional-dependencies]
+sim = ["mujoco==3.13.0"]
+dev = ["pytest>=8", "ruff>=0.6"]
+config = ["pyyaml>=6"]
+gpu = ["mujoco-warp==3.13.0"]
+g1 = ["mujoco==3.13.0", "pyyaml>=6", "imageio>=2.38", "imageio-ffmpeg>=0.6", "pillow>=10"]
+
+[project.scripts]
+morphdream-eval = "morphdream.decision.loop:main"
+morphdream-inject = "morphdream.sim.scenes.hiding_injector:main"
+
+[tool.setuptools.packages.find]
+include = ["morphdream*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+  "gpu: requires a CUDA-capable GPU",
+  "integration: multi-module integration test",
+  "leakage: information-flow and split integrity checks",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+ignore = ["E501", "I001", "UP035", "UP037", "F403"]

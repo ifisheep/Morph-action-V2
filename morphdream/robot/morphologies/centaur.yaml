@@ -1,0 +1,8 @@
+morph_id: centaur
+locks:
+  - joint: neck_yaw, angle_rad: 0.0, role: locked
+contact_roles:
+  front_left: support
+  front_right: support
+  rear_left: support
+  rear_right: support

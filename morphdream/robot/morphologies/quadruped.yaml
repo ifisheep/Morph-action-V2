@@ -1,0 +1,7 @@
+morph_id: quadruped
+locks:
+contact_roles:
+  front_left: support
+  front_right: support
+  rear_left: support
+  rear_right: support
