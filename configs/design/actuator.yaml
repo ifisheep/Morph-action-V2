@@ -4,4 +4,9 @@ voltage_v: 11.1
 stall_torque_nm: 3.8
 no_load_speed_rpm: 43
 mass_kg: 0.082
-note: "Design study uses 3.8 N·m stall torque as a conservative continuous upper bound proxy. Final hardware selection must confirm duty-cycle derating."
+# Stall torque is the maximum the servo can produce, so it is an optimistic
+# bound. MJCF forcerange uses it as the hard physical limit for transients.
+# Static holding margins use stall_torque_nm * static_torque_derating
+# (decision D2, 2026-11-22). Final hardware selection must confirm duty-cycle
+# and thermal derating.
+static_torque_derating: 0.5
