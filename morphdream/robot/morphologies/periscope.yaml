@@ -1,4 +1,24 @@
 morph_id: periscope
-locks:
+camera_height_target_m: 0.45
+support_segments: []
 contact_roles:
-  base: support
+  leg_left_0: retracted
+  leg_right_0: retracted
+  leg_left_1: retracted
+  leg_right_1: retracted
+  leg_left_2: retracted
+  leg_right_2: retracted
+lock_mask:
+  spine_0_yaw: true
+  spine_0_pitch: false
+  spine_1_yaw: true
+  spine_1_pitch: true
+  spine_2_yaw: true
+  spine_2_pitch: true
+lock_angles:
+  spine_0_yaw: 0.0
+  spine_0_pitch: 1.5707963267948966
+  spine_1_yaw: 0.0
+  spine_1_pitch: 0.0
+  spine_2_yaw: 0.0
+  spine_2_pitch: 0.0

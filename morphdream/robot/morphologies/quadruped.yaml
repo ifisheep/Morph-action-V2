@@ -1,7 +1,26 @@
 morph_id: quadruped
-locks:
+camera_height_target_m: 0.32
+support_segments: [1, 3]
 contact_roles:
-  front_left: support
-  front_right: support
-  rear_left: support
-  rear_right: support
+  leg_left_0: retracted
+  leg_right_0: retracted
+  leg_left_1: support
+  leg_right_1: support
+  leg_left_2: retracted
+  leg_right_2: retracted
+lock_mask:
+  spine_0_yaw: true
+  spine_0_pitch: true
+  spine_1_yaw: true
+  spine_1_pitch: true
+  spine_2_yaw: true
+  spine_2_pitch: true
+  neck_yaw: false
+  neck_pitch: false
+lock_angles:
+  spine_0_yaw: 0.0
+  spine_0_pitch: 0.0
+  spine_1_yaw: 0.0
+  spine_1_pitch: 0.0
+  spine_2_yaw: 0.0
+  spine_2_pitch: 0.0
