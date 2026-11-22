@@ -1,0 +1,35 @@
+# Frozen before gait tuning. Do not edit after G1 measurement begins.
+version: g1-v1
+frozen: true
+seed: 20261122
+scene_manifest: configs/g1/scenarios.json
+scene_count: 50
+episode_duration_s: 60.0
+morphologies:
+  - quadruped
+  - snake
+  - centaur
+fall_criteria:
+  max_body_tilt_rad: 0.7853981633974483
+  min_body_height_m: 0.12
+  non_foot_contact_duration_s: 0.25
+  terminal_if_simulation_nan: true
+lock_drift:
+  max_abs_angle_rad: 0.017453292519943295
+stabilization:
+  maximum_jitter_ratio: 0.5
+transitions:
+  trials_per_edge: 100
+  minimum_success_rate: 0.90
+videos:
+  duration_s: 10.0
+  fps: 30
+  required_morphologies:
+    - quadruped
+    - snake
+    - centaur
+  required_transitions:
+    - quadruped_to_centaur
+    - centaur_to_quadruped
+    - quadruped_to_snake
+    - snake_to_quadruped

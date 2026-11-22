@@ -1,0 +1,15 @@
+name: synthetic
+backend: cpu
+scene_source: procedural
+image:
+  width: 128
+  height: 128
+  near_m: 0.05
+  far_m: 20.0
+voxel:
+  size_m: 0.05
+  shape: [128, 128, 64]
+noise:
+  depth_std_m: 0.01
+  segmentation_miss_rate: 0.02
+  segmentation_false_positive_rate: 0.01

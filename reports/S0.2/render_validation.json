@@ -1,0 +1,18 @@
+{
+  "backend": "procedural_cpu",
+  "frames": 8,
+  "resolution": [
+    128,
+    128
+  ],
+  "elapsed_s": 0.0006648330017924309,
+  "fps": 12033.097000948366,
+  "depth_shape": [
+    128,
+    128
+  ],
+  "segmentation_instances": 2,
+  "hiding_candidates": 8,
+  "meets_a100_target": false,
+  "note": "Run the same contract with MuJoCo Warp on A100 for the 1000 fps gate."
+}

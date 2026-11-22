@@ -1,0 +1,23 @@
+{
+  "backend": "mujoco_warp",
+  "worlds": 512,
+  "resolution": [
+    128,
+    128
+  ],
+  "repeats": 10,
+  "elapsed_s": 0.012007402500603347,
+  "fps": 42640.362890664575,
+  "depth_shape": [
+    512,
+    128,
+    128
+  ],
+  "segmentation_shape": [
+    512,
+    128,
+    128,
+    2
+  ],
+  "meets_1000_fps": true
+}

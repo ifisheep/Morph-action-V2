@@ -1,0 +1,7 @@
+name: smoke
+split: development
+episodes: 20
+seeds: [0]
+max_steps: 20
+record_parquet: false
+run_gpu: false

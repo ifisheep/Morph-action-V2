@@ -1,0 +1,5 @@
+{
+  "version": "proposer-v1",
+  "template": "Propose evidence actions from a read-only memory snapshot.",
+  "sha256": "fcd179a1928d13623b3f466f18da1fc714ae711e6689065ff59adfdfcd105b9d"
+}

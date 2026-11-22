@@ -1,0 +1,12 @@
+# Reproducible CPU-first defaults. Override groups with Hydra-style paths.
+defaults:
+  - env: default
+  - robot: default
+  - agent: default
+  - exp: smoke
+  - _self_
+
+project: morphdream
+seed: 0
+allow_test: false
+output_dir: reports/${exp.name}

@@ -1,0 +1,337 @@
+
+=== 2026-11-21T21:04:37.988Z NOTE id=87a766907f72 ===
+Project initialized: profile=default; canvas=ppt169; path=/Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122
+
+=== 2026-11-21T21:04:46.818Z PYTHON run=a8c60577b7ba ===
+cwd: /Users/leiwu/Developer/Morph-action-V2
+argv: ["/Library/Developer/CommandLineTools/usr/bin/python3", "/private/tmp/ppt-master-runtime/scripts/project_manager.py", "import-sources", "/Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122", "/Users/leiwu/Desktop/Morphaction-ppt/AI PPT/sources/MorphDream_deck_source.md", "/Users/leiwu/Desktop/Morphaction-ppt/AI PPT/sources/LITERATURE_REVIEW.md", "/Users/leiwu/Desktop/Morphaction-ppt/AI PPT/sources/RECENT_TOP_VENUE_PAPERS.md"]
+stdout:
+  [OK] Imported sources into: /Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122
+=== 2026-11-21T21:04:47.036Z END run=a8c60577b7ba elapsed_ms=218 output_lines=9 retained=1 omitted=8 ===
+
+=== 2026-11-21T21:14:24.174Z PYTHON run=050c3e1bb745 ===
+cwd: /Users/leiwu/Developer/Morph-action-V2
+argv: ["/Library/Developer/CommandLineTools/usr/bin/python3", "/private/tmp/ppt-master-runtime/scripts/project_manager.py", "validate", "/Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122"]
+stdout:
+  [WARN]
+  [OK] Project structure is valid, with warnings.
+=== 2026-11-21T21:14:24.462Z END run=050c3e1bb745 elapsed_ms=288 output_lines=28 retained=2 omitted=26 ===
+
+=== 2026-11-21T21:14:31.246Z PYTHON run=1c7ebdab34c0 ===
+cwd: /Users/leiwu/Developer/Morph-action-V2
+argv: ["/Library/Developer/CommandLineTools/usr/bin/python3", "/private/tmp/ppt-master-runtime/scripts/svg_quality_checker.py", "/Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122", "--canonical-authoring", "--stage", "early", "--json"]
+stderr:
+  Traceback (most recent call last):
+    File "/private/tmp/ppt-master-runtime/scripts/svg_quality_checker.py", line 34, in <module>
+      from svg_quality.checker import (  # noqa: E402
+    File "/private/tmp/ppt-master-runtime/scripts/svg_quality/checker.py", line 377, in <module>
+      from svg_finalize.embed_icons import (
+    File "/private/tmp/ppt-master-runtime/scripts/svg_finalize/embed_icons.py", line 92, in <module>
+      BaseGeometry = float | tuple[float, float, float, float]
+  TypeError: unsupported operand type(s) for |: 'type' and 'types.GenericAlias'
+=== 2026-11-21T21:14:31.655Z END run=1c7ebdab34c0 elapsed_ms=409 output_lines=8 retained=8 omitted=0 ===
+
+=== 2026-11-21T21:14:42.463Z PYTHON run=b4c33ddcc028 ===
+cwd: /Users/leiwu/Developer/Morph-action-V2
+argv: ["/Library/Developer/CommandLineTools/usr/bin/python3", "/private/tmp/ppt-master-runtime/scripts/svg_quality_checker.py", "/Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122", "--canonical-authoring", "--stage", "early", "--json"]
+stdout:
+  [WARN] slide_01.svg - Passed (with warnings)
+     [WARN] Noncanonical compact authoring: Authoring SVG contains noncanonical or redundant inherited style declarations (8 change(s)); examples (group:attr None -> value hoists the shared value onto that group; child:attr value -> None drops the copy the child now inherits): text[10]:font-family 'Source Han Sans SC' -> None; text[11]:font-family 'Source Han Sans SC' -> None; text[12]:font-family 'Source Han Sans SC' -> None (advisory; normalize with `python3 scripts/compact_svg_styles.py <svg_output> --inplace`, re-stamp pages that carry Chart/Table fallbacks, and rerun the final gate, or leave the explicit form)
+     [WARN] Font stack exports non-PPT-safe typeface(s) to PPTX (latin=Inter): Inter
+     [WARN] 29 ungrouped top-level Slide-local element(s) in svg_output (<rect> #2, <rect> #3, <text> #4, ...); group only logical content units in a top-level <g id="...">. Keep genuine static page framing as a root primitive and declare a supported data-pptx-role such as "background" or "decoration"
+  [ERROR] slide_09.svg - Failed
+     viewBox: 0 0 1280 720
+     [ERROR] Invalid data-pptx-replace-with marker formula: Native PPTX formula metadata is not valid JSON: Expecting property name enclosed in double quotes
+     [WARN] Noncanonical compact authoring: Authoring SVG contains noncanonical or redundant inherited style declarations (21 change(s)); examples (group:attr None -> value hoists the shared value onto that group; child:attr value -> None drops the copy the child now inherits): text[10]:font-family 'Source Han Sans SC' -> None; text[14]:font-family 'Source Han Sans SC' -> None; text[15]:font-family 'Source Han Sans SC' -> None (advisory; normalize with `python3 scripts/compact_svg_styles.py <svg_output> --inplace`, re-stamp pages that carry Chart/Table fallbacks, and rerun the final gate, or leave the explicit form)
+     [WARN] Font stack exports non-PPT-safe typeface(s) to PPTX (latin=Inter): Inter
+     [WARN] <text> (x=840.0, y=264.0; text='minπ E[T_evidence + …') exceeds <g id="formula"> data-pptx-bounds on the horizontal axis: content (515.2, 238.5)-(1164.8, 274.5), container (520.0, 196.0)-(1160.0, 296.0), overflow horizontal 0.7%, vertical 0.0% (error above 5%); expand the root module bounds into available non-overlapping space; otherwise reflow the text; ≈18.0 px per mixed char at 30px incl. headroom; ≈35 chars fit in 640 px
+     [WARN] 44 ungrouped top-level Slide-local element(s) in svg_output (<rect> #2, <text> #3, <text> #4, ...); group only logical content units in a top-level <g id="...">. Keep genuine static page framing as a root primitive and declare a supported data-pptx-role such as "background" or "decoration"
+  [ERROR] slide_12.svg - Failed
+     viewBox: 0 0 1280 720
+     [ERROR] Invalid data-pptx-replace-with marker formula: Native PPTX formula metadata is not valid JSON: Expecting property name enclosed in double quotes
+     [WARN] Noncanonical compact authoring: Authoring SVG contains noncanonical or redundant inherited style declarations (16 change(s)); examples (group:attr None -> value hoists the shared value onto that group; child:attr value -> None drops the copy the child now inherits): text[10]:font-family 'Source Han Sans SC' -> None; text[14]:font-family 'Source Han Sans SC' -> None; text[16]:font-family 'Source Han Sans SC' -> None (advisory; normalize with `python3 scripts/compact_svg_styles.py <svg_output> --inplace`, re-stamp pages that carry Chart/Table fallbacks, and rerun the final gate, or leave the explicit form)
+     [WARN] Font stack exports non-PPT-safe typeface(s) to PPTX (latin=Inter): Inter
+     [WARN] 33 ungrouped top-level Slide-local element(s) in svg_output (<rect> #2, <text> #3, <text> #4, ...); group only logical content units in a top-level <g id="...">. Keep genuine static page framing as a root primitive and declare a supported data-pptx-role such as "background" or "decoration"
+  [WARN] slide_13.svg - Passed (with warnings)
+  [ERROR] slide_14.svg - Failed
+     viewBox: 0 0 1280 720
+     [ERROR] Invalid data-pptx-replace-with marker formula: Native PPTX formula metadata is not valid JSON: Expecting property name enclosed in double quotes
+     [WARN] Noncanonical compact authoring: Authoring SVG contains noncanonical or redundant inherited style declarations (11 change(s)); examples (group:attr None -> value hoists the shared value onto that group; child:attr value -> None drops the copy the child now inherits): text[10]:font-family 'Source Han Sans SC' -> None; text[17]:font-family 'Source Han Sans SC' -> None; text[18]:font-family 'Source Han Sans SC' -> None (advisory; normalize with `python3 scripts/compact_svg_styles.py <svg_output> --inplace`, re-stamp pages that carry Chart/Table fallbacks, and rerun the final gate, or leave the explicit form)
+     [WARN] Font stack exports non-PPT-safe typeface(s) to PPTX (latin=Inter): Inter
+     [WARN] 21 ungrouped top-level Slide-local element(s) in svg_output (<rect> #2, <text> #3, <text> #4, ...); group only logical content units in a top-level <g id="...">. Keep genuine static page framing as a root primitive and declare a supported data-pptx-role such as "background" or "decoration"
+  [WARN] slide_15.svg - Passed (with warnings)
+  [SUMMARY] Check Summary
+  Total files: 24
+    [OK] Fully passed: 0 (0%)
+    [WARN] With warnings: 21 (87%)
+    [ERROR] With errors: 3 (12%)
+  Provenance categories:
+    blocking: 3          hard findings; gate also requires exit 0
+    introduced: 73       advisory; new or changed
+    inherited: 0         informational; prototype-identical
+    source-import: 0     informational; source-conversion loss
+  [CARRIERS] Actual-use receipt (informational; not a quota)
+    Pages: 24 | text: 598 | images: 0 | icons: 0
+    Geometry: SVG elements 523 | native presets 0 | page-frame elements 0 | marker uses 10
+  [REPORT] JSON quality report exported: /Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122/validation/svg_quality_early_report.json
+=== 2026-11-21T21:14:43.293Z END run=b4c33ddcc028 elapsed_ms=830 output_lines=173 retained=39 omitted=134 ===
+
+=== 2026-11-21T21:15:08.141Z PYTHON run=75be017a0835 ===
+cwd: /Users/leiwu/Developer/Morph-action-V2
+argv: ["/Library/Developer/CommandLineTools/usr/bin/python3", "/private/tmp/ppt-master-runtime/scripts/svg_quality_checker.py", "/Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122", "--canonical-authoring", "--stage", "early", "--json"]
+stdout:
+  [WARN] slide_01.svg - Passed (with warnings)
+     [WARN] Noncanonical compact authoring: Authoring SVG contains noncanonical or redundant inherited style declarations (8 change(s)); examples (group:attr None -> value hoists the shared value onto that group; child:attr value -> None drops the copy the child now inherits): text[10]:font-family 'Source Han Sans SC' -> None; text[11]:font-family 'Source Han Sans SC' -> None; text[12]:font-family 'Source Han Sans SC' -> None (advisory; normalize with `python3 scripts/compact_svg_styles.py <svg_output> --inplace`, re-stamp pages that carry Chart/Table fallbacks, and rerun the final gate, or leave the explicit form)
+     [WARN] Font stack exports non-PPT-safe typeface(s) to PPTX (latin=Inter): Inter
+     [WARN] 29 ungrouped top-level Slide-local element(s) in svg_output (<rect> #2, <rect> #3, <text> #4, ...); group only logical content units in a top-level <g id="...">. Keep genuine static page framing as a root primitive and declare a supported data-pptx-role such as "background" or "decoration"
+  [ERROR] slide_09.svg - Failed
+     viewBox: 0 0 1280 720
+     [ERROR] Invalid data-pptx-replace-with marker formula: Native PPTX formula metadata is not valid JSON: Invalid \escape
+     [WARN] Noncanonical compact authoring: Authoring SVG contains noncanonical or redundant inherited style declarations (21 change(s)); examples (group:attr None -> value hoists the shared value onto that group; child:attr value -> None drops the copy the child now inherits): text[10]:font-family 'Source Han Sans SC' -> None; text[14]:font-family 'Source Han Sans SC' -> None; text[15]:font-family 'Source Han Sans SC' -> None (advisory; normalize with `python3 scripts/compact_svg_styles.py <svg_output> --inplace`, re-stamp pages that carry Chart/Table fallbacks, and rerun the final gate, or leave the explicit form)
+     [WARN] Font stack exports non-PPT-safe typeface(s) to PPTX (latin=Inter): Inter
+     [WARN] <text> (x=840.0, y=264.0; text='minπ E[T_evidence + …') exceeds <g id="formula"> data-pptx-bounds on the horizontal axis: content (515.2, 238.5)-(1164.8, 274.5), container (520.0, 196.0)-(1160.0, 296.0), overflow horizontal 0.7%, vertical 0.0% (error above 5%); expand the root module bounds into available non-overlapping space; otherwise reflow the text; ≈18.0 px per mixed char at 30px incl. headroom; ≈35 chars fit in 640 px
+     [WARN] 44 ungrouped top-level Slide-local element(s) in svg_output (<rect> #2, <text> #3, <text> #4, ...); group only logical content units in a top-level <g id="...">. Keep genuine static page framing as a root primitive and declare a supported data-pptx-role such as "background" or "decoration"
+  [ERROR] slide_12.svg - Failed
+     viewBox: 0 0 1280 720
+     [ERROR] Invalid data-pptx-replace-with marker formula: Native PPTX formula metadata is not valid JSON: Invalid \escape
+     [WARN] Noncanonical compact authoring: Authoring SVG contains noncanonical or redundant inherited style declarations (16 change(s)); examples (group:attr None -> value hoists the shared value onto that group; child:attr value -> None drops the copy the child now inherits): text[10]:font-family 'Source Han Sans SC' -> None; text[14]:font-family 'Source Han Sans SC' -> None; text[16]:font-family 'Source Han Sans SC' -> None (advisory; normalize with `python3 scripts/compact_svg_styles.py <svg_output> --inplace`, re-stamp pages that carry Chart/Table fallbacks, and rerun the final gate, or leave the explicit form)
+     [WARN] Font stack exports non-PPT-safe typeface(s) to PPTX (latin=Inter): Inter
+     [WARN] 33 ungrouped top-level Slide-local element(s) in svg_output (<rect> #2, <text> #3, <text> #4, ...); group only logical content units in a top-level <g id="...">. Keep genuine static page framing as a root primitive and declare a supported data-pptx-role such as "background" or "decoration"
+  [WARN] slide_13.svg - Passed (with warnings)
+  [ERROR] slide_14.svg - Failed
+     viewBox: 0 0 1280 720
+     [ERROR] Invalid data-pptx-replace-with marker formula: Native PPTX formula metadata is not valid JSON: Invalid \escape
+     [WARN] Noncanonical compact authoring: Authoring SVG contains noncanonical or redundant inherited style declarations (11 change(s)); examples (group:attr None -> value hoists the shared value onto that group; child:attr value -> None drops the copy the child now inherits): text[10]:font-family 'Source Han Sans SC' -> None; text[17]:font-family 'Source Han Sans SC' -> None; text[18]:font-family 'Source Han Sans SC' -> None (advisory; normalize with `python3 scripts/compact_svg_styles.py <svg_output> --inplace`, re-stamp pages that carry Chart/Table fallbacks, and rerun the final gate, or leave the explicit form)
+     [WARN] Font stack exports non-PPT-safe typeface(s) to PPTX (latin=Inter): Inter
+     [WARN] 21 ungrouped top-level Slide-local element(s) in svg_output (<rect> #2, <text> #3, <text> #4, ...); group only logical content units in a top-level <g id="...">. Keep genuine static page framing as a root primitive and declare a supported data-pptx-role such as "background" or "decoration"
+  [WARN] slide_15.svg - Passed (with warnings)
+  [SUMMARY] Check Summary
+  Total files: 24
+    [OK] Fully passed: 0 (0%)
+    [WARN] With warnings: 21 (87%)
+    [ERROR] With errors: 3 (12%)
+  Provenance categories:
+    blocking: 3          hard findings; gate also requires exit 0
+    introduced: 73       advisory; new or changed
+    inherited: 0         informational; prototype-identical
+    source-import: 0     informational; source-conversion loss
+  [CARRIERS] Actual-use receipt (informational; not a quota)
+    Pages: 24 | text: 598 | images: 0 | icons: 0
+    Geometry: SVG elements 523 | native presets 0 | page-frame elements 0 | marker uses 10
+  [REPORT] JSON quality report exported: /Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122/validation/svg_quality_early_report.json
+=== 2026-11-21T21:15:09.034Z END run=75be017a0835 elapsed_ms=893 output_lines=173 retained=39 omitted=134 ===
+
+=== 2026-11-21T21:15:19.421Z PYTHON run=695eec8c8e72 ===
+cwd: /Users/leiwu/Developer/Morph-action-V2
+argv: ["/Library/Developer/CommandLineTools/usr/bin/python3", "/private/tmp/ppt-master-runtime/scripts/svg_quality_checker.py", "/Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122", "--canonical-authoring", "--stage", "early", "--json"]
+stdout:
+  [WARN] slide_01.svg - Passed (with warnings)
+     [WARN] Noncanonical compact authoring: Authoring SVG contains noncanonical or redundant inherited style declarations (8 change(s)); examples (group:attr None -> value hoists the shared value onto that group; child:attr value -> None drops the copy the child now inherits): text[10]:font-family 'Source Han Sans SC' -> None; text[11]:font-family 'Source Han Sans SC' -> None; text[12]:font-family 'Source Han Sans SC' -> None (advisory; normalize with `python3 scripts/compact_svg_styles.py <svg_output> --inplace`, re-stamp pages that carry Chart/Table fallbacks, and rerun the final gate, or leave the explicit form)
+     [WARN] Font stack exports non-PPT-safe typeface(s) to PPTX (latin=Inter): Inter
+     [WARN] 29 ungrouped top-level Slide-local element(s) in svg_output (<rect> #2, <rect> #3, <text> #4, ...); group only logical content units in a top-level <g id="...">. Keep genuine static page framing as a root primitive and declare a supported data-pptx-role such as "background" or "decoration"
+  [ERROR] slide_09.svg - Failed
+     viewBox: 0 0 1280 720
+     [ERROR] Invalid data-pptx-replace-with marker formula: Native PPTX formula metadata is not valid JSON: Invalid \escape
+     [WARN] Noncanonical compact authoring: Authoring SVG contains noncanonical or redundant inherited style declarations (21 change(s)); examples (group:attr None -> value hoists the shared value onto that group; child:attr value -> None drops the copy the child now inherits): text[10]:font-family 'Source Han Sans SC' -> None; text[14]:font-family 'Source Han Sans SC' -> None; text[15]:font-family 'Source Han Sans SC' -> None (advisory; normalize with `python3 scripts/compact_svg_styles.py <svg_output> --inplace`, re-stamp pages that carry Chart/Table fallbacks, and rerun the final gate, or leave the explicit form)
+     [WARN] Font stack exports non-PPT-safe typeface(s) to PPTX (latin=Inter): Inter
+     [WARN] <text> (x=840.0, y=264.0; text='minπ E[T_evidence + …') exceeds <g id="formula"> data-pptx-bounds on the horizontal axis: content (515.2, 238.5)-(1164.8, 274.5), container (520.0, 196.0)-(1160.0, 296.0), overflow horizontal 0.7%, vertical 0.0% (error above 5%); expand the root module bounds into available non-overlapping space; otherwise reflow the text; ≈18.0 px per mixed char at 30px incl. headroom; ≈35 chars fit in 640 px
+     [WARN] 44 ungrouped top-level Slide-local element(s) in svg_output (<rect> #2, <text> #3, <text> #4, ...); group only logical content units in a top-level <g id="...">. Keep genuine static page framing as a root primitive and declare a supported data-pptx-role such as "background" or "decoration"
+  [ERROR] slide_12.svg - Failed
+     viewBox: 0 0 1280 720
+     [ERROR] Invalid data-pptx-replace-with marker formula: Native PPTX formula metadata is not valid JSON: Invalid \escape
+     [WARN] Noncanonical compact authoring: Authoring SVG contains noncanonical or redundant inherited style declarations (16 change(s)); examples (group:attr None -> value hoists the shared value onto that group; child:attr value -> None drops the copy the child now inherits): text[10]:font-family 'Source Han Sans SC' -> None; text[14]:font-family 'Source Han Sans SC' -> None; text[16]:font-family 'Source Han Sans SC' -> None (advisory; normalize with `python3 scripts/compact_svg_styles.py <svg_output> --inplace`, re-stamp pages that carry Chart/Table fallbacks, and rerun the final gate, or leave the explicit form)
+     [WARN] Font stack exports non-PPT-safe typeface(s) to PPTX (latin=Inter): Inter
+     [WARN] 33 ungrouped top-level Slide-local element(s) in svg_output (<rect> #2, <text> #3, <text> #4, ...); group only logical content units in a top-level <g id="...">. Keep genuine static page framing as a root primitive and declare a supported data-pptx-role such as "background" or "decoration"
+  [WARN] slide_13.svg - Passed (with warnings)
+  [ERROR] slide_14.svg - Failed
+     viewBox: 0 0 1280 720
+     [ERROR] Invalid data-pptx-replace-with marker formula: Native PPTX formula metadata is not valid JSON: Invalid \escape
+     [WARN] Noncanonical compact authoring: Authoring SVG contains noncanonical or redundant inherited style declarations (11 change(s)); examples (group:attr None -> value hoists the shared value onto that group; child:attr value -> None drops the copy the child now inherits): text[10]:font-family 'Source Han Sans SC' -> None; text[17]:font-family 'Source Han Sans SC' -> None; text[18]:font-family 'Source Han Sans SC' -> None (advisory; normalize with `python3 scripts/compact_svg_styles.py <svg_output> --inplace`, re-stamp pages that carry Chart/Table fallbacks, and rerun the final gate, or leave the explicit form)
+     [WARN] Font stack exports non-PPT-safe typeface(s) to PPTX (latin=Inter): Inter
+     [WARN] 21 ungrouped top-level Slide-local element(s) in svg_output (<rect> #2, <text> #3, <text> #4, ...); group only logical content units in a top-level <g id="...">. Keep genuine static page framing as a root primitive and declare a supported data-pptx-role such as "background" or "decoration"
+  [WARN] slide_15.svg - Passed (with warnings)
+  [SUMMARY] Check Summary
+  Total files: 24
+    [OK] Fully passed: 0 (0%)
+    [WARN] With warnings: 21 (87%)
+    [ERROR] With errors: 3 (12%)
+  Provenance categories:
+    blocking: 3          hard findings; gate also requires exit 0
+    introduced: 73       advisory; new or changed
+    inherited: 0         informational; prototype-identical
+    source-import: 0     informational; source-conversion loss
+  [CARRIERS] Actual-use receipt (informational; not a quota)
+    Pages: 24 | text: 598 | images: 0 | icons: 0
+    Geometry: SVG elements 523 | native presets 0 | page-frame elements 0 | marker uses 10
+  [REPORT] JSON quality report exported: /Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122/validation/svg_quality_early_report.json
+=== 2026-11-21T21:15:20.296Z END run=695eec8c8e72 elapsed_ms=875 output_lines=173 retained=39 omitted=134 ===
+
+=== 2026-11-21T21:15:44.261Z PYTHON run=294452909191 ===
+cwd: /Users/leiwu/Developer/Morph-action-V2
+argv: ["/Library/Developer/CommandLineTools/usr/bin/python3", "/private/tmp/ppt-master-runtime/scripts/svg_quality_checker.py", "/Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122", "--canonical-authoring", "--stage", "early", "--json"]
+stdout:
+  [WARN] slide_01.svg - Passed (with warnings)
+     [WARN] Noncanonical compact authoring: Authoring SVG contains noncanonical or redundant inherited style declarations (8 change(s)); examples (group:attr None -> value hoists the shared value onto that group; child:attr value -> None drops the copy the child now inherits): text[10]:font-family 'Source Han Sans SC' -> None; text[11]:font-family 'Source Han Sans SC' -> None; text[12]:font-family 'Source Han Sans SC' -> None (advisory; normalize with `python3 scripts/compact_svg_styles.py <svg_output> --inplace`, re-stamp pages that carry Chart/Table fallbacks, and rerun the final gate, or leave the explicit form)
+     [WARN] Font stack exports non-PPT-safe typeface(s) to PPTX (latin=Inter): Inter
+     [WARN] 29 ungrouped top-level Slide-local element(s) in svg_output (<rect> #2, <rect> #3, <text> #4, ...); group only logical content units in a top-level <g id="...">. Keep genuine static page framing as a root primitive and declare a supported data-pptx-role such as "background" or "decoration"
+  [SUMMARY] Check Summary
+  Total files: 24
+    [OK] Fully passed: 0 (0%)
+    [WARN] With warnings: 24 (100%)
+    [ERROR] With errors: 0 (0%)
+  Provenance categories:
+    blocking: 0          hard findings; gate also requires exit 0
+    introduced: 73       advisory; new or changed
+    inherited: 0         informational; prototype-identical
+    source-import: 0     informational; source-conversion loss
+  [CARRIERS] Actual-use receipt (informational; not a quota)
+    Pages: 24 | text: 598 | images: 0 | icons: 0
+    Geometry: SVG elements 523 | native presets 0 | page-frame elements 0 | marker uses 10
+  [REPORT] JSON quality report exported: /Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122/validation/svg_quality_early_report.json
+=== 2026-11-21T21:15:45.069Z END run=294452909191 elapsed_ms=808 output_lines=168 retained=18 omitted=150 ===
+
+=== 2026-11-21T21:16:17.836Z PYTHON run=c209e7cfb116 ===
+cwd: /Users/leiwu/Developer/Morph-action-V2
+argv: ["/Library/Developer/CommandLineTools/usr/bin/python3", "/private/tmp/ppt-master-runtime/scripts/svg_quality_checker.py", "/Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122", "--canonical-authoring", "--stage", "final", "--json"]
+stdout:
+  [WARN] slide_01.svg - Passed (with warnings)
+     [WARN] Noncanonical compact authoring: Authoring SVG contains noncanonical or redundant inherited style declarations (8 change(s)); examples (group:attr None -> value hoists the shared value onto that group; child:attr value -> None drops the copy the child now inherits): text[10]:font-family 'Source Han Sans SC' -> None; text[11]:font-family 'Source Han Sans SC' -> None; text[12]:font-family 'Source Han Sans SC' -> None (advisory; normalize with `python3 scripts/compact_svg_styles.py <svg_output> --inplace`, re-stamp pages that carry Chart/Table fallbacks, and rerun the final gate, or leave the explicit form)
+     [WARN] Font stack exports non-PPT-safe typeface(s) to PPTX (latin=Inter): Inter
+     [WARN] 29 ungrouped top-level Slide-local element(s) in svg_output (<rect> #2, <rect> #3, <text> #4, ...); group only logical content units in a top-level <g id="...">. Keep genuine static page framing as a root primitive and declare a supported data-pptx-role such as "background" or "decoration"
+  [SUMMARY] Check Summary
+  Total files: 24
+    [OK] Fully passed: 0 (0%)
+    [WARN] With warnings: 24 (100%)
+    [ERROR] With errors: 0 (0%)
+  Provenance categories:
+    blocking: 0          hard findings; gate also requires exit 0
+    introduced: 73       advisory; new or changed
+    inherited: 0         informational; prototype-identical
+    source-import: 0     informational; source-conversion loss
+  [CARRIERS] Actual-use receipt (informational; not a quota)
+    Pages: 24 | text: 598 | images: 0 | icons: 0
+    Geometry: SVG elements 523 | native presets 0 | page-frame elements 0 | marker uses 10
+  [REPORT] JSON quality report exported: /Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122/validation/svg_quality_report.json
+=== 2026-11-21T21:16:18.625Z END run=c209e7cfb116 elapsed_ms=789 output_lines=168 retained=18 omitted=150 ===
+
+=== 2026-11-21T21:16:25.945Z PYTHON run=bcccf78f86e1 ===
+cwd: /Users/leiwu/Developer/Morph-action-V2
+argv: ["/Library/Developer/CommandLineTools/usr/bin/python3", "/private/tmp/ppt-master-runtime/scripts/total_md_split.py", "/Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122"]
+stdout:
+  [OK] SVG files and notes have one-to-one correspondence
+  [Done] Successfully generated 24/24 file(s)
+  [Done] Notes splitting complete
+=== 2026-11-21T21:16:25.950Z END run=bcccf78f86e1 elapsed_ms=5 output_lines=33 retained=3 omitted=30 ===
+
+=== 2026-11-21T21:16:32.297Z PYTHON run=fd5c70449816 ===
+cwd: /Users/leiwu/Developer/Morph-action-V2
+argv: ["/Library/Developer/CommandLineTools/usr/bin/python3", "/private/tmp/ppt-master-runtime/scripts/finalize_svg.py", "/Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122"]
+=== 2026-11-21T21:16:32.340Z END run=fd5c70449816 elapsed_ms=42 output_lines=1 retained=0 omitted=1 ===
+
+=== 2026-11-21T21:17:09.281Z PYTHON run=5f3f8bd55371 ===
+cwd: /Users/leiwu/Developer/Morph-action-V2
+argv: ["/Library/Developer/CommandLineTools/usr/bin/python3", "/private/tmp/ppt-master-runtime/scripts/finalize_svg.py", "/Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122"]
+stdout:
+  [OK] Done!
+=== 2026-11-21T21:17:13.566Z END run=5f3f8bd55371 elapsed_ms=4284 output_lines=12 retained=1 omitted=11 ===
+
+=== 2026-11-21T21:17:20.827Z PYTHON run=50f28922dc14 ===
+cwd: /Users/leiwu/Developer/Morph-action-V2
+argv: ["/Library/Developer/CommandLineTools/usr/bin/python3", "/private/tmp/ppt-master-runtime/scripts/svg_to_pptx.py", "/Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122"]
+stderr:
+  Traceback (most recent call last):
+    File "/private/tmp/ppt-master-runtime/scripts/svg_to_pptx.py", line 26, in <module>
+      from svg_to_pptx import main
+    File "/private/tmp/ppt-master-runtime/scripts/svg_to_pptx/__init__.py", line 23, in __getattr__
+      from .pptx_package.cli import main
+    File "/private/tmp/ppt-master-runtime/scripts/svg_to_pptx/pptx_package/cli.py", line 87, in <module>
+      from .builder import RoundtripSlidePatch, create_pptx_with_native_svg
+    File "/private/tmp/ppt-master-runtime/scripts/svg_to_pptx/pptx_package/builder.py", line 27, in <module>
+stderr-tail:
+      from pptx import Presentation
+  ModuleNotFoundError: No module named 'pptx'
+=== 2026-11-21T21:17:21.139Z END run=50f28922dc14 elapsed_ms=312 output_lines=10 retained=10 omitted=0 ===
+
+=== 2026-11-21T21:17:45.947Z PYTHON run=da55764122d8 ===
+cwd: /Users/leiwu/Developer/Morph-action-V2
+argv: ["/Library/Developer/CommandLineTools/usr/bin/python3", "/private/tmp/ppt-master-runtime/scripts/svg_to_pptx.py", "/Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122"]
+stdout:
+  [Done] Saved: /Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122/exports/morphdream_20261122_051750.pptx
+    [POSTFLIGHT] status=passed-with-warnings quality_gate=passed slides=24 warning_categories=2
+    [POSTFLIGHT][WARNING] quality_introduced_warnings=73
+    [POSTFLIGHT][WARNING] unsafe_exported_font_faces=1
+    [PPTX] /Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122/exports/morphdream_20261122_051750.pptx
+    [REPORT] /Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122/validation/morphdream_20261122_051750.report.json
+=== 2026-11-21T21:17:50.892Z END run=da55764122d8 elapsed_ms=4945 output_lines=79 retained=6 omitted=73 ===
+
+=== 2026-11-21T21:18:08.931Z PYTHON run=3bd317630b21 ===
+cwd: /Users/leiwu/Developer/Morph-action-V2
+argv: ["/Library/Developer/CommandLineTools/usr/bin/python3", "/private/tmp/ppt-master-runtime/scripts/pptx_delivery_check.py", "/Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122/exports/morphdream_20261122_051750.pptx"]
+=== 2026-11-21T21:18:09.269Z END run=3bd317630b21 elapsed_ms=337 output_lines=217 retained=0 omitted=217 ===
+
+=== 2026-11-21T21:19:48.772Z PYTHON run=b8013dce301e ===
+cwd: /Users/leiwu/Developer/Morph-action-V2
+argv: ["/Library/Developer/CommandLineTools/usr/bin/python3", "/private/tmp/ppt-master-runtime/scripts/svg_quality_checker.py", "/Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122", "--canonical-authoring", "--stage", "final", "--json"]
+stdout:
+  [WARN] slide_01.svg - Passed (with warnings)
+     [WARN] Noncanonical compact authoring: Authoring SVG contains noncanonical or redundant inherited style declarations (8 change(s)); examples (group:attr None -> value hoists the shared value onto that group; child:attr value -> None drops the copy the child now inherits): text[10]:font-family 'Source Han Sans SC' -> None; text[11]:font-family 'Source Han Sans SC' -> None; text[12]:font-family 'Source Han Sans SC' -> None (advisory; normalize with `python3 scripts/compact_svg_styles.py <svg_output> --inplace`, re-stamp pages that carry Chart/Table fallbacks, and rerun the final gate, or leave the explicit form)
+     [WARN] Font stack exports non-PPT-safe typeface(s) to PPTX (latin=Inter): Inter
+     [WARN] 29 ungrouped top-level Slide-local element(s) in svg_output (<rect> #2, <rect> #3, <text> #4, ...); group only logical content units in a top-level <g id="...">. Keep genuine static page framing as a root primitive and declare a supported data-pptx-role such as "background" or "decoration"
+  [SUMMARY] Check Summary
+  Total files: 24
+    [OK] Fully passed: 0 (0%)
+    [WARN] With warnings: 24 (100%)
+    [ERROR] With errors: 0 (0%)
+  Provenance categories:
+    blocking: 0          hard findings; gate also requires exit 0
+    introduced: 73       advisory; new or changed
+    inherited: 0         informational; prototype-identical
+    source-import: 0     informational; source-conversion loss
+  [CARRIERS] Actual-use receipt (informational; not a quota)
+    Pages: 24 | text: 598 | images: 0 | icons: 0
+    Geometry: SVG elements 523 | native presets 0 | page-frame elements 0 | marker uses 10
+  [REPORT] JSON quality report exported: /Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122/validation/svg_quality_report.json
+=== 2026-11-21T21:19:49.851Z END run=b8013dce301e elapsed_ms=1078 output_lines=168 retained=18 omitted=150 ===
+
+=== 2026-11-21T21:19:59.549Z PYTHON run=d915938808c4 ===
+cwd: /Users/leiwu/Developer/Morph-action-V2
+argv: ["/Library/Developer/CommandLineTools/usr/bin/python3", "/private/tmp/ppt-master-runtime/scripts/total_md_split.py", "/Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122"]
+stdout:
+  [OK] SVG files and notes have one-to-one correspondence
+  [Done] Successfully generated 24/24 file(s)
+  [Done] Notes splitting complete
+=== 2026-11-21T21:19:59.556Z END run=d915938808c4 elapsed_ms=6 output_lines=33 retained=3 omitted=30 ===
+
+=== 2026-11-21T21:19:59.674Z PYTHON run=f8f09db7731e ===
+cwd: /Users/leiwu/Developer/Morph-action-V2
+argv: ["/Library/Developer/CommandLineTools/usr/bin/python3", "/private/tmp/ppt-master-runtime/scripts/finalize_svg.py", "/Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122"]
+stdout:
+  [OK] Done!
+=== 2026-11-21T21:20:00.008Z END run=f8f09db7731e elapsed_ms=334 output_lines=12 retained=1 omitted=11 ===
+
+=== 2026-11-21T21:20:07.362Z PYTHON run=278fdb3ec183 ===
+cwd: /Users/leiwu/Developer/Morph-action-V2
+argv: ["/Library/Developer/CommandLineTools/usr/bin/python3", "/private/tmp/ppt-master-runtime/scripts/svg_to_pptx.py", "/Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122"]
+stdout:
+  [Done] Saved: /Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122/exports/morphdream_20261122_052008.pptx
+    [POSTFLIGHT] status=passed-with-warnings quality_gate=passed slides=24 warning_categories=2
+    [POSTFLIGHT][WARNING] quality_introduced_warnings=73
+    [POSTFLIGHT][WARNING] unsafe_exported_font_faces=1
+    [PPTX] /Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122/exports/morphdream_20261122_052008.pptx
+    [REPORT] /Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122/validation/morphdream_20261122_052008.report.json
+=== 2026-11-21T21:20:08.733Z END run=278fdb3ec183 elapsed_ms=1370 output_lines=79 retained=6 omitted=73 ===
+
+=== 2026-11-21T21:20:24.518Z PYTHON run=df05da159995 ===
+cwd: /Users/leiwu/Developer/Morph-action-V2
+argv: ["/Library/Developer/CommandLineTools/usr/bin/python3", "/private/tmp/ppt-master-runtime/scripts/pptx_delivery_check.py", "/Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122/exports/morphdream_20261122_052008.pptx"]
+=== 2026-11-21T21:20:24.857Z END run=df05da159995 elapsed_ms=338 output_lines=217 retained=0 omitted=217 ===
+
+=== 2026-11-21T21:20:40.901Z PYTHON run=5d6c29808bd2 ===
+cwd: /Users/leiwu/Developer/Morph-action-V2
+argv: ["/Library/Developer/CommandLineTools/usr/bin/python3", "/private/tmp/ppt-master-runtime/scripts/svg_editor/server.py", "/Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122", "--live", "--daemon"]
+stderr:
+  [05:20:41] [INFO] svg_editor: started live preview in background: http://127.0.0.1:6061 (pid=58306)
+  [05:20:41] [INFO] svg_editor: log: /Users/leiwu/Developer/Morph-action-V2/morphdream_ppt169_20261122/live_preview/server.log
+  [05:20:41] [WARNING] svg_editor: browser launch failed: no browser accepted the URL; open http://127.0.0.1:6061 manually
+  [05:20:41] [INFO] svg_editor: browser did not auto-open; open http://127.0.0.1:6061 manually
+=== 2026-11-21T21:20:41.831Z END run=5d6c29808bd2 elapsed_ms=930 output_lines=4 retained=4 omitted=0 ===

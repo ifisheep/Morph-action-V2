@@ -1,0 +1,8 @@
+name: morphdream_superset
+default_morphology: quadruped
+morphologies: [quadruped, snake, centaur, hexapod, periscope]
+units: si
+world_up: z
+camera:
+  resolution: [128, 128]
+  quaternion_order: [w, x, y, z]

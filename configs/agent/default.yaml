@@ -1,0 +1,16 @@
+name: morphology_aware_search
+proposal:
+  backend: deterministic
+  model: null
+  temperature: 0.0
+  max_candidates: 8
+  prompt_version: dev-v1
+evaluation:
+  tier_max: 1
+  conservative_z: 1.96
+decision:
+  lookahead_on_morph_change: 2
+  compute_budget_s: 0.25
+cache:
+  enabled: true
+  directory: .cache/morphdream

@@ -1,0 +1,7 @@
+name: e1_smoke
+episodes: 20
+seeds: [0]
+max_steps: 20
+split: development
+morphologies: [quadruped, snake, centaur]
+output_dir: reports/experiments

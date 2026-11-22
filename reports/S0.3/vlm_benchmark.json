@@ -1,0 +1,7 @@
+{
+  "backend": "offline-schema-check",
+  "prompts": 50,
+  "structured_valid_rate": 1.0,
+  "mean_latency_ms": 0.00032752519473433495,
+  "spatial_quality": "requires human score on A100"
+}

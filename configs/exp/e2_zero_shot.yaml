@@ -1,0 +1,7 @@
+name: e2_zero_shot
+episodes: 20
+seeds: [0]
+max_steps: 20
+split: development
+morphologies: [quadruped, snake, centaur, hexapod]
+output_dir: reports/experiments

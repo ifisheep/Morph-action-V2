@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "dataset": "synthetic-smoke",
+  "development": ["smoke-dev-000", "smoke-dev-001"],
+  "validation": ["smoke-val-000"],
+  "test": ["smoke-test-000"],
+  "held_out_morphology": "periscope",
+  "source": "generated",
+  "immutable": true
+}
