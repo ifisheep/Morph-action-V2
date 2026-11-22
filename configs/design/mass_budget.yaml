@@ -1,0 +1,20 @@
+# DRAFT bottom-up mass budget for the superset robot (decision D2, 2026-11-22).
+# Mirrors morphdream.robot.assembly.MassBudget; tests keep the two in sync.
+# Every value below is an estimate for review, not a measurement.
+draft: true
+
+# One servo per actuated joint (26 in the frozen G1 v2 topology).
+servo_kg: 0.082                    # ROBOTIS XM430-W350 datasheet mass (see actuator.yaml source)
+servo_size_m: [0.0285, 0.0465, 0.034]  # XM430 envelope, W x H x D
+wiring_per_servo_kg: 0.008         # estimate: cable, connector, share of hub
+
+# Structure scales with module dimensions.
+spine_structure_kg_per_m: 0.55     # estimate: printed shell + brackets per metre of spine module
+leg_structure_kg_per_m: 0.25       # estimate: per metre of leg link
+foot_kg: 0.015                     # estimate: rubber foot
+neck_structure_kg_per_m: 0.15      # estimate: carbon tube + brackets
+
+# Payload in the front module and head.
+head_kg: 0.09                      # estimate: small depth camera + mount
+electronics_kg: 0.15               # estimate: controller, IMU, power board
+battery_kg: 0.20                   # estimate: 3S LiPo pack
