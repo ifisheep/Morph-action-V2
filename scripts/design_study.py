@@ -209,7 +209,13 @@ def run(output_dir: Path, candidates_path: Path, *, render: bool = True) -> dict
                 image_path.parent.mkdir(parents=True, exist_ok=True)
                 try:
                     renderer = mujoco.Renderer(model, height=360, width=480)
-                    renderer.update_scene(data, camera="depth_camera")
+                    camera = mujoco.MjvCamera()
+                    mujoco.mjv_defaultCamera(camera)
+                    camera.distance = max(0.8, spec.spine_segments * spec.module_length_m * 2.4)
+                    camera.azimuth = 105.0
+                    camera.elevation = -18.0
+                    camera.lookat[:] = data.subtree_com[1]
+                    renderer.update_scene(data, camera=camera)
                     imageio.imwrite(image_path, renderer.render())
                     renderer.close()
                 except Exception:

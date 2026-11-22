@@ -12,9 +12,7 @@ procedural ray/AABB visibility samples anchored to the furniture dimensions in
   static margins, gravity torque margins, geometry and coverage measurements.
 - `candidate_comparison.md` is a descriptive comparison. It makes no design
   selection.
-- Five PNGs per candidate are pending the A100 EGL rendering pass. The A100
-  host was temporarily unreachable after the numerical study and no image is
-  being substituted locally.
+- Five PNGs per candidate were rendered on A100 with EGL under `images/`.
 
 The current numerical pass shows no candidate satisfying every geometric,
 static-margin, torque and coverage criterion simultaneously. This result is a
