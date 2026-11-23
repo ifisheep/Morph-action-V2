@@ -52,9 +52,51 @@ Apply them unchanged so the reviewed content is exactly what gets merged.
    If it does not apply cleanly, try `git am -3`; if that also fails, run
    `git am --abort`, stop and report the output.
 3. Verify with `python -m pip install -e '.[dev,sim]' && make check`.
-   On A100 also run `python -m pytest -m gpu`.
+   Patch files are applied on the Mac unless the task card names another
+   machine. When a card asks for GPU validation, the A100 machine checks out
+   the PR branch and runs `python -m pytest -m gpu` without adding commits.
 4. Do not edit the patched files or the commit message. If a test fails or you
    see a problem, report the failing output and your suggestion instead of
    fixing it.
 5. Push the branch, open a pull request, and report the PR link, the test
    summary and the names of any skipped tests.
+
+## Machines and task routing
+
+Two machines run tasks, each with its own clone of GitHub and its own agent
+session. They share no state except GitHub, this file and the task cards.
+
+Every task card starts with a `Machine:` line:
+
+- `Mac`: CPU work on the local machine (code changes, applying patch files,
+  `make check` with the `sim` extra).
+- `A100 (run only)`: run a fixed commit on the GPU machine and report results.
+  No code changes.
+- `A100 (develop)`: GPU-dependent development on the GPU machine (Warp
+  rendering, training). Code changes follow the Git workflow above.
+
+Work only on the machine named in the card. If the task cannot be done there,
+stop and report why. The two machines may work at the same time on different
+branches; tasks that touch the same files run one after the other.
+
+## Code versions on the A100 machine
+
+The A100 clone is an ordinary clone of GitHub. It never holds unpushed work.
+
+1. Before each task run `git fetch origin` and check out the commit or branch
+   named in the card. The default is the latest `origin/main`.
+2. Install from the lock file: `uv sync --frozen --extra dev --extra sim --extra gpu`.
+   If uv is unavailable, use pip with the same extras and put `pip freeze` in
+   the report.
+3. Runs that produce evidence (benchmarks, renders, experiments) use a commit
+   already merged into main and a clean tree (`git status --porcelain` prints
+   nothing). The report records the commit hash, GPU model and driver
+   (`nvidia-smi`), CUDA version, and the MuJoCo and Warp versions.
+4. Do not change code during a run. For long or concurrent runs use one
+   worktree per run: `git worktree add ../run-<task-id> <commit>`; remove it
+   after the results are pushed.
+5. Reports and summary numbers go to `reports/<task-id>/` through a pull
+   request. Large raw outputs (image sets, logs) stay on the A100 machine or in
+   object storage; the report records their location and the commit.
+6. After the pull request is merged, delete the task branch and any worktree
+   on the A100 clone.
