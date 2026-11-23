@@ -10,6 +10,16 @@ chain, every spine body grows along its own +x and the head mount sits at the
 -x end of ``spine_0``. Morphology templates give relative joint angles, so their
 meaning does not depend on this attachment rotation.
 
+Sign conventions (the legs hang toward chain -z):
+
+- ``spine_k_pitch > 0`` bends the segments behind joint k toward the feet.
+  With the rear on the ground this lowers the front, so raising the segments
+  ahead of joint k (centaur torso, periscope mast) uses a *negative* pitch.
+- ``spine_k_yaw > 0`` swings the segments behind joint k toward robot left.
+- ``neck_pitch > 0`` tilts the camera up. When the front segment stands
+  vertical the camera points up at zero neck pitch, and level gaze needs
+  about -90 degrees.
+
 Masses are built bottom-up from :class:`MassBudget`: one servo per actuated
 joint plus structure that scales with module dimensions. Joint ranges come from
 :class:`JointLimits`. Both mirror YAML files under ``configs/design/`` so the
@@ -64,7 +74,7 @@ class JointLimits:
     hip_pitch_rad: float = 2.3562
     knee_rad: float = 2.3562
     neck_yaw_rad: float = 2.618
-    neck_pitch_rad: float = 1.5708
+    neck_pitch_rad: float = 2.7925
     neck_roll_rad: float = 0.7854
 
     def __post_init__(self) -> None:

@@ -1,7 +1,9 @@
 morph_id: centaur
 camera_height_target_m: 0.78
-gaze_nominal_pitch_rad: 0.0
-gaze_pitch_range_rad: [-1.0471975512, 1.0471975512]
+# Front segments stand up, so the neck points up at zero; -90 deg of neck
+# pitch gives level gaze, and +/-60 deg of gaze around it is the range below.
+gaze_nominal_pitch_rad: -1.5707963268
+gaze_pitch_range_rad: [-2.6179938780, -0.5235987756]
 gaze_yaw_range_rad: [-1.5707963268, 1.5707963268]
 support_segments: [2, 3]
 contact_roles:
@@ -20,8 +22,8 @@ lock_mask:
   spine_2_pitch: true
 lock_angles:
   spine_0_yaw: 0.0
-  spine_0_pitch: 1.5707963267948966
+  spine_0_pitch: 0.0
   spine_1_yaw: 0.0
-  spine_1_pitch: 1.5707963267948966
+  spine_1_pitch: -1.5707963267948966
   spine_2_yaw: 0.0
   spine_2_pitch: 0.0

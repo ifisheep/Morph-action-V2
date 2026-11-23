@@ -65,7 +65,8 @@ fixed in R3.
 
 ## Open questions
 
-1. **Centaur template folds the body.** `spine_0_pitch` and `spine_1_pitch`
+1. **Resolved in R1.1** (option 0°/−90° chosen, periscope fixed too; see
+   `reports/R1.1/README.md`). **Centaur template folds the body.** `spine_0_pitch` and `spine_1_pitch`
    are both +90°. With legs hanging below the chain, +90° at `spine_1_pitch`
    bends the upper body *down* under the support legs (8 self-contacts).
    Kinematic check of alternatives (legs straight, upper body judged against
