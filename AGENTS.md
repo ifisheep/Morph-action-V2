@@ -30,7 +30,7 @@ GitHub `main` is the single source of truth. Only reviewed work is merged into
 it, and the human owner does the merge.
 
 1. Start every task from the latest main: `git checkout main && git pull --ff-only`.
-2. Work on a new branch named `codex/<task-id>-<short-name>`. Never commit to main.
+2. Work on a new branch named `task/<task-id>-<short-name>`. Never commit to main.
 3. Run `make check` before every commit. Put the task id in the commit message,
    for example `R5: mark placeholder results`.
 4. Before pushing, run `git fetch origin && git rebase origin/main`, then `make check` again.
@@ -39,3 +39,22 @@ it, and the human owner does the merge.
 6. For review fixes, add commits to the same branch; do not open a new branch.
 7. Do not touch files listed under "Do not touch" in the task card. If the task
    cannot be done without them, stop and report why.
+8. Commits carry the repository owner's identity only. Do not add tool or
+   assistant names to authors, trailers, commit messages, branch names or files.
+
+## Applying patch files
+
+Some tasks arrive as `git format-patch` files that were already reviewed.
+Apply them unchanged so the reviewed content is exactly what gets merged.
+
+1. Start from the latest main: `git checkout main && git pull --ff-only`.
+2. Create a branch `task/<task-id>` and apply with `git am <file>.patch`.
+   If it does not apply cleanly, try `git am -3`; if that also fails, run
+   `git am --abort`, stop and report the output.
+3. Verify with `python -m pip install -e '.[dev,sim]' && make check`.
+   On A100 also run `python -m pytest -m gpu`.
+4. Do not edit the patched files or the commit message. If a test fails or you
+   see a problem, report the failing output and your suggestion instead of
+   fixing it.
+5. Push the branch, open a pull request, and report the PR link, the test
+   summary and the names of any skipped tests.
