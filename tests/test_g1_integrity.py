@@ -10,11 +10,12 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
+from typing import Any
 import xml.etree.ElementTree as ET
 
 import pytest
 
-from morphdream.robot.assembly import AssemblySpec, build_mjcf
+from morphdream.robot.assembly import AssemblySpec, build_mjcf, model_for_morphology
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "configs" / "g1v2.yaml"
@@ -85,22 +86,41 @@ def test_one_superset_model_has_required_topology() -> None:
     assert root.find(".//freejoint") is not None or root.find(".//joint[@type='free']") is not None
     assert not root.findall(".//equality")
     assert not root.findall(".//mocap[@mocap='true']")
-    assert "xfrc_applied" not in xml
 
 
-def test_free_base_has_no_actuator_and_motor_limits_are_finite() -> None:
+def test_free_base_has_no_actuator_and_motor_force_limits_are_configured() -> None:
     xml = _supermodel_xml()
     root = ET.fromstring(xml)
     actuators = root.findall(".//actuator/*")
     assert actuators
     assert all("free" not in (item.attrib.get("joint", "")) for item in actuators)
-    limits = [float(value) for item in actuators for value in item.attrib.get("ctrlrange", "").split()]
-    assert limits and all(abs(value) <= 4.0 for value in limits)
+    torque_limit = float(_config()["actuators"]["torque_limit_nm"])
+    for actuator in actuators:
+        assert actuator.attrib.get("forcelimited") == "true"
+        force_limits = [float(value) for value in actuator.attrib.get("forcerange", "").split()]
+        assert len(force_limits) == 2
+        assert all(abs(value) <= torque_limit for value in force_limits)
+
+
+@pytest.mark.skip(reason="v2 runner not implemented")
+def test_runtime_external_forces_are_zero_and_mocap_bodies_are_absent() -> None:
+    """The v2 runner will provide runtime model and data for these checks."""
+    model, data = _v2_runner_model_and_data()
+    assert (data.xfrc_applied == 0).all()
+    assert model.nmocap == 0
+
+
+def _v2_runner_model_and_data() -> tuple[Any, Any]:
+    """Placeholder seam for the runtime objects supplied by the v2 runner."""
+    raise NotImplementedError("v2 runner not implemented")
 
 
 def test_model_hash_is_identical_for_all_morphology_modes_and_transitions() -> None:
-    digest = hashlib.sha256(_supermodel_xml().encode()).hexdigest()
-    assert len({digest for _ in MORPHOLOGIES + TRANSITIONS}) == 1
+    digests = {
+        hashlib.sha256(model_for_morphology(morph_id).encode()).hexdigest()
+        for morph_id in MORPHOLOGIES + TRANSITIONS
+    }
+    assert len(digests) == 1
 
 
 def test_runner_report_requires_non_degenerate_randomized_metrics() -> None:

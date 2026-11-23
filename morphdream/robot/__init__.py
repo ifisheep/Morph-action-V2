@@ -6,6 +6,7 @@ from .assembly import (
     build_mjcf,
     load_joint_limits,
     load_mass_budget,
+    model_for_morphology,
 )
 from .lock import JointLock, apply_locks, load_morphology
 
@@ -17,6 +18,7 @@ __all__ = [
     "build_mjcf",
     "load_joint_limits",
     "load_mass_budget",
+    "model_for_morphology",
     "JointLock",
     "apply_locks",
     "load_morphology",

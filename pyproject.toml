@@ -14,7 +14,7 @@ dependencies = [
 
 [project.optional-dependencies]
 sim = ["mujoco==3.13.0"]
-dev = ["pytest>=8", "ruff>=0.6"]
+dev = ["pytest>=8", "ruff>=0.6", "import-linter>=2.5"]
 config = ["pyyaml>=6"]
 gpu = ["mujoco-warp==3.13.0"]
 g1 = ["mujoco==3.13.0", "pyyaml>=6", "imageio>=2.38", "imageio-ffmpeg>=0.6", "pillow>=10"]
@@ -41,3 +41,19 @@ target-version = "py310"
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP"]
 ignore = ["E501", "I001", "UP035", "UP037", "F403"]
+
+[tool.importlinter]
+root_package = "morphdream"
+include_external_packages = true
+
+[[tool.importlinter.contracts]]
+name = "imagination stays independent of simulation backends"
+type = "forbidden"
+source_modules = ["morphdream.imagination"]
+forbidden_modules = ["morphdream.sim", "mujoco", "mujoco_warp"]
+
+[[tool.importlinter.contracts]]
+name = "core is dependency-free within morphdream"
+type = "forbidden"
+source_modules = ["morphdream.core"]
+forbidden_modules = ["morphdream"]

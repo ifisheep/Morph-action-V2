@@ -322,5 +322,16 @@ def build_mjcf(spec: AssemblySpec, *, model_name: str = "morphdream_robot") -> s
     return "\n".join(lines) + "\n"
 
 
+def model_for_morphology(morph_id: str) -> str:
+    """Return the shared superset MJCF model for a morphology or transition.
+
+    Morphology templates change joint locks and controller behavior at runtime.
+    They do not select a different MJCF topology, so every morphology and
+    transition must load the same model bytes for integrity checks.
+    """
+    del morph_id
+    return build_mjcf(AssemblySpec(), model_name="g1v2_shared")
+
+
 def write_mjcf(spec: AssemblySpec, path: str | Path, *, model_name: str = "morphdream_robot") -> None:
     Path(path).write_text(build_mjcf(spec, model_name=model_name), encoding="utf-8")
