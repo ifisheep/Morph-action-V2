@@ -1458,7 +1458,8 @@
           "static_torque_ok": true,
           "camera_height_target_m": 0.32,
           "level_gaze_height_gap_m": -0.0286,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/baseline_4x011_quadruped.png"
         },
         "hexapod": {
           "retraction_pose_deg": {},
@@ -1545,7 +1546,8 @@
           "static_torque_ok": true,
           "camera_height_target_m": 0.32,
           "level_gaze_height_gap_m": -0.0283,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/baseline_4x011_hexapod.png"
         },
         "centaur": {
           "retraction_pose_deg": {
@@ -1643,7 +1645,8 @@
           "static_torque_ok": null,
           "camera_height_target_m": 0.78,
           "level_gaze_height_gap_m": -0.4231,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/baseline_4x011_centaur.png"
         },
         "snake": {
           "retraction_pose_deg": {
@@ -1761,7 +1764,8 @@
           "static_torque_ok": true,
           "camera_height_target_m": 0.08,
           "level_gaze_height_gap_m": -0.0164,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/baseline_4x011_snake.png"
         },
         "periscope": {
           "retraction_pose_deg": {
@@ -1879,7 +1883,8 @@
           "static_torque_ok": true,
           "camera_height_target_m": 0.45,
           "level_gaze_height_gap_m": -0.2272,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/baseline_4x011_periscope.png"
         }
       },
       "coverage_matrix": {
@@ -2209,7 +2214,8 @@
           "static_torque_ok": true,
           "camera_height_target_m": 0.32,
           "level_gaze_height_gap_m": -0.0664,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/compact_short_neck_quadruped.png"
         },
         "hexapod": {
           "retraction_pose_deg": {},
@@ -2296,7 +2302,8 @@
           "static_torque_ok": true,
           "camera_height_target_m": 0.32,
           "level_gaze_height_gap_m": -0.0664,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/compact_short_neck_hexapod.png"
         },
         "centaur": {
           "retraction_pose_deg": {
@@ -2394,7 +2401,8 @@
           "static_torque_ok": true,
           "camera_height_target_m": 0.78,
           "level_gaze_height_gap_m": -0.2957,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/compact_short_neck_centaur.png"
         },
         "snake": {
           "retraction_pose_deg": {
@@ -2512,7 +2520,8 @@
           "static_torque_ok": false,
           "camera_height_target_m": 0.08,
           "level_gaze_height_gap_m": -0.0138,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/compact_short_neck_snake.png"
         },
         "periscope": {
           "retraction_pose_deg": {
@@ -2630,7 +2639,8 @@
           "static_torque_ok": true,
           "camera_height_target_m": 0.45,
           "level_gaze_height_gap_m": -0.2594,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/compact_short_neck_periscope.png"
         }
       },
       "coverage_matrix": {
@@ -2961,7 +2971,8 @@
           "static_torque_ok": true,
           "camera_height_target_m": 0.32,
           "level_gaze_height_gap_m": -0.0247,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/long_spine_5_quadruped.png"
         },
         "hexapod": {
           "retraction_pose_deg": {},
@@ -3050,7 +3061,8 @@
           "static_torque_ok": true,
           "camera_height_target_m": 0.32,
           "level_gaze_height_gap_m": -0.0245,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/long_spine_5_hexapod.png"
         },
         "centaur": {
           "retraction_pose_deg": {
@@ -3150,7 +3162,8 @@
           "static_torque_ok": true,
           "camera_height_target_m": 0.78,
           "level_gaze_height_gap_m": -0.202,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/long_spine_5_centaur.png"
         },
         "snake": {
           "retraction_pose_deg": {
@@ -3270,7 +3283,8 @@
           "static_torque_ok": true,
           "camera_height_target_m": 0.08,
           "level_gaze_height_gap_m": -0.0143,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/long_spine_5_snake.png"
         },
         "periscope": {
           "retraction_pose_deg": {
@@ -3390,7 +3404,8 @@
           "static_torque_ok": true,
           "camera_height_target_m": 0.45,
           "level_gaze_height_gap_m": -0.2256,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/long_spine_5_periscope.png"
         }
       },
       "coverage_matrix": {
@@ -3719,7 +3734,8 @@
           "static_torque_ok": true,
           "camera_height_target_m": 0.32,
           "level_gaze_height_gap_m": -0.0264,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/periscope_raise_quadruped.png"
         },
         "hexapod": {
           "retraction_pose_deg": {},
@@ -3806,7 +3822,8 @@
           "static_torque_ok": true,
           "camera_height_target_m": 0.32,
           "level_gaze_height_gap_m": -0.0263,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/periscope_raise_hexapod.png"
         },
         "centaur": {
           "retraction_pose_deg": {
@@ -3904,7 +3921,8 @@
           "static_torque_ok": true,
           "camera_height_target_m": 0.78,
           "level_gaze_height_gap_m": -0.1778,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/periscope_raise_centaur.png"
         },
         "snake": {
           "retraction_pose_deg": {
@@ -4022,7 +4040,8 @@
           "static_torque_ok": true,
           "camera_height_target_m": 0.08,
           "level_gaze_height_gap_m": -0.0152,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/periscope_raise_snake.png"
         },
         "periscope": {
           "retraction_pose_deg": {
@@ -4143,7 +4162,8 @@
           "spine_overrides": {
             "spine_0_pitch": 0.0,
             "spine_1_pitch": -1.5707963267948966
-          }
+          },
+          "render": "images/periscope_raise_periscope.png"
         }
       },
       "coverage_matrix": {
@@ -4473,7 +4493,8 @@
           "static_torque_ok": true,
           "camera_height_target_m": 0.32,
           "level_gaze_height_gap_m": -0.0255,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/decoupled_neck_3dof_quadruped.png"
         },
         "hexapod": {
           "retraction_pose_deg": {},
@@ -4561,7 +4582,8 @@
           "static_torque_ok": true,
           "camera_height_target_m": 0.32,
           "level_gaze_height_gap_m": -0.0253,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/decoupled_neck_3dof_hexapod.png"
         },
         "centaur": {
           "retraction_pose_deg": {
@@ -4660,7 +4682,8 @@
           "static_torque_ok": true,
           "camera_height_target_m": 0.78,
           "level_gaze_height_gap_m": -0.2021,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/decoupled_neck_3dof_centaur.png"
         },
         "snake": {
           "retraction_pose_deg": {
@@ -4779,7 +4802,8 @@
           "static_torque_ok": true,
           "camera_height_target_m": 0.08,
           "level_gaze_height_gap_m": -0.0146,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/decoupled_neck_3dof_snake.png"
         },
         "periscope": {
           "retraction_pose_deg": {
@@ -4898,7 +4922,8 @@
           "static_torque_ok": true,
           "camera_height_target_m": 0.45,
           "level_gaze_height_gap_m": -0.2256,
-          "spine_overrides": {}
+          "spine_overrides": {},
+          "render": "images/decoupled_neck_3dof_periscope.png"
         }
       },
       "coverage_matrix": {
