@@ -22,7 +22,7 @@ def _imported_modules(path: Path) -> list[str]:
 
 def test_imagination_does_not_import_simulator() -> None:
     violations: list[str] = []
-    for path in sorted(IMAGINATION.glob("*.py")):
+    for path in sorted(IMAGINATION.rglob("*.py")):
         for module in _imported_modules(path):
             if module == "morphdream.sim" or module.startswith("morphdream.sim."):
                 violations.append(f"{path.relative_to(ROOT)} imports {module}")
@@ -34,8 +34,8 @@ def test_imagination_does_not_import_simulator() -> None:
 
 def test_imagination_has_no_direct_mujoco_dependency() -> None:
     violations: list[str] = []
-    for path in sorted(IMAGINATION.glob("*.py")):
+    for path in sorted(IMAGINATION.rglob("*.py")):
         for module in _imported_modules(path):
-            if module == "mujoco" or module.startswith("mujoco."):
+            if module in {"mujoco", "mujoco_warp"} or module.startswith(("mujoco.", "mujoco_warp.")):
                 violations.append(f"{path.relative_to(ROOT)} imports {module}")
     assert not violations, "imagination must remain backend independent: " + "; ".join(violations)

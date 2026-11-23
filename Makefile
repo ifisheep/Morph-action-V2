@@ -1,4 +1,4 @@
-.PHONY: check test lint
+.PHONY: check test lint import-lint
 
 PYTHON ?= python3
 
@@ -8,4 +8,7 @@ test:
 lint:
 	$(PYTHON) -m ruff check morphdream scripts tests
 
-check: lint test
+import-lint:
+	lint-imports
+
+check: lint import-lint test

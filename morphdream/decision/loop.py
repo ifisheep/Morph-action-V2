@@ -29,12 +29,11 @@ class RunConfig:
     output_dir: str = "reports/smoke"
     lookahead_depth: int = 2
     compute_budget_s: float = 0.25
-    allow_test: bool = False
     config_hash: str = ""
     model_name: str = "deterministic"
 
     def __post_init__(self) -> None:
-        if self.split == "test" and not (self.allow_test or os.getenv("ALLOW_TEST") == "1"):
+        if self.split == "test" and os.getenv("ALLOW_TEST") != "1":
             raise PermissionError("test evaluation requires ALLOW_TEST=1")
 
 
