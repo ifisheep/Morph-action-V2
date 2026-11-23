@@ -17,6 +17,15 @@ class JointLock:
 
 @dataclass(frozen=True)
 class Morphology:
+    """One morphology template.
+
+    ``gaze_nominal_pitch_rad`` is the ``neck_pitch`` joint angle that gives
+    level gaze in this morphology, and ``gaze_pitch_range_rad`` is the range of
+    ``neck_pitch`` joint angles the gaze controller may use. Both are joint
+    angles, not camera elevations; see ``morphdream.robot.assembly`` for the
+    sign conventions.
+    """
+
     morph_id: str
     locks: tuple[JointLock, ...] = ()
     contact_roles: Mapping[str, str] = field(default_factory=dict)

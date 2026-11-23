@@ -149,33 +149,70 @@ def test_head_and_camera_face_forward_and_left_legs_are_on_the_left() -> None:
         assert left[1] > 0 > right[1]
 
 
-@pytest.mark.parametrize(
-    "morphology",
-    [
-        pytest.param(
-            name,
-            marks=pytest.mark.xfail(
-                reason="centaur template bends spine_0_pitch and spine_1_pitch by +90 deg each, "
-                "folding the body into a U; template decision pending (reports/R1)",
-                strict=True,
-            ),
-        )
-        if name == "centaur"
-        else name
-        for name in MORPHOLOGIES
-    ],
-)
-def test_template_spine_pose_is_free_of_self_contact(morphology: str) -> None:
-    mujoco = pytest.importorskip("mujoco")
+def _template(morphology: str):
     pytest.importorskip("yaml")
-    model = mujoco.MjModel.from_xml_string(build_mjcf(AssemblySpec()))
+    return load_morphology(ROOT / "morphdream/robot/morphologies" / f"{morphology}.yaml")
+
+
+def _pose_template(mujoco, model, template, neck_pitch: float):
+    """Place the lifted robot (no floor contact) in a template's spine pose."""
     data = mujoco.MjData(model)
     data.qpos[2] = 1.5
     data.qpos[3] = 1.0
-    template = load_morphology(ROOT / "morphdream/robot/morphologies" / f"{morphology}.yaml")
-    for name, angle in template.lock_angles.items():
+    angles = {**template.lock_angles, "neck_pitch": neck_pitch}
+    for name, angle in angles.items():
         joint = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_JOINT, name)
         if joint >= 0:
             data.qpos[model.jnt_qposadr[joint]] = angle
     mujoco.mj_forward(model, data)
-    assert _self_contacts(mujoco, model, data) == []
+    return data
+
+
+def _gaze_in_body_frame(mujoco, model, data) -> tuple[float, float]:
+    """Camera elevation (rad) and height above the hips, in the frame of the
+    rear body (spine 2-3), which stays on the ground in every template."""
+    body = lambda name: mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_BODY, name)  # noqa: E731
+    rear = data.xpos[body("spine_3")] - data.xpos[body("spine_2")]
+    rear /= np.linalg.norm(rear)
+    foot = data.geom_xpos[mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_GEOM, "foot_left_2")] - data.xpos[body("spine_3")]
+    up = -(foot - (foot @ rear) * rear)
+    up /= np.linalg.norm(up)
+    camera = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_CAMERA, "depth_camera")
+    axis = -data.cam_xmat[camera].reshape(3, 3)[:, 2]
+    elevation = float(np.arctan2(axis @ up, -(axis @ rear)))
+    height = float((data.cam_xpos[camera] - data.xpos[body("spine_2")]) @ up)
+    return elevation, height
+
+
+@pytest.mark.parametrize("morphology", MORPHOLOGIES)
+def test_template_angles_are_within_joint_limits(morphology: str) -> None:
+    template = _template(morphology)
+    limits = JointLimits()
+    for name, angle in template.lock_angles.items():
+        assert abs(angle) <= limits.for_joint(name) + 1e-9, name
+    low, high = template.gaze_pitch_range_rad
+    assert low <= template.gaze_nominal_pitch_rad <= high
+    assert max(abs(low), abs(high)) <= limits.neck_pitch_rad + 1e-9
+
+
+@pytest.mark.parametrize("morphology", MORPHOLOGIES)
+def test_template_pose_is_free_of_self_contact_across_gaze_range(morphology: str) -> None:
+    mujoco = pytest.importorskip("mujoco")
+    template = _template(morphology)
+    model = mujoco.MjModel.from_xml_string(build_mjcf(AssemblySpec()))
+    low, high = template.gaze_pitch_range_rad
+    for neck in (low, template.gaze_nominal_pitch_rad, high):
+        data = _pose_template(mujoco, model, template, neck)
+        assert _self_contacts(mujoco, model, data) == [], f"neck_pitch={neck:.3f}"
+
+
+@pytest.mark.parametrize("morphology", MORPHOLOGIES)
+def test_nominal_gaze_is_level_and_raised_templates_lift_the_camera(morphology: str) -> None:
+    mujoco = pytest.importorskip("mujoco")
+    template = _template(morphology)
+    model = mujoco.MjModel.from_xml_string(build_mjcf(AssemblySpec()))
+    data = _pose_template(mujoco, model, template, template.gaze_nominal_pitch_rad)
+    elevation, height = _gaze_in_body_frame(mujoco, model, data)
+    assert abs(elevation) < np.radians(1.0)
+    raised = any(angle < -1e-6 for name, angle in template.lock_angles.items() if name.endswith("_pitch"))
+    assert height > (0.1 if raised else -0.005)

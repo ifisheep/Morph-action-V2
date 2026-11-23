@@ -10,5 +10,7 @@ hip_yaw_rad: 1.5708       # ±90°: design-study retraction uses 1.25 rad
 hip_pitch_rad: 2.3562     # ±135°
 knee_rad: 2.3562          # ±135°
 neck_yaw_rad: 2.618       # ±150°: gaze templates use ±90°
-neck_pitch_rad: 1.5708    # ±90°: gaze templates use ±60°
+neck_pitch_rad: 2.7925    # ±160° (decision D7): raised templates need -150°..-30°
+                          # for level gaze ±60°. NEEDS HARDWARE CONFIRMATION
+                          # (neck bracket clearance and cable routing).
 neck_roll_rad: 0.7854     # ±45°: only in the 3-DOF neck candidate
