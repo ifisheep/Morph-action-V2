@@ -24,12 +24,15 @@ intervals above.
 
 ## Interim procedural scene distribution
 
-The design study samples 50 scenes per candidate with five hiding classes
-`under_bed`, `under_sofa`, `behind_obstacle`, `high_shelf`, and
-`open_low_cubby`. Each class receives 10 scenes. Scene identifiers and seeds are
-written to the candidate report. The study measures line-of-sight visibility
-from each morphology's settled camera pose and records the candidate-level
-coverage matrix.
+The design study (R3 method, `morphdream/robot/design_metrics.py`) uses 100
+scenes with five hiding classes `under_bed`, `under_sofa`, `behind_obstacle`,
+`high_shelf`, and `open_low_cubby`, 20 scenes each. Scenes depend only on the
+class, the index and a fixed seed, so every candidate and morphology sees the
+same set. Targets under a bed or sofa are uniform over the underside; a
+behind-obstacle target sits in an enclosed gap between the obstacle and a
+wall; furniture stands against a wall. Scene parameters are written to
+`design_study.json`. Visibility uses the camera height and tilt pairs from
+each morphology's neck sweep; see `README.md` for the full rule.
 
 ## Interpretation
 

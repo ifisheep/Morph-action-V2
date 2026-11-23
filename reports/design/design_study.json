@@ -1,9 +1,1322 @@
 {
   "source": "reports/design/requirements.md",
+  "method": "R3: template pose, servo hold, settle; unlimited-force copy for required torque",
+  "assumptions": {
+    "posture_tolerance_rad": 0.05,
+    "tilt_tolerance_deg": 10.0,
+    "settle_seconds": 2.0,
+    "static_torque_derating": 0.5,
+    "level_gaze_tolerance_deg": 15.0,
+    "camera_fovy_deg": 45.0,
+    "depth_range_m": [
+      0.2,
+      3.0
+    ],
+    "image_height_px": 128,
+    "target_size_m": 0.06,
+    "min_target_pixels": 8,
+    "detection_range_m": 1.222,
+    "view_distances_m": [
+      0.3,
+      0.5,
+      0.75,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "view_azimuths": 24,
+    "scenes_per_type": 20,
+    "scene_seed": 20261123,
+    "morphing_gain_threshold": 0.25
+  },
+  "scenes": [
+    {
+      "kind": "under_bed",
+      "index": 0,
+      "target": [
+        -0.4739,
+        -0.6077,
+        0.05
+      ],
+      "parameters": {
+        "clearance_m": 0.1826,
+        "depth_from_edge_m": 1.4077
+      }
+    },
+    {
+      "kind": "under_bed",
+      "index": 1,
+      "target": [
+        0.8906,
+        -0.2857,
+        0.05
+      ],
+      "parameters": {
+        "clearance_m": 0.2098,
+        "depth_from_edge_m": 1.0857
+      }
+    },
+    {
+      "kind": "under_bed",
+      "index": 2,
+      "target": [
+        -0.7273,
+        -0.6654,
+        0.05
+      ],
+      "parameters": {
+        "clearance_m": 0.2315,
+        "depth_from_edge_m": 1.4654
+      }
+    },
+    {
+      "kind": "under_bed",
+      "index": 3,
+      "target": [
+        -0.7403,
+        0.6461,
+        0.05
+      ],
+      "parameters": {
+        "clearance_m": 0.188,
+        "depth_from_edge_m": 0.1539
+      }
+    },
+    {
+      "kind": "under_bed",
+      "index": 4,
+      "target": [
+        -0.4445,
+        0.1754,
+        0.05
+      ],
+      "parameters": {
+        "clearance_m": 0.2359,
+        "depth_from_edge_m": 0.6246
+      }
+    },
+    {
+      "kind": "under_bed",
+      "index": 5,
+      "target": [
+        0.5373,
+        0.6641,
+        0.05
+      ],
+      "parameters": {
+        "clearance_m": 0.1886,
+        "depth_from_edge_m": 0.1359
+      }
+    },
+    {
+      "kind": "under_bed",
+      "index": 6,
+      "target": [
+        0.146,
+        0.3279,
+        0.05
+      ],
+      "parameters": {
+        "clearance_m": 0.2166,
+        "depth_from_edge_m": 0.4721
+      }
+    },
+    {
+      "kind": "under_bed",
+      "index": 7,
+      "target": [
+        -0.7841,
+        0.2886,
+        0.05
+      ],
+      "parameters": {
+        "clearance_m": 0.2073,
+        "depth_from_edge_m": 0.5114
+      }
+    },
+    {
+      "kind": "under_bed",
+      "index": 8,
+      "target": [
+        0.4723,
+        0.0295,
+        0.05
+      ],
+      "parameters": {
+        "clearance_m": 0.2275,
+        "depth_from_edge_m": 0.7705
+      }
+    },
+    {
+      "kind": "under_bed",
+      "index": 9,
+      "target": [
+        0.7134,
+        -0.0234,
+        0.05
+      ],
+      "parameters": {
+        "clearance_m": 0.211,
+        "depth_from_edge_m": 0.8234
+      }
+    },
+    {
+      "kind": "under_bed",
+      "index": 10,
+      "target": [
+        0.7158,
+        -0.3125,
+        0.05
+      ],
+      "parameters": {
+        "clearance_m": 0.2052,
+        "depth_from_edge_m": 1.1125
+      }
+    },
+    {
+      "kind": "under_bed",
+      "index": 11,
+      "target": [
+        0.3008,
+        0.3276,
+        0.05
+      ],
+      "parameters": {
+        "clearance_m": 0.2368,
+        "depth_from_edge_m": 0.4724
+      }
+    },
+    {
+      "kind": "under_bed",
+      "index": 12,
+      "target": [
+        -0.3716,
+        -0.2971,
+        0.05
+      ],
+      "parameters": {
+        "clearance_m": 0.2395,
+        "depth_from_edge_m": 1.0971
+      }
+    },
+    {
+      "kind": "under_bed",
+      "index": 13,
+      "target": [
+        0.7443,
+        0.1611,
+        0.05
+      ],
+      "parameters": {
+        "clearance_m": 0.1941,
+        "depth_from_edge_m": 0.6389
+      }
+    },
+    {
+      "kind": "under_bed",
+      "index": 14,
+      "target": [
+        0.1724,
+        0.0262,
+        0.05
+      ],
+      "parameters": {
+        "clearance_m": 0.1877,
+        "depth_from_edge_m": 0.7738
+      }
+    },
+    {
+      "kind": "under_bed",
+      "index": 15,
+      "target": [
+        -0.0787,
+        0.5445,
+        0.05
+      ],
+      "parameters": {
+        "clearance_m": 0.2076,
+        "depth_from_edge_m": 0.2555
+      }
+    },
+    {
+      "kind": "under_bed",
+      "index": 16,
+      "target": [
+        0.1654,
+        0.2188,
+        0.05
+      ],
+      "parameters": {
+        "clearance_m": 0.1962,
+        "depth_from_edge_m": 0.5812
+      }
+    },
+    {
+      "kind": "under_bed",
+      "index": 17,
+      "target": [
+        0.1911,
+        0.2663,
+        0.05
+      ],
+      "parameters": {
+        "clearance_m": 0.1951,
+        "depth_from_edge_m": 0.5337
+      }
+    },
+    {
+      "kind": "under_bed",
+      "index": 18,
+      "target": [
+        -0.1241,
+        -0.1444,
+        0.05
+      ],
+      "parameters": {
+        "clearance_m": 0.1958,
+        "depth_from_edge_m": 0.9444
+      }
+    },
+    {
+      "kind": "under_bed",
+      "index": 19,
+      "target": [
+        -0.7747,
+        -0.4894,
+        0.05
+      ],
+      "parameters": {
+        "clearance_m": 0.1811,
+        "depth_from_edge_m": 1.2894
+      }
+    },
+    {
+      "kind": "under_sofa",
+      "index": 0,
+      "target": [
+        -0.4047,
+        0.1334,
+        0.04
+      ],
+      "parameters": {
+        "clearance_m": 0.1486,
+        "depth_from_edge_m": 0.3066
+      }
+    },
+    {
+      "kind": "under_sofa",
+      "index": 1,
+      "target": [
+        -0.5878,
+        -0.3049,
+        0.04
+      ],
+      "parameters": {
+        "clearance_m": 0.1629,
+        "depth_from_edge_m": 0.7449
+      }
+    },
+    {
+      "kind": "under_sofa",
+      "index": 2,
+      "target": [
+        0.157,
+        -0.1793,
+        0.04
+      ],
+      "parameters": {
+        "clearance_m": 0.1354,
+        "depth_from_edge_m": 0.6193
+      }
+    },
+    {
+      "kind": "under_sofa",
+      "index": 3,
+      "target": [
+        0.0075,
+        0.016,
+        0.04
+      ],
+      "parameters": {
+        "clearance_m": 0.1468,
+        "depth_from_edge_m": 0.424
+      }
+    },
+    {
+      "kind": "under_sofa",
+      "index": 4,
+      "target": [
+        0.2209,
+        -0.0452,
+        0.04
+      ],
+      "parameters": {
+        "clearance_m": 0.1264,
+        "depth_from_edge_m": 0.4852
+      }
+    },
+    {
+      "kind": "under_sofa",
+      "index": 5,
+      "target": [
+        -0.5766,
+        0.3282,
+        0.04
+      ],
+      "parameters": {
+        "clearance_m": 0.1616,
+        "depth_from_edge_m": 0.1118
+      }
+    },
+    {
+      "kind": "under_sofa",
+      "index": 6,
+      "target": [
+        0.4745,
+        -0.0186,
+        0.04
+      ],
+      "parameters": {
+        "clearance_m": 0.1681,
+        "depth_from_edge_m": 0.4586
+      }
+    },
+    {
+      "kind": "under_sofa",
+      "index": 7,
+      "target": [
+        -0.4975,
+        -0.296,
+        0.04
+      ],
+      "parameters": {
+        "clearance_m": 0.1748,
+        "depth_from_edge_m": 0.736
+      }
+    },
+    {
+      "kind": "under_sofa",
+      "index": 8,
+      "target": [
+        0.5542,
+        -0.2128,
+        0.04
+      ],
+      "parameters": {
+        "clearance_m": 0.1251,
+        "depth_from_edge_m": 0.6528
+      }
+    },
+    {
+      "kind": "under_sofa",
+      "index": 9,
+      "target": [
+        -0.7301,
+        -0.1298,
+        0.04
+      ],
+      "parameters": {
+        "clearance_m": 0.1266,
+        "depth_from_edge_m": 0.5698
+      }
+    },
+    {
+      "kind": "under_sofa",
+      "index": 10,
+      "target": [
+        0.8301,
+        0.0574,
+        0.04
+      ],
+      "parameters": {
+        "clearance_m": 0.1738,
+        "depth_from_edge_m": 0.3826
+      }
+    },
+    {
+      "kind": "under_sofa",
+      "index": 11,
+      "target": [
+        0.5091,
+        -0.025,
+        0.04
+      ],
+      "parameters": {
+        "clearance_m": 0.1484,
+        "depth_from_edge_m": 0.465
+      }
+    },
+    {
+      "kind": "under_sofa",
+      "index": 12,
+      "target": [
+        0.7149,
+        -0.2259,
+        0.04
+      ],
+      "parameters": {
+        "clearance_m": 0.1234,
+        "depth_from_edge_m": 0.6659
+      }
+    },
+    {
+      "kind": "under_sofa",
+      "index": 13,
+      "target": [
+        -0.7889,
+        0.3078,
+        0.04
+      ],
+      "parameters": {
+        "clearance_m": 0.1419,
+        "depth_from_edge_m": 0.1322
+      }
+    },
+    {
+      "kind": "under_sofa",
+      "index": 14,
+      "target": [
+        0.1811,
+        0.1873,
+        0.04
+      ],
+      "parameters": {
+        "clearance_m": 0.1203,
+        "depth_from_edge_m": 0.2527
+      }
+    },
+    {
+      "kind": "under_sofa",
+      "index": 15,
+      "target": [
+        -0.4929,
+        0.2313,
+        0.04
+      ],
+      "parameters": {
+        "clearance_m": 0.1645,
+        "depth_from_edge_m": 0.2087
+      }
+    },
+    {
+      "kind": "under_sofa",
+      "index": 16,
+      "target": [
+        0.7922,
+        0.0495,
+        0.04
+      ],
+      "parameters": {
+        "clearance_m": 0.1494,
+        "depth_from_edge_m": 0.3905
+      }
+    },
+    {
+      "kind": "under_sofa",
+      "index": 17,
+      "target": [
+        0.03,
+        -0.0466,
+        0.04
+      ],
+      "parameters": {
+        "clearance_m": 0.1266,
+        "depth_from_edge_m": 0.4866
+      }
+    },
+    {
+      "kind": "under_sofa",
+      "index": 18,
+      "target": [
+        0.2697,
+        -0.2107,
+        0.04
+      ],
+      "parameters": {
+        "clearance_m": 0.1717,
+        "depth_from_edge_m": 0.6507
+      }
+    },
+    {
+      "kind": "under_sofa",
+      "index": 19,
+      "target": [
+        0.7063,
+        -0.1014,
+        0.04
+      ],
+      "parameters": {
+        "clearance_m": 0.1483,
+        "depth_from_edge_m": 0.5414
+      }
+    },
+    {
+      "kind": "behind_obstacle",
+      "index": 0,
+      "target": [
+        -0.0215,
+        0.9575,
+        0.1278
+      ],
+      "parameters": {
+        "obstacle_height_m": 0.7453
+      }
+    },
+    {
+      "kind": "behind_obstacle",
+      "index": 1,
+      "target": [
+        0.1183,
+        1.059,
+        0.1895
+      ],
+      "parameters": {
+        "obstacle_height_m": 0.6931
+      }
+    },
+    {
+      "kind": "behind_obstacle",
+      "index": 2,
+      "target": [
+        -0.026,
+        1.0549,
+        0.1235
+      ],
+      "parameters": {
+        "obstacle_height_m": 0.8017
+      }
+    },
+    {
+      "kind": "behind_obstacle",
+      "index": 3,
+      "target": [
+        -0.0542,
+        1.1157,
+        0.1885
+      ],
+      "parameters": {
+        "obstacle_height_m": 0.5107
+      }
+    },
+    {
+      "kind": "behind_obstacle",
+      "index": 4,
+      "target": [
+        0.1651,
+        1.1426,
+        0.1436
+      ],
+      "parameters": {
+        "obstacle_height_m": 0.5795
+      }
+    },
+    {
+      "kind": "behind_obstacle",
+      "index": 5,
+      "target": [
+        -0.4003,
+        1.1309,
+        0.2097
+      ],
+      "parameters": {
+        "obstacle_height_m": 0.4999
+      }
+    },
+    {
+      "kind": "behind_obstacle",
+      "index": 6,
+      "target": [
+        0.3767,
+        0.9613,
+        0.161
+      ],
+      "parameters": {
+        "obstacle_height_m": 0.6318
+      }
+    },
+    {
+      "kind": "behind_obstacle",
+      "index": 7,
+      "target": [
+        -0.0785,
+        1.0653,
+        0.2093
+      ],
+      "parameters": {
+        "obstacle_height_m": 0.618
+      }
+    },
+    {
+      "kind": "behind_obstacle",
+      "index": 8,
+      "target": [
+        -0.318,
+        0.958,
+        0.2445
+      ],
+      "parameters": {
+        "obstacle_height_m": 0.7126
+      }
+    },
+    {
+      "kind": "behind_obstacle",
+      "index": 9,
+      "target": [
+        -0.1209,
+        1.0365,
+        0.1865
+      ],
+      "parameters": {
+        "obstacle_height_m": 0.5535
+      }
+    },
+    {
+      "kind": "behind_obstacle",
+      "index": 10,
+      "target": [
+        0.1394,
+        1.0834,
+        0.0956
+      ],
+      "parameters": {
+        "obstacle_height_m": 0.8986
+      }
+    },
+    {
+      "kind": "behind_obstacle",
+      "index": 11,
+      "target": [
+        0.4813,
+        1.0292,
+        0.0674
+      ],
+      "parameters": {
+        "obstacle_height_m": 0.6147
+      }
+    },
+    {
+      "kind": "behind_obstacle",
+      "index": 12,
+      "target": [
+        -0.1394,
+        0.9681,
+        0.1214
+      ],
+      "parameters": {
+        "obstacle_height_m": 0.9233
+      }
+    },
+    {
+      "kind": "behind_obstacle",
+      "index": 13,
+      "target": [
+        0.1366,
+        1.0992,
+        0.1272
+      ],
+      "parameters": {
+        "obstacle_height_m": 0.4515
+      }
+    },
+    {
+      "kind": "behind_obstacle",
+      "index": 14,
+      "target": [
+        0.1382,
+        1.1365,
+        0.1999
+      ],
+      "parameters": {
+        "obstacle_height_m": 0.5026
+      }
+    },
+    {
+      "kind": "behind_obstacle",
+      "index": 15,
+      "target": [
+        0.24,
+        1.0473,
+        0.2073
+      ],
+      "parameters": {
+        "obstacle_height_m": 0.8461
+      }
+    },
+    {
+      "kind": "behind_obstacle",
+      "index": 16,
+      "target": [
+        -0.3061,
+        1.1013,
+        0.0841
+      ],
+      "parameters": {
+        "obstacle_height_m": 0.8103
+      }
+    },
+    {
+      "kind": "behind_obstacle",
+      "index": 17,
+      "target": [
+        0.318,
+        0.9952,
+        0.0532
+      ],
+      "parameters": {
+        "obstacle_height_m": 0.8818
+      }
+    },
+    {
+      "kind": "behind_obstacle",
+      "index": 18,
+      "target": [
+        0.1941,
+        0.9591,
+        0.1463
+      ],
+      "parameters": {
+        "obstacle_height_m": 0.798
+      }
+    },
+    {
+      "kind": "behind_obstacle",
+      "index": 19,
+      "target": [
+        -0.0908,
+        1.0143,
+        0.1765
+      ],
+      "parameters": {
+        "obstacle_height_m": 0.6265
+      }
+    },
+    {
+      "kind": "high_shelf",
+      "index": 0,
+      "target": [
+        -0.0478,
+        0.1683,
+        1.4229
+      ],
+      "parameters": {
+        "shelf_height_m": 1.3629,
+        "depth_m": 0.3366
+      }
+    },
+    {
+      "kind": "high_shelf",
+      "index": 1,
+      "target": [
+        0.1631,
+        0.1292,
+        1.6245
+      ],
+      "parameters": {
+        "shelf_height_m": 1.5645,
+        "depth_m": 0.2583
+      }
+    },
+    {
+      "kind": "high_shelf",
+      "index": 2,
+      "target": [
+        -0.0181,
+        0.1744,
+        1.3458
+      ],
+      "parameters": {
+        "shelf_height_m": 1.2858,
+        "depth_m": 0.3488
+      }
+    },
+    {
+      "kind": "high_shelf",
+      "index": 3,
+      "target": [
+        -0.1642,
+        0.1699,
+        1.1287
+      ],
+      "parameters": {
+        "shelf_height_m": 1.0687,
+        "depth_m": 0.3399
+      }
+    },
+    {
+      "kind": "high_shelf",
+      "index": 4,
+      "target": [
+        -0.0396,
+        0.1375,
+        1.8124
+      ],
+      "parameters": {
+        "shelf_height_m": 1.7524,
+        "depth_m": 0.275
+      }
+    },
+    {
+      "kind": "high_shelf",
+      "index": 5,
+      "target": [
+        0.074,
+        0.1681,
+        1.8739
+      ],
+      "parameters": {
+        "shelf_height_m": 1.8139,
+        "depth_m": 0.3363
+      }
+    },
+    {
+      "kind": "high_shelf",
+      "index": 6,
+      "target": [
+        0.0735,
+        0.1397,
+        1.9174
+      ],
+      "parameters": {
+        "shelf_height_m": 1.8574,
+        "depth_m": 0.2794
+      }
+    },
+    {
+      "kind": "high_shelf",
+      "index": 7,
+      "target": [
+        -0.1682,
+        0.1489,
+        1.4363
+      ],
+      "parameters": {
+        "shelf_height_m": 1.3763,
+        "depth_m": 0.2978
+      }
+    },
+    {
+      "kind": "high_shelf",
+      "index": 8,
+      "target": [
+        -0.1253,
+        0.1659,
+        1.7115
+      ],
+      "parameters": {
+        "shelf_height_m": 1.6515,
+        "depth_m": 0.3319
+      }
+    },
+    {
+      "kind": "high_shelf",
+      "index": 9,
+      "target": [
+        0.1936,
+        0.1474,
+        1.426
+      ],
+      "parameters": {
+        "shelf_height_m": 1.366,
+        "depth_m": 0.2948
+      }
+    },
+    {
+      "kind": "high_shelf",
+      "index": 10,
+      "target": [
+        -0.0329,
+        0.1444,
+        1.2686
+      ],
+      "parameters": {
+        "shelf_height_m": 1.2086,
+        "depth_m": 0.2888
+      }
+    },
+    {
+      "kind": "high_shelf",
+      "index": 11,
+      "target": [
+        -0.0145,
+        0.1308,
+        1.4966
+      ],
+      "parameters": {
+        "shelf_height_m": 1.4366,
+        "depth_m": 0.2616
+      }
+    },
+    {
+      "kind": "high_shelf",
+      "index": 12,
+      "target": [
+        -0.1478,
+        0.1255,
+        1.8852
+      ],
+      "parameters": {
+        "shelf_height_m": 1.8252,
+        "depth_m": 0.2509
+      }
+    },
+    {
+      "kind": "high_shelf",
+      "index": 13,
+      "target": [
+        0.098,
+        0.1373,
+        1.3577
+      ],
+      "parameters": {
+        "shelf_height_m": 1.2977,
+        "depth_m": 0.2746
+      }
+    },
+    {
+      "kind": "high_shelf",
+      "index": 14,
+      "target": [
+        0.044,
+        0.1503,
+        1.1267
+      ],
+      "parameters": {
+        "shelf_height_m": 1.0667,
+        "depth_m": 0.3006
+      }
+    },
+    {
+      "kind": "high_shelf",
+      "index": 15,
+      "target": [
+        -0.0273,
+        0.1514,
+        1.9753
+      ],
+      "parameters": {
+        "shelf_height_m": 1.9153,
+        "depth_m": 0.3027
+      }
+    },
+    {
+      "kind": "high_shelf",
+      "index": 16,
+      "target": [
+        -0.0206,
+        0.172,
+        1.4645
+      ],
+      "parameters": {
+        "shelf_height_m": 1.4045,
+        "depth_m": 0.3441
+      }
+    },
+    {
+      "kind": "high_shelf",
+      "index": 17,
+      "target": [
+        -0.1103,
+        0.1505,
+        1.7753
+      ],
+      "parameters": {
+        "shelf_height_m": 1.7153,
+        "depth_m": 0.3011
+      }
+    },
+    {
+      "kind": "high_shelf",
+      "index": 18,
+      "target": [
+        -0.0149,
+        0.1276,
+        1.4193
+      ],
+      "parameters": {
+        "shelf_height_m": 1.3593,
+        "depth_m": 0.2552
+      }
+    },
+    {
+      "kind": "high_shelf",
+      "index": 19,
+      "target": [
+        -0.049,
+        0.1339,
+        1.5033
+      ],
+      "parameters": {
+        "shelf_height_m": 1.4433,
+        "depth_m": 0.2677
+      }
+    },
+    {
+      "kind": "open_low_cubby",
+      "index": 0,
+      "target": [
+        -0.1643,
+        0.2507,
+        0.1
+      ],
+      "parameters": {
+        "opening_height_m": 0.3389,
+        "depth_m": 0.3288
+      }
+    },
+    {
+      "kind": "open_low_cubby",
+      "index": 1,
+      "target": [
+        0.136,
+        0.2578,
+        0.1
+      ],
+      "parameters": {
+        "opening_height_m": 0.3016,
+        "depth_m": 0.3565
+      }
+    },
+    {
+      "kind": "open_low_cubby",
+      "index": 2,
+      "target": [
+        -0.1569,
+        0.2341,
+        0.1
+      ],
+      "parameters": {
+        "opening_height_m": 0.3447,
+        "depth_m": 0.3583
+      }
+    },
+    {
+      "kind": "open_low_cubby",
+      "index": 3,
+      "target": [
+        0.121,
+        0.2707,
+        0.1
+      ],
+      "parameters": {
+        "opening_height_m": 0.3513,
+        "depth_m": 0.3089
+      }
+    },
+    {
+      "kind": "open_low_cubby",
+      "index": 4,
+      "target": [
+        -0.1029,
+        0.294,
+        0.1
+      ],
+      "parameters": {
+        "opening_height_m": 0.3444,
+        "depth_m": 0.3906
+      }
+    },
+    {
+      "kind": "open_low_cubby",
+      "index": 5,
+      "target": [
+        0.1359,
+        0.3056,
+        0.1
+      ],
+      "parameters": {
+        "opening_height_m": 0.3321,
+        "depth_m": 0.3879
+      }
+    },
+    {
+      "kind": "open_low_cubby",
+      "index": 6,
+      "target": [
+        -0.1266,
+        0.2163,
+        0.1
+      ],
+      "parameters": {
+        "opening_height_m": 0.3234,
+        "depth_m": 0.3105
+      }
+    },
+    {
+      "kind": "open_low_cubby",
+      "index": 7,
+      "target": [
+        -0.1523,
+        0.2275,
+        0.1
+      ],
+      "parameters": {
+        "opening_height_m": 0.2865,
+        "depth_m": 0.3556
+      }
+    },
+    {
+      "kind": "open_low_cubby",
+      "index": 8,
+      "target": [
+        0.0839,
+        0.2702,
+        0.1
+      ],
+      "parameters": {
+        "opening_height_m": 0.2875,
+        "depth_m": 0.3549
+      }
+    },
+    {
+      "kind": "open_low_cubby",
+      "index": 9,
+      "target": [
+        0.1322,
+        0.2054,
+        0.1
+      ],
+      "parameters": {
+        "opening_height_m": 0.3496,
+        "depth_m": 0.3375
+      }
+    },
+    {
+      "kind": "open_low_cubby",
+      "index": 10,
+      "target": [
+        -0.1344,
+        0.2149,
+        0.1
+      ],
+      "parameters": {
+        "opening_height_m": 0.2844,
+        "depth_m": 0.35
+      }
+    },
+    {
+      "kind": "open_low_cubby",
+      "index": 11,
+      "target": [
+        -0.1753,
+        0.3288,
+        0.1
+      ],
+      "parameters": {
+        "opening_height_m": 0.3243,
+        "depth_m": 0.3883
+      }
+    },
+    {
+      "kind": "open_low_cubby",
+      "index": 12,
+      "target": [
+        0.0823,
+        0.3193,
+        0.1
+      ],
+      "parameters": {
+        "opening_height_m": 0.3538,
+        "depth_m": 0.3748
+      }
+    },
+    {
+      "kind": "open_low_cubby",
+      "index": 13,
+      "target": [
+        0.1359,
+        0.2568,
+        0.1
+      ],
+      "parameters": {
+        "opening_height_m": 0.2807,
+        "depth_m": 0.3173
+      }
+    },
+    {
+      "kind": "open_low_cubby",
+      "index": 14,
+      "target": [
+        0.0204,
+        0.3267,
+        0.1
+      ],
+      "parameters": {
+        "opening_height_m": 0.3629,
+        "depth_m": 0.3823
+      }
+    },
+    {
+      "kind": "open_low_cubby",
+      "index": 15,
+      "target": [
+        -0.0626,
+        0.2587,
+        0.1
+      ],
+      "parameters": {
+        "opening_height_m": 0.3576,
+        "depth_m": 0.3008
+      }
+    },
+    {
+      "kind": "open_low_cubby",
+      "index": 16,
+      "target": [
+        0.0582,
+        0.2587,
+        0.1
+      ],
+      "parameters": {
+        "opening_height_m": 0.3101,
+        "depth_m": 0.3514
+      }
+    },
+    {
+      "kind": "open_low_cubby",
+      "index": 17,
+      "target": [
+        0.0842,
+        0.2387,
+        0.1
+      ],
+      "parameters": {
+        "opening_height_m": 0.3085,
+        "depth_m": 0.3593
+      }
+    },
+    {
+      "kind": "open_low_cubby",
+      "index": 18,
+      "target": [
+        -0.1454,
+        0.3114,
+        0.1
+      ],
+      "parameters": {
+        "opening_height_m": 0.3001,
+        "depth_m": 0.3925
+      }
+    },
+    {
+      "kind": "open_low_cubby",
+      "index": 19,
+      "target": [
+        0.1674,
+        0.2518,
+        0.1
+      ],
+      "parameters": {
+        "opening_height_m": 0.2926,
+        "depth_m": 0.3763
+      }
+    }
+  ],
   "candidates": [
     {
       "id": "baseline_4x011",
-      "model_hash": "98c478c3c53d879dc214310017f60c63d7a15de30a27975ecca86a81e654fe10",
+      "model_hash": "e13ec96fe6967ea594d949ff9f2ff04273315a73eed3d7f484bf457fe05fd0cc",
       "parameters": {
         "spine_segments": 4,
         "leg_pairs": 3,
@@ -18,159 +1331,743 @@
         "include_head": true,
         "include_free_base": true,
         "include_actuators": true,
-        "actuator_torque_limit_nm": 3.8
+        "actuator_torque_limit_nm": 3.8,
+        "masses": {
+          "servo_kg": 0.082,
+          "servo_size_m": [
+            0.0285,
+            0.0465,
+            0.034
+          ],
+          "wiring_per_servo_kg": 0.008,
+          "spine_structure_kg_per_m": 0.55,
+          "leg_structure_kg_per_m": 0.25,
+          "foot_kg": 0.015,
+          "neck_structure_kg_per_m": 0.15,
+          "head_kg": 0.09,
+          "electronics_kg": 0.15,
+          "battery_kg": 0.2
+        },
+        "joint_limits": {
+          "spine_yaw_rad": 1.5708,
+          "spine_pitch_rad": 1.7453,
+          "hip_yaw_rad": 1.5708,
+          "hip_pitch_rad": 2.3562,
+          "knee_rad": 2.3562,
+          "neck_yaw_rad": 2.618,
+          "neck_pitch_rad": 2.7925,
+          "neck_roll_rad": 0.7854
+        }
       },
       "dof_count_nv": 32,
-      "mass_kg": 10.239999999999997,
-      "length_m": 1.08,
+      "mass_kg": 3.532,
       "morphologies": {
         "quadruped": {
-          "camera_height_range_m": [
-            -0.027059887614942796,
-            0.2896860244961992,
-            0.4155428405462588
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": -0.14805280338904228,
-          "max_gravity_torque_nm": 1.396348746039207,
-          "torque_margin_nm": 2.403651253960793,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            0.29432063334524955,
-            -0.3939779667918599,
-            0.2896860244961992
-          ],
-          "support_point_count": 4,
-          "render": "images/baseline_4x011_quadruped.png"
+          "retraction_pose_deg": {
+            "leg_left_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_right_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ]
+          },
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0156,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.06,
+            "head_on_floor": false,
+            "max_speed": 0.0002,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 1.244,
+            "required_torque_joint": "spine_0_pitch",
+            "static_margin_m": 0.0604,
+            "body_height_m": 0.3935,
+            "floor_contacts": 4,
+            "camera": {
+              "level_gaze_height_m": 0.2914,
+              "level_gaze_elevation_deg": -1.0,
+              "near_level_height_range_m": [
+                0.2084,
+                0.3747
+              ],
+              "sweep_height_range_m": [
+                0.0805,
+                0.6411
+              ],
+              "sweep_elevation_range_deg": [
+                -33.0,
+                59.0
+              ],
+              "self_contact_samples": 0,
+              "floor_collision_samples": 7
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0156,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.06,
+            "head_on_floor": false,
+            "max_speed": 0.0002,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              0.000152,
+              0.0,
+              0.282983,
+              0.999964,
+              0.0,
+              0.008543,
+              0.0,
+              0.0,
+              -0.005884,
+              0.0,
+              0.01555,
+              0.0,
+              0.000236,
+              0.000132,
+              0.0,
+              0.000236,
+              0.000132,
+              0.0,
+              0.002614,
+              0.0,
+              -2.092907,
+              -2.356307,
+              0.0,
+              -2.092907,
+              -2.356307,
+              0.0,
+              -0.000201,
+              0.0,
+              -0.000271,
+              -0.00015,
+              0.0,
+              -0.000271,
+              -0.00015
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.32,
+          "level_gaze_height_gap_m": -0.0286,
+          "spine_overrides": {}
         },
         "hexapod": {
-          "camera_height_range_m": [
-            0.06374039733250217,
-            0.06517448993210935,
-            0.07625160079126678
-          ],
-          "can_view_ground_1m": false,
-          "static_margin_m": -0.18387962431413524,
-          "max_gravity_torque_nm": 11.67720904970172,
-          "torque_margin_nm": -7.87720904970172,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            0.3276071849903067,
-            0.2438838854862183,
-            0.06517448993210935
-          ],
-          "support_point_count": 6,
-          "render": "images/baseline_4x011_hexapod.png"
+          "retraction_pose_deg": {},
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0156,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.02,
+            "head_on_floor": false,
+            "max_speed": 0.0001,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 1.244,
+            "required_torque_joint": "spine_0_pitch",
+            "static_margin_m": 0.0536,
+            "body_height_m": 0.3593,
+            "floor_contacts": 4,
+            "camera": {
+              "level_gaze_height_m": 0.2917,
+              "level_gaze_elevation_deg": -0.9,
+              "near_level_height_range_m": [
+                0.2087,
+                0.375
+              ],
+              "sweep_height_range_m": [
+                0.0807,
+                0.6413
+              ],
+              "sweep_elevation_range_deg": [
+                -32.9,
+                59.1
+              ],
+              "self_contact_samples": 0,
+              "floor_collision_samples": 7
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0156,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.02,
+            "head_on_floor": false,
+            "max_speed": 0.0001,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              6.2e-05,
+              0.0,
+              0.282916,
+              0.999966,
+              0.0,
+              0.008257,
+              0.0,
+              0.0,
+              -0.005884,
+              0.0,
+              0.015551,
+              0.0,
+              0.000129,
+              7.2e-05,
+              0.0,
+              0.000129,
+              7.2e-05,
+              0.0,
+              0.001388,
+              0.0,
+              -8e-06,
+              -3e-06,
+              0.0,
+              -8e-06,
+              -3e-06,
+              0.0,
+              8.1e-05,
+              0.0,
+              -0.000146,
+              -8.1e-05,
+              0.0,
+              -0.000146,
+              -8.1e-05
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.32,
+          "level_gaze_height_gap_m": -0.0283,
+          "spine_overrides": {}
         },
         "centaur": {
-          "camera_height_range_m": [
-            -0.1495471824464939,
-            0.3792997951903481,
-            0.44548126463104865
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": -0.11547984227917604,
-          "max_gravity_torque_nm": 6.9823971706028365,
-          "torque_margin_nm": -3.1823971706028367,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            -0.03602197339813515,
-            -0.17556267830938194,
-            0.3792997951903481
-          ],
-          "support_point_count": 4,
-          "render": "images/baseline_4x011_centaur.png"
+          "retraction_pose_deg": {
+            "leg_left_0": [
+              0.0,
+              0.0,
+              135.0
+            ],
+            "leg_right_0": [
+              0.0,
+              0.0,
+              135.0
+            ]
+          },
+          "unlimited": {
+            "posture_reached": false,
+            "max_joint_error_rad": 0.0427,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 53.69,
+            "head_on_floor": true,
+            "max_speed": 0.0133,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 3.455,
+            "required_torque_joint": "spine_0_pitch",
+            "static_margin_m": 0.0437,
+            "body_height_m": 0.4022,
+            "floor_contacts": 3,
+            "camera": {
+              "level_gaze_height_m": 0.3569,
+              "level_gaze_elevation_deg": -1.2,
+              "near_level_height_range_m": [
+                0.2739,
+                0.4402
+              ],
+              "sweep_height_range_m": [
+                0.0624,
+                0.4402
+              ],
+              "sweep_elevation_range_deg": [
+                -49.2,
+                10.8
+              ],
+              "self_contact_samples": 0,
+              "floor_collision_samples": 15
+            }
+          },
+          "limited": {
+            "posture_reached": false,
+            "max_joint_error_rad": 0.0474,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 54.09,
+            "head_on_floor": true,
+            "max_speed": 0.0047,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              0.257603,
+              0.0,
+              0.159369,
+              0.936995,
+              0.0,
+              -0.349344,
+              0.0,
+              0.0,
+              -1.537008,
+              0.0,
+              -0.047414,
+              0.0,
+              -0.001434,
+              2.356132,
+              0.0,
+              -0.001434,
+              2.356132,
+              0.0,
+              -1.610383,
+              0.0,
+              -0.024468,
+              -0.012941,
+              0.0,
+              -0.024468,
+              -0.012941,
+              0.0,
+              0.00657,
+              0.0,
+              0.002132,
+              0.000351,
+              0.0,
+              0.002132,
+              0.000351
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": null,
+          "camera_height_target_m": 0.78,
+          "level_gaze_height_gap_m": -0.4231,
+          "spine_overrides": {}
         },
         "snake": {
-          "camera_height_range_m": [
-            -0.1266053878138938,
-            0.32493217690524734,
-            0.4615030187321151
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": 0.07858747809991717,
-          "max_gravity_torque_nm": 7.043348662540067,
-          "torque_margin_nm": -3.2433486625400674,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            0.22099338681574354,
-            -0.5011673611663812,
-            0.32493217690524734
-          ],
-          "support_point_count": 12,
-          "render": "images/baseline_4x011_snake.png"
+          "retraction_pose_deg": {
+            "leg_left_0": [
+              0.0,
+              90.0,
+              135.0
+            ],
+            "leg_right_0": [
+              0.0,
+              90.0,
+              135.0
+            ],
+            "leg_left_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_right_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_left_2": [
+              0.0,
+              -90.0,
+              -120.0
+            ],
+            "leg_right_2": [
+              0.0,
+              -90.0,
+              -120.0
+            ]
+          },
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0156,
+            "worst_joint": "neck_pitch",
+            "rear_tilt_deg": 0.0,
+            "head_on_floor": false,
+            "max_speed": 0.0,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 1.249,
+            "required_torque_joint": "neck_pitch",
+            "static_margin_m": 0.068,
+            "body_height_m": 0.1599,
+            "floor_contacts": 9,
+            "camera": {
+              "level_gaze_height_m": 0.0636,
+              "level_gaze_elevation_deg": 0.9,
+              "near_level_height_range_m": [
+                0.0636,
+                0.1467
+              ],
+              "sweep_height_range_m": [
+                0.0636,
+                0.4069
+              ],
+              "sweep_elevation_range_deg": [
+                0.9,
+                60.9
+              ],
+              "self_contact_samples": 0,
+              "floor_collision_samples": 15
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0156,
+            "worst_joint": "neck_pitch",
+            "rear_tilt_deg": 0.0,
+            "head_on_floor": false,
+            "max_speed": 0.0,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              -0.000136,
+              0.0,
+              0.033114,
+              0.99997,
+              0.0,
+              -0.007733,
+              0.0,
+              0.0,
+              0.015607,
+              0.0,
+              -0.015104,
+              0.0,
+              1.570286,
+              2.356278,
+              0.0,
+              1.570286,
+              2.356278,
+              0.0,
+              -0.000402,
+              0.0,
+              -2.092908,
+              -2.356307,
+              0.0,
+              -2.092908,
+              -2.356307,
+              0.0,
+              8.5e-05,
+              0.0,
+              -1.570958,
+              -2.094616,
+              0.0,
+              -1.570958,
+              -2.094616
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.08,
+          "level_gaze_height_gap_m": -0.0164,
+          "spine_overrides": {}
         },
         "periscope": {
-          "camera_height_range_m": [
-            -0.12596884451687992,
-            0.3256563857929302,
-            0.46168733552874747
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": 0.06086899326654498,
-          "max_gravity_torque_nm": 7.030675743144375,
-          "torque_margin_nm": -3.230675743144375,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            0.31243661275185086,
-            -0.5485556872492525,
-            0.3256563857929302
-          ],
-          "support_point_count": 12,
-          "render": "images/baseline_4x011_periscope.png"
+          "retraction_pose_deg": {
+            "leg_left_0": [
+              0.0,
+              90.0,
+              135.0
+            ],
+            "leg_right_0": [
+              0.0,
+              90.0,
+              135.0
+            ],
+            "leg_left_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_right_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_left_2": [
+              0.0,
+              -90.0,
+              -120.0
+            ],
+            "leg_right_2": [
+              0.0,
+              -90.0,
+              -120.0
+            ]
+          },
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0059,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.01,
+            "head_on_floor": false,
+            "max_speed": 0.0,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 0.476,
+            "required_torque_joint": "spine_0_pitch",
+            "static_margin_m": 0.068,
+            "body_height_m": 0.2905,
+            "floor_contacts": 10,
+            "camera": {
+              "level_gaze_height_m": 0.2228,
+              "level_gaze_elevation_deg": -0.4,
+              "near_level_height_range_m": [
+                0.1397,
+                0.306
+              ],
+              "sweep_height_range_m": [
+                0.0603,
+                0.5704
+              ],
+              "sweep_elevation_range_deg": [
+                -24.4,
+                59.6
+              ],
+              "self_contact_samples": 0,
+              "floor_collision_samples": 9
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0059,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.01,
+            "head_on_floor": false,
+            "max_speed": 0.0,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              -0.000684,
+              0.0,
+              -0.075224,
+              0.70927,
+              0.0,
+              -0.704937,
+              0.0,
+              0.0,
+              -1.576682,
+              0.0,
+              -1.564852,
+              0.0,
+              1.571157,
+              2.356278,
+              0.0,
+              1.571157,
+              2.356278,
+              0.0,
+              0.000307,
+              0.0,
+              -2.092908,
+              -2.356307,
+              0.0,
+              -2.092908,
+              -2.356307,
+              0.0,
+              -1.4e-05,
+              0.0,
+              -1.571007,
+              -2.094616,
+              0.0,
+              -1.571007,
+              -2.094616
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.45,
+          "level_gaze_height_gap_m": -0.2272,
+          "spine_overrides": {}
         }
       },
       "coverage_matrix": {
         "quadruped": {
           "under_bed": 1.0,
           "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
+          "behind_obstacle": 0.0,
           "high_shelf": 0.0,
           "open_low_cubby": 1.0
         },
         "hexapod": {
           "under_bed": 1.0,
           "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
+          "behind_obstacle": 0.0,
           "high_shelf": 0.0,
           "open_low_cubby": 1.0
         },
         "centaur": {
           "under_bed": 1.0,
           "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
+          "behind_obstacle": 0.0,
           "high_shelf": 0.0,
           "open_low_cubby": 1.0
         },
         "snake": {
           "under_bed": 1.0,
           "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
+          "behind_obstacle": 0.0,
           "high_shelf": 0.0,
           "open_low_cubby": 1.0
         },
         "periscope": {
           "under_bed": 1.0,
           "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
+          "behind_obstacle": 0.0,
           "high_shelf": 0.0,
           "open_low_cubby": 1.0
         }
       },
-      "max_torque_margin_nm": -7.87720904970172,
-      "best_by_hiding_type": {
-        "under_bed": "quadruped",
-        "under_sofa": "quadruped",
-        "behind_obstacle": "quadruped",
-        "high_shelf": "quadruped",
-        "open_low_cubby": "quadruped"
+      "coverage_by_min_pixels": {
+        "8": {
+          "quadruped": {
+            "under_bed": 1.0,
+            "under_sofa": 1.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "hexapod": {
+            "under_bed": 1.0,
+            "under_sofa": 1.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "centaur": {
+            "under_bed": 1.0,
+            "under_sofa": 1.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "snake": {
+            "under_bed": 1.0,
+            "under_sofa": 1.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "periscope": {
+            "under_bed": 1.0,
+            "under_sofa": 1.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          }
+        },
+        "16": {
+          "quadruped": {
+            "under_bed": 0.6,
+            "under_sofa": 0.75,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "hexapod": {
+            "under_bed": 0.6,
+            "under_sofa": 0.75,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "centaur": {
+            "under_bed": 0.6,
+            "under_sofa": 0.65,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "snake": {
+            "under_bed": 1.0,
+            "under_sofa": 0.9,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "periscope": {
+            "under_bed": 0.6,
+            "under_sofa": 0.75,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          }
+        },
+        "24": {
+          "quadruped": {
+            "under_bed": 0.5,
+            "under_sofa": 0.3,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.75
+          },
+          "hexapod": {
+            "under_bed": 0.5,
+            "under_sofa": 0.3,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.75
+          },
+          "centaur": {
+            "under_bed": 0.5,
+            "under_sofa": 0.3,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.75
+          },
+          "snake": {
+            "under_bed": 1.0,
+            "under_sofa": 0.5,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.75
+          },
+          "periscope": {
+            "under_bed": 0.5,
+            "under_sofa": 0.3,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.75
+          }
+        }
       },
-      "coverage_complete": false,
-      "complementary_type_count": 0
+      "summary": {
+        "postures_reached": 4,
+        "postures_not_reached": [
+          "centaur"
+        ],
+        "worst_required_torque_nm": 1.249,
+        "worst_required_torque_at": "snake/neck_pitch",
+        "static_torque_ok_all": true,
+        "min_static_margin_m": 0.0536,
+        "best_coverage": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 0.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        },
+        "morphing_gain_over_quadruped": {
+          "under_bed": 0.0,
+          "under_sofa": 0.0,
+          "behind_obstacle": 0.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 0.0
+        },
+        "types_with_morphing_gain": 0,
+        "coverage_eligible": [
+          "quadruped",
+          "hexapod",
+          "snake",
+          "periscope"
+        ],
+        "coverage_complete": false
+      }
     },
     {
       "id": "compact_short_neck",
-      "model_hash": "364e6392359cef137d1d10703b0207a917034014d689ce11ee436037535bdfd2",
+      "model_hash": "427f9129163926d64cd2ae920a913a970bf7aa8a6863d278a740c621bfb80d2f",
       "parameters": {
         "spine_segments": 4,
         "leg_pairs": 3,
@@ -185,159 +2082,742 @@
         "include_head": true,
         "include_free_base": true,
         "include_actuators": true,
-        "actuator_torque_limit_nm": 3.8
+        "actuator_torque_limit_nm": 3.8,
+        "masses": {
+          "servo_kg": 0.082,
+          "servo_size_m": [
+            0.0285,
+            0.0465,
+            0.034
+          ],
+          "wiring_per_servo_kg": 0.008,
+          "spine_structure_kg_per_m": 0.55,
+          "leg_structure_kg_per_m": 0.25,
+          "foot_kg": 0.015,
+          "neck_structure_kg_per_m": 0.15,
+          "head_kg": 0.09,
+          "electronics_kg": 0.15,
+          "battery_kg": 0.2
+        },
+        "joint_limits": {
+          "spine_yaw_rad": 1.5708,
+          "spine_pitch_rad": 1.7453,
+          "hip_yaw_rad": 1.5708,
+          "hip_pitch_rad": 2.3562,
+          "knee_rad": 2.3562,
+          "neck_yaw_rad": 2.618,
+          "neck_pitch_rad": 2.7925,
+          "neck_roll_rad": 0.7854
+        }
       },
       "dof_count_nv": 32,
-      "mass_kg": 10.239999999999997,
-      "length_m": 0.76,
+      "mass_kg": 3.398,
       "morphologies": {
         "quadruped": {
-          "camera_height_range_m": [
-            0.0951331530770369,
-            0.32433619057149254,
-            0.3284348900486162
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": 0.04824271218870108,
-          "max_gravity_torque_nm": 7.359700745693302,
-          "torque_margin_nm": -3.559700745693302,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            -0.11259064155331872,
-            0.02284415749943217,
-            0.32433619057149254
-          ],
-          "support_point_count": 4,
-          "render": "images/compact_short_neck_quadruped.png"
+          "retraction_pose_deg": {
+            "leg_left_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_right_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ]
+          },
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0099,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.02,
+            "head_on_floor": false,
+            "max_speed": 0.0001,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 0.793,
+            "required_torque_joint": "spine_0_pitch",
+            "static_margin_m": 0.0552,
+            "body_height_m": 0.3305,
+            "floor_contacts": 4,
+            "camera": {
+              "level_gaze_height_m": 0.2536,
+              "level_gaze_elevation_deg": -0.6,
+              "near_level_height_range_m": [
+                0.2121,
+                0.2952
+              ],
+              "sweep_height_range_m": [
+                0.0815,
+                0.4279
+              ],
+              "sweep_elevation_range_deg": [
+                -60.6,
+                59.4
+              ],
+              "self_contact_samples": 0,
+              "floor_collision_samples": 0
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0099,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.02,
+            "head_on_floor": false,
+            "max_speed": 0.0001,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              6.5e-05,
+              0.0,
+              0.238178,
+              0.999986,
+              0.0,
+              0.005325,
+              0.0,
+              0.0,
+              -0.002575,
+              0.0,
+              0.00991,
+              0.0,
+              8.8e-05,
+              4.9e-05,
+              0.0,
+              8.8e-05,
+              4.9e-05,
+              0.0,
+              0.001098,
+              0.0,
+              -2.093206,
+              -2.356282,
+              0.0,
+              -2.093206,
+              -2.356282,
+              0.0,
+              4.2e-05,
+              0.0,
+              -0.000101,
+              -5.6e-05,
+              0.0,
+              -0.000101,
+              -5.6e-05
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.32,
+          "level_gaze_height_gap_m": -0.0664,
+          "spine_overrides": {}
         },
         "hexapod": {
-          "camera_height_range_m": [
-            0.009763763290128624,
-            0.04964051304397403,
-            0.0869186719112518
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": -0.16057518582169997,
-          "max_gravity_torque_nm": 9.392715444530282,
-          "torque_margin_nm": -5.592715444530282,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            0.28681256726831394,
-            0.3058706825182261,
-            0.04964051304397403
-          ],
-          "support_point_count": 6,
-          "render": "images/compact_short_neck_hexapod.png"
+          "retraction_pose_deg": {},
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0099,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.02,
+            "head_on_floor": false,
+            "max_speed": 0.0001,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 0.793,
+            "required_torque_joint": "spine_0_pitch",
+            "static_margin_m": 0.0495,
+            "body_height_m": 0.3231,
+            "floor_contacts": 6,
+            "camera": {
+              "level_gaze_height_m": 0.2536,
+              "level_gaze_elevation_deg": -0.6,
+              "near_level_height_range_m": [
+                0.212,
+                0.2952
+              ],
+              "sweep_height_range_m": [
+                0.0815,
+                0.4278
+              ],
+              "sweep_elevation_range_deg": [
+                -60.6,
+                59.4
+              ],
+              "self_contact_samples": 0,
+              "floor_collision_samples": 0
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0099,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.02,
+            "head_on_floor": false,
+            "max_speed": 0.0001,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              1.8e-05,
+              0.0,
+              0.238185,
+              0.999986,
+              0.0,
+              0.00536,
+              0.0,
+              0.0,
+              -0.002575,
+              0.0,
+              0.00991,
+              0.0,
+              9.9e-05,
+              5.5e-05,
+              0.0,
+              9.9e-05,
+              5.5e-05,
+              0.0,
+              0.001132,
+              0.0,
+              -4.3e-05,
+              -2.3e-05,
+              0.0,
+              -4.3e-05,
+              -2.3e-05,
+              0.0,
+              0.000111,
+              0.0,
+              -7e-05,
+              -3.9e-05,
+              0.0,
+              -7e-05,
+              -3.9e-05
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.32,
+          "level_gaze_height_gap_m": -0.0664,
+          "spine_overrides": {}
         },
         "centaur": {
-          "camera_height_range_m": [
-            -0.03851714404407601,
-            0.25528817111755164,
-            0.26808755249823446
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": -0.10359764868919417,
-          "max_gravity_torque_nm": 5.9444289743980825,
-          "torque_margin_nm": -2.1444289743980827,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            -0.14500337849819592,
-            -0.08196492042684024,
-            0.25528817111755164
-          ],
-          "support_point_count": 4,
-          "render": "images/compact_short_neck_centaur.png"
+          "retraction_pose_deg": {
+            "leg_left_0": [
+              0.0,
+              0.0,
+              135.0
+            ],
+            "leg_right_0": [
+              0.0,
+              0.0,
+              135.0
+            ]
+          },
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0083,
+            "worst_joint": "spine_1_pitch",
+            "rear_tilt_deg": 0.06,
+            "head_on_floor": false,
+            "max_speed": 0.0001,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 0.665,
+            "required_torque_joint": "spine_1_pitch",
+            "static_margin_m": 0.0049,
+            "body_height_m": 0.5537,
+            "floor_contacts": 4,
+            "camera": {
+              "level_gaze_height_m": 0.4843,
+              "level_gaze_elevation_deg": -0.7,
+              "near_level_height_range_m": [
+                0.4427,
+                0.5259
+              ],
+              "sweep_height_range_m": [
+                0.4031,
+                0.6587
+              ],
+              "sweep_elevation_range_deg": [
+                -24.7,
+                59.3
+              ],
+              "self_contact_samples": 9,
+              "floor_collision_samples": 0
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0083,
+            "worst_joint": "spine_1_pitch",
+            "rear_tilt_deg": 0.06,
+            "head_on_floor": false,
+            "max_speed": 0.0001,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              0.000125,
+              0.0,
+              0.237196,
+              0.711363,
+              0.0,
+              -0.702825,
+              0.0,
+              0.0,
+              -1.573371,
+              0.0,
+              0.002663,
+              0.0,
+              -0.001511,
+              2.356259,
+              0.0,
+              -0.001511,
+              2.356259,
+              0.0,
+              -1.562482,
+              0.0,
+              -9.2e-05,
+              -5e-05,
+              0.0,
+              -9.2e-05,
+              -5e-05,
+              0.0,
+              0.000381,
+              0.0,
+              4.6e-05,
+              2.5e-05,
+              0.0,
+              4.6e-05,
+              2.5e-05
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.78,
+          "level_gaze_height_gap_m": -0.2957,
+          "spine_overrides": {}
         },
         "snake": {
-          "camera_height_range_m": [
-            -0.03924619471450763,
-            0.2278176923289647,
-            0.2578899439368079
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": 0.06526153589545441,
-          "max_gravity_torque_nm": 5.46072140922178,
-          "torque_margin_nm": -1.6607214092217806,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            -0.052061997611547,
-            -0.1680826369088969,
-            0.2278176923289647
-          ],
-          "support_point_count": 12,
-          "render": "images/compact_short_neck_snake.png"
+          "retraction_pose_deg": {
+            "leg_left_0": [
+              0.0,
+              90.0,
+              135.0
+            ],
+            "leg_right_0": [
+              0.0,
+              90.0,
+              135.0
+            ],
+            "leg_left_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_right_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_left_2": [
+              0.0,
+              -90.0,
+              -120.0
+            ],
+            "leg_right_2": [
+              0.0,
+              -90.0,
+              -120.0
+            ]
+          },
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0249,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.03,
+            "head_on_floor": false,
+            "max_speed": 0.0,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 1.992,
+            "required_torque_joint": "spine_0_pitch",
+            "static_margin_m": 0.0542,
+            "body_height_m": 0.1398,
+            "floor_contacts": 7,
+            "camera": {
+              "level_gaze_height_m": 0.0662,
+              "level_gaze_elevation_deg": 2.2,
+              "near_level_height_range_m": [
+                0.0662,
+                0.1076
+              ],
+              "sweep_height_range_m": [
+                0.0662,
+                0.2354
+              ],
+              "sweep_elevation_range_deg": [
+                2.2,
+                62.2
+              ],
+              "self_contact_samples": 0,
+              "floor_collision_samples": 15
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0249,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.03,
+            "head_on_floor": false,
+            "max_speed": 0.0,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              -0.000126,
+              0.0,
+              0.029457,
+              0.999809,
+              0.0,
+              -0.019535,
+              0.0,
+              0.0,
+              0.017924,
+              0.0,
+              -0.024901,
+              0.0,
+              1.569291,
+              2.356261,
+              0.0,
+              1.569291,
+              2.356261,
+              0.0,
+              -0.013719,
+              0.0,
+              -2.093206,
+              -2.356282,
+              0.0,
+              -2.093206,
+              -2.356282,
+              0.0,
+              -0.000457,
+              0.0,
+              -1.571161,
+              -2.094564,
+              0.0,
+              -1.571161,
+              -2.094564
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": false,
+          "camera_height_target_m": 0.08,
+          "level_gaze_height_gap_m": -0.0138,
+          "spine_overrides": {}
         },
         "periscope": {
-          "camera_height_range_m": [
-            -0.038745695007415454,
-            0.2282363037246938,
-            0.25818008999451714
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": 0.06554161410509562,
-          "max_gravity_torque_nm": 5.444096874694319,
-          "torque_margin_nm": -1.644096874694319,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            -0.04720374422484046,
-            -0.16659846850393328,
-            0.2282363037246938
-          ],
-          "support_point_count": 12,
-          "render": "images/compact_short_neck_periscope.png"
+          "retraction_pose_deg": {
+            "leg_left_0": [
+              0.0,
+              90.0,
+              135.0
+            ],
+            "leg_right_0": [
+              0.0,
+              90.0,
+              135.0
+            ],
+            "leg_left_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_right_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_left_2": [
+              0.0,
+              -90.0,
+              -120.0
+            ],
+            "leg_right_2": [
+              0.0,
+              -90.0,
+              -120.0
+            ]
+          },
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0026,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.01,
+            "head_on_floor": false,
+            "max_speed": 0.0,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 0.208,
+            "required_torque_joint": "spine_0_pitch",
+            "static_margin_m": 0.0595,
+            "body_height_m": 0.2601,
+            "floor_contacts": 10,
+            "camera": {
+              "level_gaze_height_m": 0.1906,
+              "level_gaze_elevation_deg": -0.2,
+              "near_level_height_range_m": [
+                0.1491,
+                0.2322
+              ],
+              "sweep_height_range_m": [
+                0.0732,
+                0.3641
+              ],
+              "sweep_elevation_range_deg": [
+                -36.2,
+                59.8
+              ],
+              "self_contact_samples": 6,
+              "floor_collision_samples": 5
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0026,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.01,
+            "head_on_floor": false,
+            "max_speed": 0.0,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              -0.000253,
+              0.0,
+              -0.058321,
+              0.708075,
+              0.0,
+              -0.706137,
+              0.0,
+              0.0,
+              -1.573371,
+              0.0,
+              -1.568201,
+              0.0,
+              1.571112,
+              2.35626,
+              0.0,
+              1.571112,
+              2.35626,
+              0.0,
+              0.000255,
+              0.0,
+              -2.093206,
+              -2.356282,
+              0.0,
+              -2.093206,
+              -2.356282,
+              0.0,
+              -6e-05,
+              0.0,
+              -1.570963,
+              -2.094564,
+              0.0,
+              -1.570963,
+              -2.094564
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.45,
+          "level_gaze_height_gap_m": -0.2594,
+          "spine_overrides": {}
         }
       },
       "coverage_matrix": {
         "quadruped": {
           "under_bed": 1.0,
           "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
+          "behind_obstacle": 0.0,
           "high_shelf": 0.0,
           "open_low_cubby": 1.0
         },
         "hexapod": {
           "under_bed": 1.0,
           "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
+          "behind_obstacle": 0.0,
           "high_shelf": 0.0,
           "open_low_cubby": 1.0
         },
         "centaur": {
-          "under_bed": 1.0,
-          "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
+          "under_bed": 0.55,
+          "under_sofa": 0.25,
+          "behind_obstacle": 0.0,
           "high_shelf": 0.0,
           "open_low_cubby": 1.0
         },
         "snake": {
           "under_bed": 1.0,
           "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
+          "behind_obstacle": 0.0,
           "high_shelf": 0.0,
           "open_low_cubby": 1.0
         },
         "periscope": {
           "under_bed": 1.0,
           "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
+          "behind_obstacle": 0.0,
           "high_shelf": 0.0,
           "open_low_cubby": 1.0
         }
       },
-      "max_torque_margin_nm": -5.592715444530282,
-      "best_by_hiding_type": {
-        "under_bed": "quadruped",
-        "under_sofa": "quadruped",
-        "behind_obstacle": "quadruped",
-        "high_shelf": "quadruped",
-        "open_low_cubby": "quadruped"
+      "coverage_by_min_pixels": {
+        "8": {
+          "quadruped": {
+            "under_bed": 1.0,
+            "under_sofa": 1.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "hexapod": {
+            "under_bed": 1.0,
+            "under_sofa": 1.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "centaur": {
+            "under_bed": 0.55,
+            "under_sofa": 0.25,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "snake": {
+            "under_bed": 1.0,
+            "under_sofa": 1.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "periscope": {
+            "under_bed": 1.0,
+            "under_sofa": 1.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          }
+        },
+        "16": {
+          "quadruped": {
+            "under_bed": 0.6,
+            "under_sofa": 0.65,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "hexapod": {
+            "under_bed": 0.6,
+            "under_sofa": 0.65,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "centaur": {
+            "under_bed": 0.0,
+            "under_sofa": 0.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "snake": {
+            "under_bed": 1.0,
+            "under_sofa": 0.9,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "periscope": {
+            "under_bed": 0.6,
+            "under_sofa": 0.75,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          }
+        },
+        "24": {
+          "quadruped": {
+            "under_bed": 0.5,
+            "under_sofa": 0.25,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.75
+          },
+          "hexapod": {
+            "under_bed": 0.5,
+            "under_sofa": 0.25,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.75
+          },
+          "centaur": {
+            "under_bed": 0.0,
+            "under_sofa": 0.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.0
+          },
+          "snake": {
+            "under_bed": 1.0,
+            "under_sofa": 0.7,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.75
+          },
+          "periscope": {
+            "under_bed": 0.5,
+            "under_sofa": 0.3,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.75
+          }
+        }
       },
-      "coverage_complete": false,
-      "complementary_type_count": 0
+      "summary": {
+        "postures_reached": 5,
+        "postures_not_reached": [],
+        "worst_required_torque_nm": 1.992,
+        "worst_required_torque_at": "snake/spine_0_pitch",
+        "static_torque_ok_all": false,
+        "min_static_margin_m": 0.0049,
+        "best_coverage": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 0.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 1.0
+        },
+        "morphing_gain_over_quadruped": {
+          "under_bed": 0.0,
+          "under_sofa": 0.0,
+          "behind_obstacle": 0.0,
+          "high_shelf": 0.0,
+          "open_low_cubby": 0.0
+        },
+        "types_with_morphing_gain": 0,
+        "coverage_eligible": [
+          "quadruped",
+          "hexapod",
+          "centaur",
+          "snake",
+          "periscope"
+        ],
+        "coverage_complete": false
+      }
     },
     {
       "id": "long_spine_5",
-      "model_hash": "2a8509be8048acb6ad373cfb95d5c7bee81bbdba4ec5cc97d955d5dc9e60b222",
+      "model_hash": "c2b017f616f6cd1d3ceec029701c2885b2b597039c6d5a342b4d0925d9018676",
       "parameters": {
         "spine_segments": 5,
         "leg_pairs": 3,
@@ -352,159 +2832,752 @@
         "include_head": true,
         "include_free_base": true,
         "include_actuators": true,
-        "actuator_torque_limit_nm": 3.8
+        "actuator_torque_limit_nm": 3.8,
+        "masses": {
+          "servo_kg": 0.082,
+          "servo_size_m": [
+            0.0285,
+            0.0465,
+            0.034
+          ],
+          "wiring_per_servo_kg": 0.008,
+          "spine_structure_kg_per_m": 0.55,
+          "leg_structure_kg_per_m": 0.25,
+          "foot_kg": 0.015,
+          "neck_structure_kg_per_m": 0.15,
+          "head_kg": 0.09,
+          "electronics_kg": 0.15,
+          "battery_kg": 0.2
+        },
+        "joint_limits": {
+          "spine_yaw_rad": 1.5708,
+          "spine_pitch_rad": 1.7453,
+          "hip_yaw_rad": 1.5708,
+          "hip_pitch_rad": 2.3562,
+          "knee_rad": 2.3562,
+          "neck_yaw_rad": 2.618,
+          "neck_pitch_rad": 2.7925,
+          "neck_roll_rad": 0.7854
+        }
       },
       "dof_count_nv": 34,
-      "mass_kg": 11.239999999999997,
-      "length_m": 1.04,
+      "mass_kg": 3.75,
       "morphologies": {
         "quadruped": {
-          "camera_height_range_m": [
-            0.04262327992134893,
-            0.32744849379944874,
-            0.4363834339738435
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": -0.09208913815340364,
-          "max_gravity_torque_nm": 8.488196090485236,
-          "torque_margin_nm": -4.688196090485236,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            0.14130605507168637,
-            -0.013254458824419689,
-            0.32744849379944874
-          ],
-          "support_point_count": 4,
-          "render": "images/long_spine_5_quadruped.png"
+          "retraction_pose_deg": {
+            "leg_left_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_right_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ]
+          },
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0125,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.06,
+            "head_on_floor": false,
+            "max_speed": 0.0004,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 1.002,
+            "required_torque_joint": "spine_0_pitch",
+            "static_margin_m": 0.068,
+            "body_height_m": 0.3935,
+            "floor_contacts": 4,
+            "camera": {
+              "level_gaze_height_m": 0.2953,
+              "level_gaze_elevation_deg": -0.8,
+              "near_level_height_range_m": [
+                0.2434,
+                0.3474
+              ],
+              "sweep_height_range_m": [
+                0.0806,
+                0.5135
+              ],
+              "sweep_elevation_range_deg": [
+                -60.8,
+                59.2
+              ],
+              "self_contact_samples": 0,
+              "floor_collision_samples": 0
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0125,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.06,
+            "head_on_floor": false,
+            "max_speed": 0.0004,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              -0.000352,
+              0.0,
+              0.283379,
+              0.999976,
+              0.0,
+              0.006862,
+              0.0,
+              0.0,
+              -0.003333,
+              0.0,
+              0.012529,
+              0.0,
+              0.000601,
+              0.000335,
+              0.0,
+              0.000601,
+              0.000335,
+              0.0,
+              0.002193,
+              0.0,
+              -2.092907,
+              -2.356307,
+              0.0,
+              -2.092907,
+              -2.356307,
+              0.0,
+              0.002806,
+              0.0,
+              -0.000555,
+              -0.000309,
+              0.0,
+              -0.000555,
+              -0.000309,
+              0.0,
+              0.000408
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.32,
+          "level_gaze_height_gap_m": -0.0247,
+          "spine_overrides": {}
         },
         "hexapod": {
-          "camera_height_range_m": [
-            0.20252491789875732,
-            0.37462424575865133,
-            0.48334053088618695
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": -0.05463501434716104,
-          "max_gravity_torque_nm": 9.557023871541242,
-          "torque_margin_nm": -5.757023871541242,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            0.05742948177999804,
-            0.03406174625832609,
-            0.37462424575865133
-          ],
-          "support_point_count": 6,
-          "render": "images/long_spine_5_hexapod.png"
+          "retraction_pose_deg": {},
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0125,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.03,
+            "head_on_floor": false,
+            "max_speed": 0.0005,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 1.002,
+            "required_torque_joint": "spine_0_pitch",
+            "static_margin_m": 0.068,
+            "body_height_m": 0.3647,
+            "floor_contacts": 6,
+            "camera": {
+              "level_gaze_height_m": 0.2955,
+              "level_gaze_elevation_deg": -0.8,
+              "near_level_height_range_m": [
+                0.2436,
+                0.3476
+              ],
+              "sweep_height_range_m": [
+                0.0807,
+                0.5137
+              ],
+              "sweep_elevation_range_deg": [
+                -60.8,
+                59.2
+              ],
+              "self_contact_samples": 0,
+              "floor_collision_samples": 0
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0125,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.03,
+            "head_on_floor": false,
+            "max_speed": 0.0005,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              -0.000287,
+              0.0,
+              0.283311,
+              0.999978,
+              0.0,
+              0.006667,
+              0.0,
+              0.0,
+              -0.003333,
+              0.0,
+              0.01253,
+              0.0,
+              0.000398,
+              0.000221,
+              0.0,
+              0.000398,
+              0.000221,
+              0.0,
+              0.001329,
+              0.0,
+              0.000138,
+              7.7e-05,
+              0.0,
+              0.000138,
+              7.7e-05,
+              0.0,
+              0.002927,
+              0.0,
+              -0.0005,
+              -0.000277,
+              0.0,
+              -0.0005,
+              -0.000277,
+              0.0,
+              0.000408
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.32,
+          "level_gaze_height_gap_m": -0.0245,
+          "spine_overrides": {}
         },
         "centaur": {
-          "camera_height_range_m": [
-            0.030569872251859892,
-            0.2615015884024793,
-            0.37562416514444963
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": -0.07413100924495405,
-          "max_gravity_torque_nm": 8.191332386765698,
-          "torque_margin_nm": -4.391332386765698,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            0.07962894992013389,
-            0.19017926905389665,
-            0.2615015884024793
-          ],
-          "support_point_count": 4,
-          "render": "images/long_spine_5_centaur.png"
+          "retraction_pose_deg": {
+            "leg_left_0": [
+              0.0,
+              0.0,
+              135.0
+            ],
+            "leg_right_0": [
+              0.0,
+              0.0,
+              135.0
+            ]
+          },
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.01,
+            "worst_joint": "spine_1_pitch",
+            "rear_tilt_deg": 0.04,
+            "head_on_floor": false,
+            "max_speed": 0.0004,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 0.803,
+            "required_torque_joint": "spine_1_pitch",
+            "static_margin_m": 0.0221,
+            "body_height_m": 0.6472,
+            "floor_contacts": 4,
+            "camera": {
+              "level_gaze_height_m": 0.578,
+              "level_gaze_elevation_deg": -0.8,
+              "near_level_height_range_m": [
+                0.5261,
+                0.6301
+              ],
+              "sweep_height_range_m": [
+                0.4461,
+                0.7963
+              ],
+              "sweep_elevation_range_deg": [
+                -32.8,
+                59.2
+              ],
+              "self_contact_samples": 7,
+              "floor_collision_samples": 0
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.01,
+            "worst_joint": "spine_1_pitch",
+            "rear_tilt_deg": 0.04,
+            "head_on_floor": false,
+            "max_speed": 0.0004,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              -0.001421,
+              0.0,
+              0.226103,
+              0.712098,
+              0.0,
+              -0.70208,
+              0.0,
+              0.0,
+              -1.57413,
+              0.0,
+              0.003463,
+              0.0,
+              -0.001899,
+              2.356277,
+              0.0,
+              -0.001899,
+              2.356277,
+              0.0,
+              -1.560764,
+              0.0,
+              0.000359,
+              0.0002,
+              0.0,
+              0.000359,
+              0.0002,
+              0.0,
+              0.003267,
+              0.0,
+              -0.000348,
+              -0.000191,
+              0.0,
+              -0.000348,
+              -0.000191,
+              0.0,
+              0.000408
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.78,
+          "level_gaze_height_gap_m": -0.202,
+          "spine_overrides": {}
         },
         "snake": {
-          "camera_height_range_m": [
-            0.014185014469168242,
-            0.052273669437580286,
-            0.08955052475655625
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": 0.08426899362106459,
-          "max_gravity_torque_nm": 5.692942968975466,
-          "torque_margin_nm": -1.8929429689754658,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            -0.19001496327435566,
-            -0.462354186722906,
-            0.052273669437580286
-          ],
-          "support_point_count": 12,
-          "render": "images/long_spine_5_snake.png"
+          "retraction_pose_deg": {
+            "leg_left_0": [
+              0.0,
+              90.0,
+              135.0
+            ],
+            "leg_right_0": [
+              0.0,
+              90.0,
+              135.0
+            ],
+            "leg_left_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_right_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_left_2": [
+              0.0,
+              -90.0,
+              -120.0
+            ],
+            "leg_right_2": [
+              0.0,
+              -90.0,
+              -120.0
+            ]
+          },
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0209,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.0,
+            "head_on_floor": false,
+            "max_speed": 0.0,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 1.671,
+            "required_torque_joint": "spine_0_pitch",
+            "static_margin_m": 0.0644,
+            "body_height_m": 0.1599,
+            "floor_contacts": 7,
+            "camera": {
+              "level_gaze_height_m": 0.0657,
+              "level_gaze_elevation_deg": 1.4,
+              "near_level_height_range_m": [
+                0.0657,
+                0.1175
+              ],
+              "sweep_height_range_m": [
+                0.0657,
+                0.279
+              ],
+              "sweep_elevation_range_deg": [
+                1.4,
+                61.4
+              ],
+              "self_contact_samples": 0,
+              "floor_collision_samples": 15
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0209,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.0,
+            "head_on_floor": false,
+            "max_speed": 0.0,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              -0.000297,
+              0.0,
+              0.031113,
+              0.999922,
+              0.0,
+              -0.01247,
+              0.0,
+              0.0,
+              0.016528,
+              0.0,
+              -0.020884,
+              0.0,
+              1.568902,
+              2.356278,
+              0.0,
+              1.568902,
+              2.356278,
+              0.0,
+              -0.004004,
+              0.0,
+              -2.092908,
+              -2.356307,
+              0.0,
+              -2.092908,
+              -2.356307,
+              0.0,
+              0.001232,
+              0.0,
+              -1.572213,
+              -2.094616,
+              0.0,
+              -1.572213,
+              -2.094616,
+              0.0,
+              0.000408
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.08,
+          "level_gaze_height_gap_m": -0.0143,
+          "spine_overrides": {}
         },
         "periscope": {
-          "camera_height_range_m": [
-            0.022519777319953735,
-            0.05028466201509754,
-            0.08070322699309332
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": 0.08596170672865217,
-          "max_gravity_torque_nm": 5.312747658927234,
-          "torque_margin_nm": -1.5127476589272346,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            -0.18640703505692094,
-            -0.4734479550286151,
-            0.05028466201509754
-          ],
-          "support_point_count": 12,
-          "render": "images/long_spine_5_periscope.png"
+          "retraction_pose_deg": {
+            "leg_left_0": [
+              0.0,
+              90.0,
+              135.0
+            ],
+            "leg_right_0": [
+              0.0,
+              90.0,
+              135.0
+            ],
+            "leg_left_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_right_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_left_2": [
+              0.0,
+              -90.0,
+              -120.0
+            ],
+            "leg_right_2": [
+              0.0,
+              -90.0,
+              -120.0
+            ]
+          },
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0034,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.01,
+            "head_on_floor": false,
+            "max_speed": 0.0,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 0.269,
+            "required_torque_joint": "spine_0_pitch",
+            "static_margin_m": 0.068,
+            "body_height_m": 0.2936,
+            "floor_contacts": 10,
+            "camera": {
+              "level_gaze_height_m": 0.2244,
+              "level_gaze_elevation_deg": -0.2,
+              "near_level_height_range_m": [
+                0.1724,
+                0.2764
+              ],
+              "sweep_height_range_m": [
+                0.0639,
+                0.4413
+              ],
+              "sweep_elevation_range_deg": [
+                -40.2,
+                59.8
+              ],
+              "self_contact_samples": 5,
+              "floor_collision_samples": 5
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0034,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.01,
+            "head_on_floor": false,
+            "max_speed": 0.0,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              -0.000603,
+              0.0,
+              -0.130221,
+              0.708347,
+              0.0,
+              -0.705864,
+              0.0,
+              0.0,
+              -1.57413,
+              0.0,
+              -1.567431,
+              0.0,
+              1.57109,
+              2.356278,
+              0.0,
+              1.57109,
+              2.356278,
+              0.0,
+              0.000255,
+              0.0,
+              -2.092908,
+              -2.356307,
+              0.0,
+              -2.092908,
+              -2.356307,
+              0.0,
+              0.001225,
+              0.0,
+              -1.572215,
+              -2.094616,
+              0.0,
+              -1.572215,
+              -2.094616,
+              0.0,
+              0.000408
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.45,
+          "level_gaze_height_gap_m": -0.2256,
+          "spine_overrides": {}
         }
       },
       "coverage_matrix": {
         "quadruped": {
           "under_bed": 1.0,
           "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
+          "behind_obstacle": 0.0,
           "high_shelf": 0.0,
           "open_low_cubby": 1.0
         },
         "hexapod": {
           "under_bed": 1.0,
           "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
+          "behind_obstacle": 0.0,
           "high_shelf": 0.0,
           "open_low_cubby": 1.0
         },
         "centaur": {
-          "under_bed": 1.0,
-          "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
-          "high_shelf": 0.0,
+          "under_bed": 0.5,
+          "under_sofa": 0.2,
+          "behind_obstacle": 0.0,
+          "high_shelf": 0.05,
           "open_low_cubby": 1.0
         },
         "snake": {
           "under_bed": 1.0,
           "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
+          "behind_obstacle": 0.0,
           "high_shelf": 0.0,
           "open_low_cubby": 1.0
         },
         "periscope": {
           "under_bed": 1.0,
           "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
+          "behind_obstacle": 0.0,
           "high_shelf": 0.0,
           "open_low_cubby": 1.0
         }
       },
-      "max_torque_margin_nm": -5.757023871541242,
-      "best_by_hiding_type": {
-        "under_bed": "quadruped",
-        "under_sofa": "quadruped",
-        "behind_obstacle": "quadruped",
-        "high_shelf": "quadruped",
-        "open_low_cubby": "quadruped"
+      "coverage_by_min_pixels": {
+        "8": {
+          "quadruped": {
+            "under_bed": 1.0,
+            "under_sofa": 1.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "hexapod": {
+            "under_bed": 1.0,
+            "under_sofa": 1.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "centaur": {
+            "under_bed": 0.5,
+            "under_sofa": 0.2,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.05,
+            "open_low_cubby": 1.0
+          },
+          "snake": {
+            "under_bed": 1.0,
+            "under_sofa": 1.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "periscope": {
+            "under_bed": 1.0,
+            "under_sofa": 1.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          }
+        },
+        "16": {
+          "quadruped": {
+            "under_bed": 0.6,
+            "under_sofa": 0.5,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "hexapod": {
+            "under_bed": 0.6,
+            "under_sofa": 0.5,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "centaur": {
+            "under_bed": 0.05,
+            "under_sofa": 0.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "snake": {
+            "under_bed": 1.0,
+            "under_sofa": 0.9,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "periscope": {
+            "under_bed": 0.6,
+            "under_sofa": 0.75,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          }
+        },
+        "24": {
+          "quadruped": {
+            "under_bed": 0.5,
+            "under_sofa": 0.25,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.75
+          },
+          "hexapod": {
+            "under_bed": 0.5,
+            "under_sofa": 0.25,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.75
+          },
+          "centaur": {
+            "under_bed": 0.0,
+            "under_sofa": 0.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.0
+          },
+          "snake": {
+            "under_bed": 1.0,
+            "under_sofa": 0.5,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.75
+          },
+          "periscope": {
+            "under_bed": 0.5,
+            "under_sofa": 0.3,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.75
+          }
+        }
       },
-      "coverage_complete": false,
-      "complementary_type_count": 0
+      "summary": {
+        "postures_reached": 5,
+        "postures_not_reached": [],
+        "worst_required_torque_nm": 1.671,
+        "worst_required_torque_at": "snake/spine_0_pitch",
+        "static_torque_ok_all": true,
+        "min_static_margin_m": 0.0221,
+        "best_coverage": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 0.0,
+          "high_shelf": 0.05,
+          "open_low_cubby": 1.0
+        },
+        "morphing_gain_over_quadruped": {
+          "under_bed": 0.0,
+          "under_sofa": 0.0,
+          "behind_obstacle": 0.0,
+          "high_shelf": 0.05,
+          "open_low_cubby": 0.0
+        },
+        "types_with_morphing_gain": 0,
+        "coverage_eligible": [
+          "quadruped",
+          "hexapod",
+          "centaur",
+          "snake",
+          "periscope"
+        ],
+        "coverage_complete": false
+      }
     },
     {
       "id": "periscope_raise",
-      "model_hash": "6b2ff9bfcf93bb2a4cc80dc4cbbb45e943f630b8a58ba090b7764a6d2ac23e19",
+      "model_hash": "11e9c7fde163dcb038e76c69d83bd48d3c93e58b01bdd74f73a4826a0dfe90d7",
       "parameters": {
         "spine_segments": 4,
         "leg_pairs": 3,
@@ -519,159 +3592,745 @@
         "include_head": true,
         "include_free_base": true,
         "include_actuators": true,
-        "actuator_torque_limit_nm": 3.8
+        "actuator_torque_limit_nm": 3.8,
+        "masses": {
+          "servo_kg": 0.082,
+          "servo_size_m": [
+            0.0285,
+            0.0465,
+            0.034
+          ],
+          "wiring_per_servo_kg": 0.008,
+          "spine_structure_kg_per_m": 0.55,
+          "leg_structure_kg_per_m": 0.25,
+          "foot_kg": 0.015,
+          "neck_structure_kg_per_m": 0.15,
+          "head_kg": 0.09,
+          "electronics_kg": 0.15,
+          "battery_kg": 0.2
+        },
+        "joint_limits": {
+          "spine_yaw_rad": 1.5708,
+          "spine_pitch_rad": 1.7453,
+          "hip_yaw_rad": 1.5708,
+          "hip_pitch_rad": 2.3562,
+          "knee_rad": 2.3562,
+          "neck_yaw_rad": 2.618,
+          "neck_pitch_rad": 2.7925,
+          "neck_roll_rad": 0.7854
+        }
       },
       "dof_count_nv": 32,
-      "mass_kg": 10.239999999999997,
-      "length_m": 1.02,
+      "mass_kg": 3.539,
       "morphologies": {
         "quadruped": {
-          "camera_height_range_m": [
-            0.05093702062105902,
-            0.4207259928801233,
-            0.4675811355231596
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": 0.053430887111052996,
-          "max_gravity_torque_nm": 9.91964426480616,
-          "torque_margin_nm": -6.119644264806159,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            -0.06772854158382355,
-            -0.007055389535673345,
-            0.4207259928801233
-          ],
-          "support_point_count": 4,
-          "render": "images/periscope_raise_quadruped.png"
+          "retraction_pose_deg": {
+            "leg_left_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_right_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ]
+          },
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0144,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.04,
+            "head_on_floor": false,
+            "max_speed": 0.0002,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 1.15,
+            "required_torque_joint": "spine_0_pitch",
+            "static_margin_m": 0.068,
+            "body_height_m": 0.3935,
+            "floor_contacts": 4,
+            "camera": {
+              "level_gaze_height_m": 0.2936,
+              "level_gaze_elevation_deg": -0.9,
+              "near_level_height_range_m": [
+                0.2314,
+                0.3561
+              ],
+              "sweep_height_range_m": [
+                0.0722,
+                0.5557
+              ],
+              "sweep_elevation_range_deg": [
+                -48.9,
+                59.1
+              ],
+              "self_contact_samples": 0,
+              "floor_collision_samples": 3
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0144,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.04,
+            "head_on_floor": false,
+            "max_speed": 0.0002,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              8.3e-05,
+              0.0,
+              0.282951,
+              0.99997,
+              0.0,
+              0.007685,
+              0.0,
+              0.0,
+              -0.004138,
+              0.0,
+              0.014381,
+              0.0,
+              0.00017,
+              9.5e-05,
+              0.0,
+              0.00017,
+              9.5e-05,
+              0.0,
+              0.001625,
+              0.0,
+              -2.092908,
+              -2.356307,
+              0.0,
+              -2.092908,
+              -2.356307,
+              0.0,
+              6.1e-05,
+              0.0,
+              -0.000189,
+              -0.000105,
+              0.0,
+              -0.000189,
+              -0.000105
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.32,
+          "level_gaze_height_gap_m": -0.0264,
+          "spine_overrides": {}
         },
         "hexapod": {
-          "camera_height_range_m": [
-            0.06616852677376175,
-            0.06898973520732511,
-            0.07659209071622014
-          ],
-          "can_view_ground_1m": false,
-          "static_margin_m": -0.20211164938799314,
-          "max_gravity_torque_nm": 12.294392870378028,
-          "torque_margin_nm": -8.494392870378029,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            -0.35738457031294263,
-            0.34423953233483556,
-            0.06898973520732511
-          ],
-          "support_point_count": 6,
-          "render": "images/periscope_raise_hexapod.png"
+          "retraction_pose_deg": {},
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0144,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.02,
+            "head_on_floor": false,
+            "max_speed": 0.0001,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 1.151,
+            "required_torque_joint": "spine_0_pitch",
+            "static_margin_m": 0.0653,
+            "body_height_m": 0.3625,
+            "floor_contacts": 6,
+            "camera": {
+              "level_gaze_height_m": 0.2937,
+              "level_gaze_elevation_deg": -0.9,
+              "near_level_height_range_m": [
+                0.2315,
+                0.3562
+              ],
+              "sweep_height_range_m": [
+                0.0723,
+                0.5558
+              ],
+              "sweep_elevation_range_deg": [
+                -48.9,
+                59.1
+              ],
+              "self_contact_samples": 0,
+              "floor_collision_samples": 3
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0144,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.02,
+            "head_on_floor": false,
+            "max_speed": 0.0001,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              1.1e-05,
+              0.0,
+              0.282922,
+              0.999971,
+              0.0,
+              0.007568,
+              0.0,
+              0.0,
+              -0.004138,
+              0.0,
+              0.014381,
+              0.0,
+              0.000138,
+              7.7e-05,
+              0.0,
+              0.000138,
+              7.7e-05,
+              0.0,
+              0.00108,
+              0.0,
+              -4.5e-05,
+              -2.4e-05,
+              0.0,
+              -4.5e-05,
+              -2.4e-05,
+              0.0,
+              0.000244,
+              0.0,
+              -0.000107,
+              -5.9e-05,
+              0.0,
+              -0.000107,
+              -5.9e-05
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.32,
+          "level_gaze_height_gap_m": -0.0263,
+          "spine_overrides": {}
         },
         "centaur": {
-          "camera_height_range_m": [
-            -0.10771231972117376,
-            0.307039638776404,
-            0.34350891160936786
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": -0.11805418334535751,
-          "max_gravity_torque_nm": 7.908489087278436,
-          "torque_margin_nm": -4.1084890872784365,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            -0.07677648439466744,
-            -0.09127517328845859,
-            0.307039638776404
-          ],
-          "support_point_count": 4,
-          "render": "images/periscope_raise_centaur.png"
+          "retraction_pose_deg": {
+            "leg_left_0": [
+              0.0,
+              0.0,
+              135.0
+            ],
+            "leg_right_0": [
+              0.0,
+              0.0,
+              135.0
+            ]
+          },
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0109,
+            "worst_joint": "spine_1_pitch",
+            "rear_tilt_deg": 0.05,
+            "head_on_floor": false,
+            "max_speed": 0.0,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 0.874,
+            "required_torque_joint": "spine_1_pitch",
+            "static_margin_m": 0.0086,
+            "body_height_m": 0.671,
+            "floor_contacts": 4,
+            "camera": {
+              "level_gaze_height_m": 0.6022,
+              "level_gaze_elevation_deg": -0.9,
+              "near_level_height_range_m": [
+                0.54,
+                0.6647
+              ],
+              "sweep_height_range_m": [
+                0.3449,
+                0.8644
+              ],
+              "sweep_elevation_range_deg": [
+                -60.9,
+                59.1
+              ],
+              "self_contact_samples": 3,
+              "floor_collision_samples": 0
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0109,
+            "worst_joint": "spine_1_pitch",
+            "rear_tilt_deg": 0.05,
+            "head_on_floor": false,
+            "max_speed": 0.0,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              -0.000206,
+              0.0,
+              0.281087,
+              0.712784,
+              0.0,
+              -0.701383,
+              0.0,
+              0.0,
+              -1.574934,
+              0.0,
+              0.004302,
+              0.0,
+              -0.001899,
+              2.356277,
+              0.0,
+              -0.001899,
+              2.356277,
+              0.0,
+              -1.559874,
+              0.0,
+              -6.3e-05,
+              -3.4e-05,
+              0.0,
+              -6.3e-05,
+              -3.4e-05,
+              0.0,
+              0.000527,
+              0.0,
+              1.8e-05,
+              1e-05,
+              0.0,
+              1.8e-05,
+              1e-05
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.78,
+          "level_gaze_height_gap_m": -0.1778,
+          "spine_overrides": {}
         },
         "snake": {
-          "camera_height_range_m": [
-            -0.09503848706938915,
-            0.28378165363655483,
-            0.35442247841493807
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": 0.07224424812391383,
-          "max_gravity_torque_nm": 8.000840615047023,
-          "torque_margin_nm": -4.200840615047023,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            0.3217175371327168,
-            -0.3669213570381404,
-            0.28378165363655483
-          ],
-          "support_point_count": 12,
-          "render": "images/periscope_raise_snake.png"
+          "retraction_pose_deg": {
+            "leg_left_0": [
+              0.0,
+              90.0,
+              135.0
+            ],
+            "leg_right_0": [
+              0.0,
+              90.0,
+              135.0
+            ],
+            "leg_left_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_right_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_left_2": [
+              0.0,
+              -90.0,
+              -135.0
+            ],
+            "leg_right_2": [
+              0.0,
+              -90.0,
+              -135.0
+            ]
+          },
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0195,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.0,
+            "head_on_floor": false,
+            "max_speed": 0.0,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 1.561,
+            "required_torque_joint": "spine_0_pitch",
+            "static_margin_m": 0.068,
+            "body_height_m": 0.147,
+            "floor_contacts": 9,
+            "camera": {
+              "level_gaze_height_m": 0.0648,
+              "level_gaze_elevation_deg": 1.2,
+              "near_level_height_range_m": [
+                0.0648,
+                0.127
+              ],
+              "sweep_height_range_m": [
+                0.0648,
+                0.3215
+              ],
+              "sweep_elevation_range_deg": [
+                1.2,
+                61.2
+              ],
+              "self_contact_samples": 0,
+              "floor_collision_samples": 15
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0195,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.0,
+            "head_on_floor": false,
+            "max_speed": 0.0,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              -0.000315,
+              0.0,
+              0.032434,
+              0.999948,
+              0.0,
+              -0.010223,
+              0.0,
+              0.0,
+              0.01678,
+              0.0,
+              -0.01951,
+              0.0,
+              1.569131,
+              2.356278,
+              0.0,
+              1.569131,
+              2.356278,
+              0.0,
+              -0.000967,
+              0.0,
+              -2.092908,
+              -2.356307,
+              0.0,
+              -2.092908,
+              -2.356307,
+              0.0,
+              0.0001,
+              0.0,
+              -1.570989,
+              -2.356278,
+              0.0,
+              -1.570989,
+              -2.356278
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.08,
+          "level_gaze_height_gap_m": -0.0152,
+          "spine_overrides": {}
         },
         "periscope": {
-          "camera_height_range_m": [
-            -0.10653153416866418,
-            0.2765103678599943,
-            0.36829182504339275
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": 0.07578102225143422,
-          "max_gravity_torque_nm": 8.065111217211228,
-          "torque_margin_nm": -4.265111217211229,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            0.2924673785592058,
-            -0.36646969670832447,
-            0.2765103678599943
-          ],
-          "support_point_count": 12,
-          "render": "images/periscope_raise_periscope.png"
+          "retraction_pose_deg": {
+            "leg_left_0": [
+              0.0,
+              0.0,
+              135.0
+            ],
+            "leg_right_0": [
+              0.0,
+              0.0,
+              135.0
+            ],
+            "leg_left_1": [
+              0.0,
+              90.0,
+              135.0
+            ],
+            "leg_right_1": [
+              0.0,
+              90.0,
+              135.0
+            ],
+            "leg_left_2": [
+              0.0,
+              -90.0,
+              -135.0
+            ],
+            "leg_right_2": [
+              0.0,
+              -90.0,
+              -135.0
+            ]
+          },
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0109,
+            "worst_joint": "spine_1_pitch",
+            "rear_tilt_deg": 0.02,
+            "head_on_floor": false,
+            "max_speed": 0.0,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 0.872,
+            "required_torque_joint": "spine_1_pitch",
+            "static_margin_m": 0.068,
+            "body_height_m": 0.4248,
+            "floor_contacts": 8,
+            "camera": {
+              "level_gaze_height_m": 0.3561,
+              "level_gaze_elevation_deg": -0.9,
+              "near_level_height_range_m": [
+                0.2938,
+                0.4185
+              ],
+              "sweep_height_range_m": [
+                0.0986,
+                0.6182
+              ],
+              "sweep_elevation_range_deg": [
+                -60.9,
+                59.1
+              ],
+              "self_contact_samples": 3,
+              "floor_collision_samples": 0
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0109,
+            "worst_joint": "spine_1_pitch",
+            "rear_tilt_deg": 0.02,
+            "head_on_floor": false,
+            "max_speed": 0.0,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              -0.000512,
+              0.0,
+              0.034765,
+              0.712578,
+              0.0,
+              -0.701593,
+              0.0,
+              0.0,
+              -1.574934,
+              0.0,
+              0.004296,
+              0.0,
+              -0.001899,
+              2.356277,
+              0.0,
+              -0.001899,
+              2.356277,
+              0.0,
+              -1.559894,
+              0.0,
+              1.571443,
+              2.356278,
+              0.0,
+              1.571443,
+              2.356278,
+              0.0,
+              0.000409,
+              0.0,
+              -1.570835,
+              -2.356278,
+              0.0,
+              -1.570835,
+              -2.356278
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.45,
+          "level_gaze_height_gap_m": -0.0939,
+          "spine_overrides": {
+            "spine_0_pitch": 0.0,
+            "spine_1_pitch": -1.5707963267948966
+          }
         }
       },
       "coverage_matrix": {
         "quadruped": {
           "under_bed": 1.0,
           "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
+          "behind_obstacle": 0.0,
           "high_shelf": 0.0,
           "open_low_cubby": 1.0
         },
         "hexapod": {
           "under_bed": 1.0,
           "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
+          "behind_obstacle": 0.0,
           "high_shelf": 0.0,
           "open_low_cubby": 1.0
         },
         "centaur": {
-          "under_bed": 1.0,
-          "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
-          "high_shelf": 0.0,
+          "under_bed": 0.55,
+          "under_sofa": 0.2,
+          "behind_obstacle": 0.0,
+          "high_shelf": 0.1,
           "open_low_cubby": 1.0
         },
         "snake": {
           "under_bed": 1.0,
           "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
+          "behind_obstacle": 0.0,
           "high_shelf": 0.0,
           "open_low_cubby": 1.0
         },
         "periscope": {
           "under_bed": 1.0,
-          "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
+          "under_sofa": 0.9,
+          "behind_obstacle": 0.0,
           "high_shelf": 0.0,
           "open_low_cubby": 1.0
         }
       },
-      "max_torque_margin_nm": -8.494392870378029,
-      "best_by_hiding_type": {
-        "under_bed": "quadruped",
-        "under_sofa": "quadruped",
-        "behind_obstacle": "quadruped",
-        "high_shelf": "quadruped",
-        "open_low_cubby": "quadruped"
+      "coverage_by_min_pixels": {
+        "8": {
+          "quadruped": {
+            "under_bed": 1.0,
+            "under_sofa": 1.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "hexapod": {
+            "under_bed": 1.0,
+            "under_sofa": 1.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "centaur": {
+            "under_bed": 0.55,
+            "under_sofa": 0.2,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.1,
+            "open_low_cubby": 1.0
+          },
+          "snake": {
+            "under_bed": 1.0,
+            "under_sofa": 1.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "periscope": {
+            "under_bed": 1.0,
+            "under_sofa": 0.9,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          }
+        },
+        "16": {
+          "quadruped": {
+            "under_bed": 0.6,
+            "under_sofa": 0.65,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "hexapod": {
+            "under_bed": 0.6,
+            "under_sofa": 0.65,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "centaur": {
+            "under_bed": 0.2,
+            "under_sofa": 0.05,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "snake": {
+            "under_bed": 1.0,
+            "under_sofa": 0.9,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "periscope": {
+            "under_bed": 0.6,
+            "under_sofa": 0.4,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          }
+        },
+        "24": {
+          "quadruped": {
+            "under_bed": 0.5,
+            "under_sofa": 0.3,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.75
+          },
+          "hexapod": {
+            "under_bed": 0.5,
+            "under_sofa": 0.3,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.75
+          },
+          "centaur": {
+            "under_bed": 0.0,
+            "under_sofa": 0.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.75
+          },
+          "snake": {
+            "under_bed": 1.0,
+            "under_sofa": 0.65,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.75
+          },
+          "periscope": {
+            "under_bed": 0.5,
+            "under_sofa": 0.2,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.75
+          }
+        }
       },
-      "coverage_complete": false,
-      "complementary_type_count": 0
+      "summary": {
+        "postures_reached": 5,
+        "postures_not_reached": [],
+        "worst_required_torque_nm": 1.561,
+        "worst_required_torque_at": "snake/spine_0_pitch",
+        "static_torque_ok_all": true,
+        "min_static_margin_m": 0.0086,
+        "best_coverage": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 0.0,
+          "high_shelf": 0.1,
+          "open_low_cubby": 1.0
+        },
+        "morphing_gain_over_quadruped": {
+          "under_bed": 0.0,
+          "under_sofa": 0.0,
+          "behind_obstacle": 0.0,
+          "high_shelf": 0.1,
+          "open_low_cubby": 0.0
+        },
+        "types_with_morphing_gain": 0,
+        "coverage_eligible": [
+          "quadruped",
+          "hexapod",
+          "centaur",
+          "snake",
+          "periscope"
+        ],
+        "coverage_complete": false
+      }
     },
     {
       "id": "decoupled_neck_3dof",
-      "model_hash": "379ef87d9d30504120f91aeb91d65877734297e4fbce8b603faad1090a1a5290",
+      "model_hash": "45671c1d74951eb988a09db9c2b4282c140a970cb11206eb6466270b91e9ea57",
       "parameters": {
         "spine_segments": 4,
         "leg_pairs": 3,
@@ -686,155 +4345,743 @@
         "include_head": true,
         "include_free_base": true,
         "include_actuators": true,
-        "actuator_torque_limit_nm": 3.8
+        "actuator_torque_limit_nm": 3.8,
+        "masses": {
+          "servo_kg": 0.082,
+          "servo_size_m": [
+            0.0285,
+            0.0465,
+            0.034
+          ],
+          "wiring_per_servo_kg": 0.008,
+          "spine_structure_kg_per_m": 0.55,
+          "leg_structure_kg_per_m": 0.25,
+          "foot_kg": 0.015,
+          "neck_structure_kg_per_m": 0.15,
+          "head_kg": 0.09,
+          "electronics_kg": 0.15,
+          "battery_kg": 0.2
+        },
+        "joint_limits": {
+          "spine_yaw_rad": 1.5708,
+          "spine_pitch_rad": 1.7453,
+          "hip_yaw_rad": 1.5708,
+          "hip_pitch_rad": 2.3562,
+          "knee_rad": 2.3562,
+          "neck_yaw_rad": 2.618,
+          "neck_pitch_rad": 2.7925,
+          "neck_roll_rad": 0.7854
+        }
       },
       "dof_count_nv": 33,
-      "mass_kg": 10.239999999999997,
-      "length_m": 0.9299999999999999,
+      "mass_kg": 3.5995,
       "morphologies": {
         "quadruped": {
-          "camera_height_range_m": [
-            0.08580295210688386,
-            0.3526891720678931,
-            0.40661171495539633
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": 0.056425643370769454,
-          "max_gravity_torque_nm": 9.058059110275584,
-          "torque_margin_nm": -5.2580591102755845,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            -0.042381574381319675,
-            0.07857356314053554,
-            0.3526891720678931
-          ],
-          "support_point_count": 4,
-          "render": "images/decoupled_neck_3dof_quadruped.png"
+          "retraction_pose_deg": {
+            "leg_left_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_right_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ]
+          },
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0144,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.05,
+            "head_on_floor": false,
+            "max_speed": 0.0002,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 1.153,
+            "required_torque_joint": "spine_0_pitch",
+            "static_margin_m": 0.0619,
+            "body_height_m": 0.3935,
+            "floor_contacts": 4,
+            "camera": {
+              "level_gaze_height_m": 0.2945,
+              "level_gaze_elevation_deg": -0.9,
+              "near_level_height_range_m": [
+                0.2426,
+                0.3466
+              ],
+              "sweep_height_range_m": [
+                0.08,
+                0.5129
+              ],
+              "sweep_elevation_range_deg": [
+                -60.9,
+                59.1
+              ],
+              "self_contact_samples": 0,
+              "floor_collision_samples": 0
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0144,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.05,
+            "head_on_floor": false,
+            "max_speed": 0.0002,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              0.000127,
+              0.0,
+              0.28283,
+              0.999969,
+              0.0,
+              0.007848,
+              0.0,
+              0.0,
+              -0.003333,
+              0.0,
+              0.0,
+              0.01441,
+              0.0,
+              0.0002,
+              0.000112,
+              0.0,
+              0.0002,
+              0.000112,
+              0.0,
+              0.002132,
+              0.0,
+              -2.092907,
+              -2.356307,
+              0.0,
+              -2.092907,
+              -2.356307,
+              0.0,
+              -0.000108,
+              0.0,
+              -0.00023,
+              -0.000127,
+              0.0,
+              -0.00023,
+              -0.000127
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.32,
+          "level_gaze_height_gap_m": -0.0255,
+          "spine_overrides": {}
         },
         "hexapod": {
-          "camera_height_range_m": [
-            0.03949445745798513,
-            0.04970459863338425,
-            0.16156404734773566
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": -0.17000667700189354,
-          "max_gravity_torque_nm": 10.226466569030862,
-          "torque_margin_nm": -6.426466569030862,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            0.39023073515216844,
-            0.31538178400445005,
-            0.04970459863338425
-          ],
-          "support_point_count": 6,
-          "render": "images/decoupled_neck_3dof_hexapod.png"
+          "retraction_pose_deg": {},
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0144,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.02,
+            "head_on_floor": false,
+            "max_speed": 0.0001,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 1.153,
+            "required_torque_joint": "spine_0_pitch",
+            "static_margin_m": 0.0552,
+            "body_height_m": 0.3638,
+            "floor_contacts": 6,
+            "camera": {
+              "level_gaze_height_m": 0.2947,
+              "level_gaze_elevation_deg": -0.9,
+              "near_level_height_range_m": [
+                0.2428,
+                0.3467
+              ],
+              "sweep_height_range_m": [
+                0.0801,
+                0.5131
+              ],
+              "sweep_elevation_range_deg": [
+                -60.9,
+                59.1
+              ],
+              "self_contact_samples": 0,
+              "floor_collision_samples": 0
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0144,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.02,
+            "head_on_floor": false,
+            "max_speed": 0.0001,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              2.6e-05,
+              0.0,
+              0.282783,
+              0.999971,
+              0.0,
+              0.007647,
+              0.0,
+              0.0,
+              -0.003333,
+              0.0,
+              0.0,
+              0.014411,
+              0.0,
+              0.00015,
+              8.4e-05,
+              0.0,
+              0.00015,
+              8.4e-05,
+              0.0,
+              0.001238,
+              0.0,
+              -6.2e-05,
+              -3.3e-05,
+              0.0,
+              -6.2e-05,
+              -3.3e-05,
+              0.0,
+              0.000162,
+              0.0,
+              -0.000109,
+              -6e-05,
+              0.0,
+              -0.000109,
+              -6e-05
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.32,
+          "level_gaze_height_gap_m": -0.0253,
+          "spine_overrides": {}
         },
         "centaur": {
-          "camera_height_range_m": [
-            -0.05000633187647627,
-            0.29359709648644283,
-            0.3220948233465609
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": -0.11697969817377832,
-          "max_gravity_torque_nm": 6.983672737168593,
-          "torque_margin_nm": -3.1836727371685933,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            -0.16332978179591676,
-            -0.12555683888429472,
-            0.29359709648644283
-          ],
-          "support_point_count": 4,
-          "render": "images/decoupled_neck_3dof_centaur.png"
+          "retraction_pose_deg": {
+            "leg_left_0": [
+              0.0,
+              0.0,
+              135.0
+            ],
+            "leg_right_0": [
+              0.0,
+              0.0,
+              135.0
+            ]
+          },
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0101,
+            "worst_joint": "spine_1_pitch",
+            "rear_tilt_deg": 0.06,
+            "head_on_floor": false,
+            "max_speed": 0.0001,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 0.807,
+            "required_torque_joint": "spine_1_pitch",
+            "static_margin_m": 0.0072,
+            "body_height_m": 0.6471,
+            "floor_contacts": 4,
+            "camera": {
+              "level_gaze_height_m": 0.5779,
+              "level_gaze_elevation_deg": -0.8,
+              "near_level_height_range_m": [
+                0.526,
+                0.63
+              ],
+              "sweep_height_range_m": [
+                0.446,
+                0.7962
+              ],
+              "sweep_elevation_range_deg": [
+                -32.8,
+                59.2
+              ],
+              "self_contact_samples": 7,
+              "floor_collision_samples": 0
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0101,
+            "worst_joint": "spine_1_pitch",
+            "rear_tilt_deg": 0.06,
+            "head_on_floor": false,
+            "max_speed": 0.0001,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              4e-06,
+              0.0,
+              0.281082,
+              0.712249,
+              0.0,
+              -0.701926,
+              0.0,
+              0.0,
+              -1.57413,
+              0.0,
+              0.0,
+              0.003495,
+              0.0,
+              -0.001899,
+              2.356277,
+              0.0,
+              -0.001899,
+              2.356277,
+              0.0,
+              -1.56071,
+              0.0,
+              -0.000102,
+              -5.5e-05,
+              0.0,
+              -0.000102,
+              -5.5e-05,
+              0.0,
+              0.000515,
+              0.0,
+              4.7e-05,
+              2.6e-05,
+              0.0,
+              4.7e-05,
+              2.6e-05
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.78,
+          "level_gaze_height_gap_m": -0.2021,
+          "spine_overrides": {}
         },
         "snake": {
-          "camera_height_range_m": [
-            -0.05498630951733781,
-            0.2540746504147547,
-            0.3124844883983746
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": 0.07245429425498331,
-          "max_gravity_torque_nm": 7.047181394317869,
-          "torque_margin_nm": -3.2471813943178693,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            0.3187895794304852,
-            -0.45792313537397245,
-            0.2540746504147547
-          ],
-          "support_point_count": 12,
-          "render": "images/decoupled_neck_3dof_snake.png"
+          "retraction_pose_deg": {
+            "leg_left_0": [
+              0.0,
+              90.0,
+              135.0
+            ],
+            "leg_right_0": [
+              0.0,
+              90.0,
+              135.0
+            ],
+            "leg_left_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_right_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_left_2": [
+              0.0,
+              -90.0,
+              -120.0
+            ],
+            "leg_right_2": [
+              0.0,
+              -90.0,
+              -120.0
+            ]
+          },
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.021,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.0,
+            "head_on_floor": false,
+            "max_speed": 0.0,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 1.678,
+            "required_torque_joint": "spine_0_pitch",
+            "static_margin_m": 0.0614,
+            "body_height_m": 0.1599,
+            "floor_contacts": 7,
+            "camera": {
+              "level_gaze_height_m": 0.0654,
+              "level_gaze_elevation_deg": 1.4,
+              "near_level_height_range_m": [
+                0.0654,
+                0.1172
+              ],
+              "sweep_height_range_m": [
+                0.0654,
+                0.2788
+              ],
+              "sweep_elevation_range_deg": [
+                1.4,
+                61.4
+              ],
+              "self_contact_samples": 0,
+              "floor_collision_samples": 15
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.021,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.0,
+            "head_on_floor": false,
+            "max_speed": 0.0,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              -0.000317,
+              0.0,
+              0.032471,
+              0.999926,
+              0.0,
+              -0.012204,
+              0.0,
+              0.0,
+              0.017701,
+              0.0,
+              0.0,
+              -0.020977,
+              0.0,
+              1.568902,
+              2.356278,
+              0.0,
+              1.568902,
+              2.356278,
+              0.0,
+              -0.003401,
+              0.0,
+              -2.092908,
+              -2.356307,
+              0.0,
+              -2.092908,
+              -2.356307,
+              0.0,
+              1.4e-05,
+              0.0,
+              -1.570994,
+              -2.094616,
+              0.0,
+              -1.570994,
+              -2.094616
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.08,
+          "level_gaze_height_gap_m": -0.0146,
+          "spine_overrides": {}
         },
         "periscope": {
-          "camera_height_range_m": [
-            -0.05339968969805743,
-            0.2502899781522888,
-            0.3126185642589664
-          ],
-          "can_view_ground_1m": true,
-          "static_margin_m": 0.07336088011627843,
-          "max_gravity_torque_nm": 7.0133077092378215,
-          "torque_margin_nm": -3.2133077092378217,
-          "min_geom_height_m": -0.02,
-          "camera_xyz_m": [
-            0.3223683590676376,
-            -0.4464659630739818,
-            0.2502899781522888
-          ],
-          "support_point_count": 12,
-          "render": "images/decoupled_neck_3dof_periscope.png"
+          "retraction_pose_deg": {
+            "leg_left_0": [
+              0.0,
+              90.0,
+              135.0
+            ],
+            "leg_right_0": [
+              0.0,
+              90.0,
+              135.0
+            ],
+            "leg_left_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_right_1": [
+              0.0,
+              -120.0,
+              -135.0
+            ],
+            "leg_left_2": [
+              0.0,
+              -90.0,
+              -120.0
+            ],
+            "leg_right_2": [
+              0.0,
+              -90.0,
+              -120.0
+            ]
+          },
+          "unlimited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0034,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.01,
+            "head_on_floor": false,
+            "max_speed": 0.0,
+            "initial_self_contacts": 0,
+            "required_torque_nm": 0.27,
+            "required_torque_joint": "spine_0_pitch",
+            "static_margin_m": 0.068,
+            "body_height_m": 0.2936,
+            "floor_contacts": 10,
+            "camera": {
+              "level_gaze_height_m": 0.2244,
+              "level_gaze_elevation_deg": -0.2,
+              "near_level_height_range_m": [
+                0.1724,
+                0.2764
+              ],
+              "sweep_height_range_m": [
+                0.0639,
+                0.4413
+              ],
+              "sweep_elevation_range_deg": [
+                -40.2,
+                59.8
+              ],
+              "self_contact_samples": 5,
+              "floor_collision_samples": 5
+            }
+          },
+          "limited": {
+            "posture_reached": true,
+            "max_joint_error_rad": 0.0034,
+            "worst_joint": "spine_0_pitch",
+            "rear_tilt_deg": 0.01,
+            "head_on_floor": false,
+            "max_speed": 0.0,
+            "initial_self_contacts": 0,
+            "settled_qpos": [
+              -0.000396,
+              0.0,
+              -0.075223,
+              0.708349,
+              0.0,
+              -0.705863,
+              0.0,
+              0.0,
+              -1.57413,
+              0.0,
+              0.0,
+              -1.567424,
+              0.0,
+              1.5711,
+              2.356278,
+              0.0,
+              1.5711,
+              2.356278,
+              0.0,
+              0.000244,
+              0.0,
+              -2.092908,
+              -2.356307,
+              0.0,
+              -2.092908,
+              -2.356307,
+              0.0,
+              0.0,
+              0.0,
+              -1.571001,
+              -2.094616,
+              0.0,
+              -1.571001,
+              -2.094616
+            ]
+          },
+          "torque_limits_nm": {
+            "stall": 3.8,
+            "static": 1.9
+          },
+          "static_torque_ok": true,
+          "camera_height_target_m": 0.45,
+          "level_gaze_height_gap_m": -0.2256,
+          "spine_overrides": {}
         }
       },
       "coverage_matrix": {
         "quadruped": {
           "under_bed": 1.0,
           "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
+          "behind_obstacle": 0.0,
           "high_shelf": 0.0,
           "open_low_cubby": 1.0
         },
         "hexapod": {
           "under_bed": 1.0,
           "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
+          "behind_obstacle": 0.0,
           "high_shelf": 0.0,
           "open_low_cubby": 1.0
         },
         "centaur": {
-          "under_bed": 1.0,
-          "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
-          "high_shelf": 0.0,
+          "under_bed": 0.5,
+          "under_sofa": 0.2,
+          "behind_obstacle": 0.0,
+          "high_shelf": 0.05,
           "open_low_cubby": 1.0
         },
         "snake": {
           "under_bed": 1.0,
           "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
+          "behind_obstacle": 0.0,
           "high_shelf": 0.0,
           "open_low_cubby": 1.0
         },
         "periscope": {
           "under_bed": 1.0,
           "under_sofa": 1.0,
-          "behind_obstacle": 1.0,
+          "behind_obstacle": 0.0,
           "high_shelf": 0.0,
           "open_low_cubby": 1.0
         }
       },
-      "max_torque_margin_nm": -6.426466569030862,
-      "best_by_hiding_type": {
-        "under_bed": "quadruped",
-        "under_sofa": "quadruped",
-        "behind_obstacle": "quadruped",
-        "high_shelf": "quadruped",
-        "open_low_cubby": "quadruped"
+      "coverage_by_min_pixels": {
+        "8": {
+          "quadruped": {
+            "under_bed": 1.0,
+            "under_sofa": 1.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "hexapod": {
+            "under_bed": 1.0,
+            "under_sofa": 1.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "centaur": {
+            "under_bed": 0.5,
+            "under_sofa": 0.2,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.05,
+            "open_low_cubby": 1.0
+          },
+          "snake": {
+            "under_bed": 1.0,
+            "under_sofa": 1.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "periscope": {
+            "under_bed": 1.0,
+            "under_sofa": 1.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          }
+        },
+        "16": {
+          "quadruped": {
+            "under_bed": 0.6,
+            "under_sofa": 0.5,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "hexapod": {
+            "under_bed": 0.6,
+            "under_sofa": 0.5,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "centaur": {
+            "under_bed": 0.05,
+            "under_sofa": 0.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "snake": {
+            "under_bed": 1.0,
+            "under_sofa": 0.9,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          },
+          "periscope": {
+            "under_bed": 0.6,
+            "under_sofa": 0.75,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 1.0
+          }
+        },
+        "24": {
+          "quadruped": {
+            "under_bed": 0.5,
+            "under_sofa": 0.25,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.75
+          },
+          "hexapod": {
+            "under_bed": 0.5,
+            "under_sofa": 0.25,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.75
+          },
+          "centaur": {
+            "under_bed": 0.0,
+            "under_sofa": 0.0,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.0
+          },
+          "snake": {
+            "under_bed": 1.0,
+            "under_sofa": 0.5,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.75
+          },
+          "periscope": {
+            "under_bed": 0.5,
+            "under_sofa": 0.3,
+            "behind_obstacle": 0.0,
+            "high_shelf": 0.0,
+            "open_low_cubby": 0.75
+          }
+        }
       },
-      "coverage_complete": false,
-      "complementary_type_count": 0
+      "summary": {
+        "postures_reached": 5,
+        "postures_not_reached": [],
+        "worst_required_torque_nm": 1.678,
+        "worst_required_torque_at": "snake/spine_0_pitch",
+        "static_torque_ok_all": true,
+        "min_static_margin_m": 0.0072,
+        "best_coverage": {
+          "under_bed": 1.0,
+          "under_sofa": 1.0,
+          "behind_obstacle": 0.0,
+          "high_shelf": 0.05,
+          "open_low_cubby": 1.0
+        },
+        "morphing_gain_over_quadruped": {
+          "under_bed": 0.0,
+          "under_sofa": 0.0,
+          "behind_obstacle": 0.0,
+          "high_shelf": 0.05,
+          "open_low_cubby": 0.0
+        },
+        "types_with_morphing_gain": 0,
+        "coverage_eligible": [
+          "quadruped",
+          "hexapod",
+          "centaur",
+          "snake",
+          "periscope"
+        ],
+        "coverage_complete": false
+      }
     }
   ]
 }
